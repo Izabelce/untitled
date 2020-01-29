@@ -19,6 +19,9 @@ public class Data_Manipulation_Interface {
         if(myController.bestellungeinbauen(neueBestellung))return neueBestellung;
         return null;
     }
+    public Bestellung neueBestellungVersuchen(int fahrradID, int anzahl, String liefertag){
+     return neueBestellungVersuchen(fahrradID, anzahl, myController.getTagIDFromString(liefertag));
+    }
 
     public void calculateDayZielvorgaben() {
         myController.zielVorgabenWorkflow();

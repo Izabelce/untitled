@@ -4,7 +4,6 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,11 +13,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
 
-public class Controller2 implements Initializable {
+public class Controller2 extends Controller_Base implements Initializable {
 
     @FXML
     private TextField textField;
@@ -26,6 +23,9 @@ public class Controller2 implements Initializable {
     private Label datum;
     @FXML
     private Button btnOpenNewWindow;
+
+
+
 
     public void setDatum(String datumNew) {
 
@@ -45,8 +45,7 @@ public class Controller2 implements Initializable {
             stage.setMaximized(true);
             stage.show();
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
@@ -68,8 +67,7 @@ public class Controller2 implements Initializable {
             stage.show();
 
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
@@ -87,8 +85,7 @@ public class Controller2 implements Initializable {
             stage.setMaximized(true);
             stage.show();
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
@@ -106,8 +103,7 @@ public class Controller2 implements Initializable {
             stage.setMaximized(true);
             stage.show();
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
@@ -125,8 +121,7 @@ public class Controller2 implements Initializable {
             stage.setMaximized(true);
             stage.show();
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
@@ -144,8 +139,7 @@ public class Controller2 implements Initializable {
             stage.setMaximized(true);
             stage.show();
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
@@ -163,8 +157,7 @@ public class Controller2 implements Initializable {
             stage.setMaximized(true);
             stage.show();
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
@@ -182,8 +175,7 @@ public class Controller2 implements Initializable {
             stage.setMaximized(true);
             stage.show();
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)

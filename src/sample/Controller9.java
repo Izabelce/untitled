@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Controller9 {
+public class Controller9 extends Controller_Base {
 
     public void button_close(Event evt) {
         Parent root1;

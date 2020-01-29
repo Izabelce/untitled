@@ -4,7 +4,7 @@ import javafx.event.Event;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 
-public class Controller16 {
+public class Controller16 extends Controller_Base {
 
     public void button_close(Event evt) {
         Parent root1;

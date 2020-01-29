@@ -1,31 +1,28 @@
 package sample;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+
+import Data_Manipulation_Module.Data_Manipulation_Controller;
+import Data_Manipulation_Module.Data_Manipulation_Interface;
+import Database_Connectivity_Module.Database_Connector;
+import Database_Connectivity_Module.Database_Controller;
+import Database_Connectivity_Module.Database_Helper;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.event.Event;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.EventObject;
 import java.util.ResourceBundle;
 
 public class Controller1 implements Initializable {
-private  interfaceDatum heute;
+    private interfaceDatum heute;
     @FXML
     private TextField textField;
     @FXML
@@ -39,9 +36,25 @@ private  interfaceDatum heute;
         datumLabel.setText("PLATZHALTER");
 
     }
-    public void button_demoNeu(Event evt) {
-        Parent root1;
 
+    public void button_demoNeu(Event evt) {
+        //init die wichtigen objekte
+
+        System.out.println("Building Database_Connectivity_Module...");
+        Database_Connector dbcon = new Database_Connector();
+        Database_Helper dbHelper = new Database_Helper();
+        Database_Controller dbCtrl = new Database_Controller(dbcon, dbHelper);
+        dbcon.populate_Tablespace();
+        System.out.println("Building Data_Manipulation_Module...");
+        Data_Manipulation_Controller dbManCon = new Data_Manipulation_Controller(dbCtrl.getDbInterface());
+        Data_Manipulation_Interface manipulation_interface = new Data_Manipulation_Interface();
+        dbManCon.zielVorgabenWorkflow();
+        Backend_Interface b_int = new Backend_Interface(manipulation_interface);
+
+
+        //########################################################################
+
+        Parent root1;
         try {
             root1 = FXMLLoader.load(getClass().getResource("view2.fxml"));
             Stage stage = new Stage();
@@ -50,12 +63,11 @@ private  interfaceDatum heute;
             stage.show();
             stage.setMaximized(true);
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
-        ((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node) (evt.getSource())).getScene().getWindow().hide();
     }
 
     public void button_demoCont(Event evt) {
@@ -73,17 +85,16 @@ private  interfaceDatum heute;
             stage.setMaximized(true);
 
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
-        ((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node) (evt.getSource())).getScene().getWindow().hide();
     }
 
 
     public void setDatum(interfaceDatum datumHeute) {
-        heute= datumHeute;
+        heute = datumHeute;
         datumLabel.setText(heute.getHeute());
     }
 

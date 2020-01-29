@@ -153,13 +153,13 @@ public class Data_Manipulation_Controller {
         }
         System.out.println("    Berechnete Werte werden festgeschrieben...");
         //TODO KOMMENTARE ENTFERNEN
-        //lagerbestandfestschreiben();
+        lagerbestandfestschreiben();
         for (Schichtarbeitstag s : alleTage) {
             for (Lieferung l : s.getLieferungen()) {
-                //   queryA.lieferungfestschrieben(l);
+                   queryA.lieferungfestschrieben(l);
             }
             for (Bestellung b : s.getBestellungen()) {
-                //  queryA.bestellungenfestschreiben(b);
+                  queryA.bestellungenfestschreiben(b);
             }
         }
         candidatesherstellen();
@@ -561,6 +561,10 @@ public class Data_Manipulation_Controller {
             s.checkMyself();
         }
         return true;
+    }
+
+    public int getTagIDFromString(String liefertag) {
+        return queryA.getIDDay(liefertag);
     }
 }
 

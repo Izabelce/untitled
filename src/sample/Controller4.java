@@ -15,7 +15,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller4 extends interfaceDatum implements Initializable {
+public class Controller4 extends Controller_Base implements Initializable {
+
+
+
 
     @FXML
     private Label datum;
@@ -96,4 +99,5 @@ public class Controller4 extends interfaceDatum implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
 }

@@ -22,10 +22,9 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class Controller3 implements Initializable {
+public class Controller3 extends Controller_Base implements Initializable {
     @FXML
     private DatePicker dateNew;
-
 
     public void button_close(Event evt) {
         Parent root1;

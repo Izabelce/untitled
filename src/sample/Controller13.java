@@ -9,7 +9,7 @@ import javafx.scene.control.DatePicker;
 
 import java.text.SimpleDateFormat;
 
-public class Controller13 {
+public class Controller13 extends Controller_Base {
 
     @FXML
     private DatePicker dateNew;
