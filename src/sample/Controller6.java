@@ -1,10 +1,24 @@
 package sample;
 
 import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 
 public class Controller6 extends Controller_Base {
+
+    @FXML
+    private Label datum;
+
+    //Datum wird gesetzt TESTEN!
+    public void initialize() {
+        backendInterface = Backend_Interface.getInstance(null);
+        datum.setText(backendInterface.getHeute());
+    }
+
+    //In dieser Klasse werden Reports erstellt, wie gehen wir da vor?
 
     public void button_close(Event evt) {
         Parent root1;

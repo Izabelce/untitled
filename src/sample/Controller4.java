@@ -17,14 +17,28 @@ import java.util.ResourceBundle;
 
 public class Controller4 extends Controller_Base implements Initializable {
 
-
-
-
     @FXML
     private Label datum;
+    @FXML
+    private Label lieferungen;
+    @FXML
+    private Label bestellungen;
+    @FXML
+    private Label schichten;
+    @FXML
+    private Label produktionsvolumen;
 
-    public Controller4(String datum) {
-        super(datum);
+    //hierfür muss den anzahl der jeweiligen lieferungen, bestellungen etc für den ausgewählten HEUTE übergebn werden
+
+    //Datum wird gesetzt TESTEN!
+    public void initialize() {
+        backendInterface = Backend_Interface.getInstance(null);
+        datum.setText(backendInterface.getHeute());
+        //hier die methoden aufrufen die den beständen liefern im setText() rein schreiben
+        lieferungen.setText("");
+        bestellungen.setText("");
+        schichten.setText("");
+        produktionsvolumen.setText("");
     }
 
 
