@@ -35,4 +35,8 @@ public class Data_Manipulation_Interface {
         System.out.println(neueBestellungVersuchen(2, 33, 129));
         System.out.println(neueBestellungVersuchen(2, 33, 123));
     }
+
+    public void setToday(String heute) {
+        myController.setToday(heute);
+    }
 }

@@ -45,8 +45,7 @@ public class Controller2 extends Controller_Base implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // Hide this current window (if this is what you want)
-        //((Node)(evt.getSource())).getScene().getWindow().hide();
+
     }
 
     public void infosHeute(Event evt) {
@@ -67,8 +66,7 @@ public class Controller2 extends Controller_Base implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // Hide this current window (if this is what you want)
-        //((Node)(evt.getSource())).getScene().getWindow().hide();
+
     }
 
     public void bestandsreportErstellen(Event evt) {

@@ -571,5 +571,9 @@ public class Data_Manipulation_Controller {
     public int getTagIDFromString(String liefertag) {
         return queryA.getIDDay(liefertag);
     }
+
+    public void setToday(String heute) {
+        connectivity_interface.setToday(heute);
+    }
 }
 

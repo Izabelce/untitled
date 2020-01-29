@@ -22,7 +22,7 @@ public class Backend_Interface {
 
         //TO-DO Methode set Heute implementieren
         public void setHeute(String heute){
-
+            dataInterface.setToday(heute);
         }
 
         public Bestellung neueBestellungAnlegen(int fahrradID, String wunschliefertermin, int anzahl){

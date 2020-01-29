@@ -61,4 +61,9 @@ public class Database_Controller {
     public void commit() {
         dbCon.commit();
     }
+
+    public void setToday(String heute){
+        this.heute = heute;
+        heuteId = dbCon.getKalendertagID(heute);
+    }
 }

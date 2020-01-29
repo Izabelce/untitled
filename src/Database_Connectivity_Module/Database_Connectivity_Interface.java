@@ -46,4 +46,8 @@ public class Database_Connectivity_Interface {
     public void comnmit() {
         myController.commit();
     }
+
+    public void setToday(String heute) {
+        myController.setToday(heute);
+    }
 }
