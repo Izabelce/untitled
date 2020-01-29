@@ -1,7 +1,7 @@
 package sample;
 
 public abstract class Controller_Base {
-    private Backend_Interface backendInterface;
+    protected Backend_Interface backendInterface;
     public void setBackendInterface(Backend_Interface backendinterface) {
         this.backendInterface = backendinterface;
     }

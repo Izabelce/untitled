@@ -152,7 +152,6 @@ public class Data_Manipulation_Controller {
             s.checkMyself();
         }
         System.out.println("    Berechnete Werte werden festgeschrieben...");
-        //TODO KOMMENTARE ENTFERNEN
         lagerbestandfestschreiben();
         for (Schichtarbeitstag s : alleTage) {
             for (Lieferung l : s.getLieferungen()) {
@@ -384,7 +383,7 @@ public class Data_Manipulation_Controller {
         Schichtarbeitstag letzterTag = kw.getLast();
 
         for (int i = 9; i <= 22; i++) {
-            if (letzterTag.getLagerbestand(i) < 0) {
+            if (letzterTag.getLagerbestand(i) < Database_Connectivity_Interface.getPuffer() && letzterTag.getArbeitstag_ID()> 115) {
                 int starttagId = starttagberechnen(Komponentenzuordnung.getKtypFromID(i), letzterArbeitstagVorwoche);
                 if(starttagId < getToday(0))return false;
                 Lieferung neededLieferung = new Lieferung(i, letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(), letzterArbeitstagVorwoche.getArbeitstag_ID(), starttagId);
@@ -566,7 +565,6 @@ public class Data_Manipulation_Controller {
             }
         }
         System.out.println("        Bestellung ist ok");
-
         return true;
     }
 
