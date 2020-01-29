@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Adventureworks_Bikes_version2_guis:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Adventureworks_Bikes_version2_guis_jar</output-path>
-    <root id="archive" name="Adventureworks_Bikes_version2_guis.jar">
+  <artifact type="javafx" name="Adventureworks_Bikes">
+    <output-path>$PROJECT_DIR$/out/artifacts/Adventureworks_Bikes</output-path>
+    <root id="root">
       <element id="module-output" name="Adventureworks_Bikes_version2_guis" />
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/src.zip" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/javafx-swt.jar" path-in-jar="/" />
@@ -13,6 +13,11 @@
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/javafx.controls.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/javafx.graphics.jar" path-in-jar="/" />
       <element id="directory" name="test" />
+      <element id="archive" name="Adventureworks_Bikes.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/sample/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

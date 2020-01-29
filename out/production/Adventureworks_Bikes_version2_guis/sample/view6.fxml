@@ -19,7 +19,7 @@
       <Pane prefHeight="477.0" prefWidth="464.0">
          <children>
          <Label layoutX="37.0" layoutY="40.0" text="Heute:" />
-         <Label layoutX="72.0" layoutY="40.0" text="datum" />
+         <Label fx:id="datum" layoutX="72.0" layoutY="40.0" text="datum" />
          <Button layoutX="37.0" layoutY="117.0" mnemonicParsing="false" text="Report 1 erstellen" />
          <Button layoutX="37.0" layoutY="163.0" mnemonicParsing="false" text="Report 2 erstellen" />
          <Button layoutX="37.0" layoutY="208.0" mnemonicParsing="false" text="Report 3 erstellen" />

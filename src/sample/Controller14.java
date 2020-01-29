@@ -16,8 +16,8 @@ public class Controller14 extends Controller_Base {
 
     public void bestellen(Event evt) {
         Parent root1;
-        //Bestellung in der Datenbank schreiben
-        // Hide this current window (if this is what you want)
+        //TODO Bestellung in der Datenbank schreiben
+        //Hide this current window (if this is what you want)
         ((Node)(evt.getSource())).getScene().getWindow().hide();
 
     }

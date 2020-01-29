@@ -23,7 +23,7 @@ public class Controller5 extends Controller_Base {
     @FXML
     private DatePicker zeitraumBis;
 
-    //Datum wird gesetzt TESTEN!
+    //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
         backendInterface = Backend_Interface.getInstance(null);
         datum.setText(backendInterface.getHeute());
@@ -36,11 +36,11 @@ public class Controller5 extends Controller_Base {
         java.sql.Date getZeitraumBis = java.sql.Date.valueOf(zeitraumBis.getValue());
         SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
         //System.out.println(ft.format(gettedDatePickerDate));
-        //hier wird das neue ausgewählte Datum in das Interface Instanz geschrieben, um es später zuzugreifen
-        //BITTE EINE METHODE ZUR ÜBERGABE SCHREIBEN
+        // TODO hier wird das neue ausgewählte Datum in das Interface Instanz geschrieben, um es später zuzugreifen
+        //TODO BITTE EINE METHODE ZUR ÜBERGABE SCHREIBEN
         //backendInterface.setHeute(ft.format(gettedDatePickerDate));
 
-        //HIER SOLL EIN PDF ERSTELLT WERDEN?
+        //TODO HIER SOLL EIN PDF ERSTELLT WERDEN?
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view2.fxml"));
             Parent root = (Parent) loader.load();

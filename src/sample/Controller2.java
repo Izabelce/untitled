@@ -24,7 +24,7 @@ public class Controller2 extends Controller_Base implements Initializable {
     @FXML
     private Button btnOpenNewWindow;
 
-    //Datum wird gesetzt TESTEN!
+    //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
         backendInterface = Backend_Interface.getInstance(null);
         datum.setText(backendInterface.getHeute());

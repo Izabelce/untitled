@@ -28,9 +28,9 @@ public class Controller4 extends Controller_Base implements Initializable {
     @FXML
     private Label produktionsvolumen;
 
-    //hierfür muss den anzahl der jeweiligen lieferungen, bestellungen etc für den ausgewählten HEUTE übergebn werden
+    //TODO hierfür muss den anzahl der jeweiligen lieferungen, bestellungen etc für den ausgewählten HEUTE übergebn werden
 
-    //Datum wird gesetzt TESTEN!
+    //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
         backendInterface = Backend_Interface.getInstance(null);
         datum.setText(backendInterface.getHeute());

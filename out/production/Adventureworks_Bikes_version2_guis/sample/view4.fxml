@@ -27,10 +27,10 @@
          <Button layoutX="274.0" layoutY="135.0" mnemonicParsing="false" onAction="#geheZuBestell" text="Gehe zu Bestellungen" />
          <Button layoutX="274.0" layoutY="279.0" mnemonicParsing="false" onAction="#infos" prefHeight="25.0" prefWidth="77.0" text="Info" />
          <Button layoutX="378.0" layoutY="279.0" mnemonicParsing="false" onAction="#button_close" text="Schliessen" />
-         <Label layoutX="131.0" layoutY="111.0" text="zahl" />
-         <Label layoutX="126.0" layoutY="183.0" text="zahl" />
-         <Label layoutX="137.0" layoutY="147.0" text="zahl" />
-         <Label layoutX="148.0" layoutY="218.0" text="zahl" />
+         <Label fx:id="lieferungen" layoutX="131.0" layoutY="111.0" text="zahl" />
+         <Label fx:id="schichten" layoutX="126.0" layoutY="183.0" text="zahl" />
+         <Label fx:id="bestellungen" layoutX="137.0" layoutY="147.0" text="zahl" />
+         <Label fx:id="produktionsvolumen" layoutX="148.0" layoutY="218.0" text="zahl" />
             <Label fx:id="datum" layoutX="67.0" layoutY="46.0" text="Label" />
          </children>
       </Pane>

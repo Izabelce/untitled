@@ -38,7 +38,7 @@ public class Controller7 extends Controller_Base {
     private Label ft8;
 
 
-    //Datum wird gesetzt TESTEN!
+    //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
         backendInterface = Backend_Interface.getInstance(null);
         datum.setText(backendInterface.getHeute());
@@ -53,7 +53,7 @@ public class Controller7 extends Controller_Base {
         SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
         //System.out.println(ft.format(gettedDatePickerDate));
 
-        //Bestellung anlegen
+        //TODO Bestellung anlegen, bitte prüfen ob es so funktinioert
         backendInterface.neueBestellungAnlegen(1,ft.format(gettedDatePickerDate),Integer.valueOf(ft1.getText()));
         backendInterface.neueBestellungAnlegen(2,ft.format(gettedDatePickerDate),Integer.valueOf(ft2.getText()));
         backendInterface.neueBestellungAnlegen(3,ft.format(gettedDatePickerDate),Integer.valueOf(ft3.getText()));

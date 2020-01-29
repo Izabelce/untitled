@@ -18,7 +18,7 @@ public class Controller10 extends Controller_Base {
     @FXML
     private Label anzahl;
 
-    //Datum wird gesetzt TESTEN!
+    //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
         backendInterface = Backend_Interface.getInstance(null);
         datum.setText(backendInterface.getHeute());
@@ -34,9 +34,9 @@ public class Controller10 extends Controller_Base {
 
     public void einpflegen(Event evt) {
         Parent root1;
-        anzahl.getText(); //Anzahl Lagerschadennr. irgendwo rein schreiben bitte
-        //Daten einpflegen
-        // Hide this current window (if this is what you want)
+        anzahl.getText(); //TODO Anzahl Lagerschadennr. irgendwo rein schreiben bitte
+        //TODO Daten einpflegen
+        //Hide this current window (if this is what you want)
         ((Node)(evt.getSource())).getScene().getWindow().hide();
 
     }
