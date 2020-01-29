@@ -1,0 +1,314 @@
+CREATE Table Land(
+  Landname varchar2(255)  
+  );
+
+ALTER TABLE Land
+ADD CONSTRAINT Landname_ID PRIMARY KEY(Landname);
+
+CREATE TABLE Kalenderwoche(
+KW_ID Int,
+KW VARCHAR2(255)
+);
+
+ALTER TABLE Kalenderwoche
+ADD CONSTRAINT pk_KW PRIMARY KEY(KW_ID);
+  
+CREATE TABLE Kalendertag (
+Tag_ID Int,
+KW_ID Int,
+Datum VARCHAR2(255),
+Wochentag VARCHAR2(255)
+);
+
+ALTER TABLE Kalendertag
+ADD CONSTRAINT Kalendertag_ID PRIMARY KEY(Tag_ID);
+
+ALTER TABLE Kalendertag
+ADD CONSTRAINT fk_kw FOREIGN KEY (KW_ID) REFERENCES Kalenderwoche (KW_ID);
+
+CREATE TABLE Schichtarbeit(
+Schicht_ID Int,
+max_output Int
+);
+
+ALTER TABLE Schichtarbeit
+ADD CONSTRAINT Schichtarbeit_ID PRIMARY KEY (Schicht_ID);
+
+CREATE TABLE Produktionsort(
+Produktionsort_ID Int,
+Max_Pro_Schicht Int
+);
+
+ALTER TABLE Produktionsort
+ADD CONSTRAINT Produktionsort_ID PRIMARY KEY (Produktionsort_ID);
+
+CREATE TABLE Lager(
+Lager_ID Int,
+Produktionsort_ID Int
+);
+
+ALTER TABLE Lager
+ADD CONSTRAINT Lager_ID PRIMARY KEY (Lager_ID);
+ALTER TABLE Lager
+ADD CONSTRAINT Produktionsort FOREIGN KEY (Produktionsort_ID) REFERENCES Produktionsort(Produktionsort_ID);
+
+CREATE TABLE Fahrplan(
+Fahrplannummer Int,
+Ankunftstag Int,
+Abfahrtstag Int
+);
+
+ALTER TABLE Fahrplan
+ADD CONSTRAINT Fahrplan_ID PRIMARY KEY (Fahrplannummer);
+
+ALTER TABLE Fahrplan
+ADD CONSTRAINT Abfahrtstag FOREIGN KEY (Ankunftstag) References Kalendertag(Tag_ID);
+
+ALTER TABLE Fahrplan
+ADD CONSTRAINT Ankunftstag FOREIGN KEY (Abfahrtstag) REFERENCES Kalendertag(Tag_ID);
+
+CREATE TABLE Zulieferer(
+Zulieferer_ID Int,
+InLand VarChar2(255),
+Name VarChar2(255)
+);
+
+ALTER TABLE Zulieferer
+ADD CONSTRAINT Zulieferer_ID PRIMARY KEY (Zulieferer_ID);
+
+ALTER TABLE Zulieferer
+ADD CONSTRAINT Lokalisiert_In FOREIGN KEY (InLand) REFERENCES Land(Landname);
+
+CREATE TABLE Lagerobjekt(
+Lagerobjekt_ID Int,
+Lagerobjekt_Name VarChar(255)
+);
+ALTER TABLE Lagerobjekt
+ADD CONSTRAINT Lagerobjekt_ID PRIMARY KEY (Lagerobjekt_ID);
+
+ALTER TABLE Lagerobjekt MODIFY ( Lagerobjekt_Name NOT NULL);
+
+
+CREATE TABLE Fahrradkomponente(
+Komponent_ID Int,
+Art varchar2(255),
+Zulieferer_ID Int,
+Mindestbestellmenge Int,
+Lieferdauer Int,
+Lager_ID Int
+);
+
+ALTER TABLE Fahrradkomponente
+ADD CONSTRAINT Fahrradkomponente_ID PRIMARY KEY (Komponent_ID);
+
+ALTER TABLE Fahrradkomponente
+ADD CONSTRAINT Lagerobjekt_komp_ID FOREIGN KEY (Komponent_ID) REFERENCES Lagerobjekt(Lagerobjekt_ID);
+
+ALTER TABLE Fahrradkomponente
+ADD CONSTRAINT Zulieferer FOREIGN KEY (Zulieferer_ID) REFERENCES Zulieferer(Zulieferer_ID);
+
+ALTER TABLE Fahrradkomponente
+ADD CONSTRAINT Lager FOREIGN KEY (Lager_ID) REFERENCES Lager(Lager_ID);
+
+CREATE TABLE Fahrrad(
+Modelltyp_ID Int,
+Produktionsort_ID Int,
+Lager_ID Int
+);
+
+ALTER TABLE Fahrrad
+ADD CONSTRAINT Modelltyp_ID PRIMARY KEY (Modelltyp_ID);
+
+ALTER TABLE Fahrrad
+ADD CONSTRAINT Lagerobjekt_Fahrrad_ID FOREIGN KEY (Modelltyp_ID) REFERENCES Lagerobjekt(Lagerobjekt_ID);
+
+ALTER TABLE Fahrrad
+ADD CONSTRAINT fk_Fahrrad_Produktionsort FOREIGN KEY (Produktionsort_ID) REFERENCES Produktionsort(Produktionsort_ID);
+
+ALTER TABLE Fahrrad
+ADD CONSTRAINT Lagerort FOREIGN KEY (Lager_ID) REFERENCES Lager(Lager_ID); 
+
+CREATE TABLE Zielvorgaben_Monat(
+Zielvorgaben_Monats_ID Int,
+ErsterTag_ID Int,
+LetzterTag_ID Int,
+Monatsname VARCHAR2(255)
+);
+
+ALTER TABLE Zielvorgaben_Monat
+ADD CONSTRAINT pk_Zielvorgaben_Monat PRIMARY KEY (Zielvorgaben_Monats_ID);
+
+ALTER TABLE Zielvorgaben_Monat
+ADD CONSTRAINT fk_erster_Tag FOREIGN KEY (ErsterTag_ID) REFERENCES Kalendertag(Tag_ID);
+
+ALTER TABLE Zielvorgaben_Monat
+ADD CONSTRAINT fk_letzter_Tag FOREIGN KEY (LetzterTag_ID) REFERENCES Kalendertag(Tag_ID);
+
+CREATE TABLE Zielvorgabe(
+Zielvorgaben_Monats_ID Int,
+Modelltyp_ID Int,
+Anzahl Int
+);
+
+ALTER TABLE Zielvorgabe
+ADD CONSTRAINT pk_zielvorgabe PRIMARY KEY (Zielvorgaben_Monats_ID, Modelltyp_ID);
+
+ALTER TABLE Zielvorgabe
+ADD CONSTRAINT fk_zielvorgabeMonat FOREIGN KEY (Zielvorgaben_Monats_ID) REFERENCES Zielvorgaben_Monat(Zielvorgaben_Monats_ID);
+
+ALTER TABLE Zielvorgabe
+ADD CONSTRAINT fk_zielvorgabeModell FOREIGN KEY (Modelltyp_ID) REFERENCES Fahrrad(Modelltyp_ID);
+
+
+CREATE TABLE Transportmittel(
+Transportmittel_ID Int,
+Fahrplan Int,
+ETA VarChar2(255),
+Komponent_ID Int,
+Anzahl Int
+);
+
+ALTER TABLE Transportmittel
+ADD CONSTRAINT Transportmittel_ID PRIMARY KEY (Transportmittel_ID);
+
+ALTER TABLE Transportmittel
+ADD CONSTRAINT Fahrplannummer FOREIGN KEY (Fahrplan) REFERENCES Fahrplan(Fahrplannummer);
+
+ALTER TABLE Transportmittel
+ADD CONSTRAINT Komponent_ID FOREIGN KEY (Komponent_ID) REFERENCES Fahrradkomponente(Komponent_ID);
+
+CREATE TABLE Bestellung(
+Bestell_ID Int,
+Bestelldatum Int,
+Lieferdatum Int
+);
+
+ALTER TABLE Bestellung
+ADD CONSTRAINT Bestell_ID PRIMARY KEY (Bestell_ID);
+
+ALTER TABLE Bestellung
+ADD CONSTRAINT Bestelldatum FOREIGN KEY (Bestelldatum) REFERENCES Kalendertag(Tag_ID);
+
+ALTER TABLE Bestellung
+ADD CONSTRAINT Lieferdatum FOREIGN KEY (Lieferdatum) REFERENCES Kalendertag(Tag_ID);
+
+
+CREATE TABLE Ist_Feiertag_In(
+	Landname VarChar2(255),
+	Tag_ID Int,
+	Feiertag_Name VarChar2(255)				  
+	);
+	
+ALTER TABLE Ist_Feiertag_In
+ADD CONSTRAINT pk PRIMARY KEY (Landname, Tag_ID);
+
+ALTER TABLE Ist_Feiertag_In
+ADD CONSTRAINT fk_Land FOREIGN KEY (Landname) REFERENCES Land (Landname);
+	
+ALTER TABLE Ist_Feiertag_In
+ADD CONSTRAINT fk_Tag FOREIGN KEY (Tag_ID) REFERENCES Kalendertag(Tag_ID);
+
+CREATE TABLE besteht_aus(
+Modelltyp_ID Int,
+Komponent_ID Int	
+);
+
+ALTER TABLE besteht_aus
+ADD CONSTRAINT pk_besteht_aus PRIMARY KEY (Modelltyp_ID, Komponent_ID);
+
+ALTER TABLE besteht_aus
+ADD CONSTRAINT fk_Komponent FOREIGN KEY (Komponent_ID) REFERENCES Lagerobjekt(Lagerobjekt_ID);
+
+ALTER TABLE besteht_aus
+ADD CONSTRAINT fk_modell FOREIGN KEY (Modelltyp_ID)REFERENCES Lagerobjekt(Lagerobjekt_ID);
+
+CREATE TABLE bestellt(
+Bestell_ID Int,
+Modelltyp_ID Int,
+Anzahl Int	
+);
+
+ALTER TABLE bestellt
+ADD CONSTRAINT bestellt_pk PRIMARY KEY (Bestell_ID, Modelltyp_ID);
+
+ALTER TABLE bestellt
+ADD CONSTRAINT fk_Bestell_ID FOREIGN KEY (Bestell_ID) REFERENCES Bestellung(Bestell_ID);
+
+ALTER TABLE bestellt
+ADD CONSTRAINT fk_modell_ID FOREIGN KEY (Modelltyp_ID) REFERENCES Fahrrad(Modelltyp_ID);
+
+CREATE TABLE nutzt(
+Produktionsort_ID Int,
+Schicht_ID Int,
+Tag_ID Int
+);
+
+ALTER TABLE nutzt
+ADD CONSTRAINT nutzt_pk PRIMARY KEY (Produktionsort_ID, Schicht_ID, Tag_ID);
+
+ALTER TABLE nutzt
+ADD CONSTRAINT fk_produktionsort FOREIGN KEY (Produktionsort_ID) REFERENCES Produktionsort(Produktionsort_ID);
+
+ALTER TABLE nutzt
+ADD CONSTRAINT fk_schicht FOREIGN KEY (Schicht_ID) REFERENCES Schichtarbeit(Schicht_ID);
+
+ALTER TABLE nutzt
+ADD CONSTRAINT fk_tag_nutzt FOREIGN KEY (Tag_ID) REFERENCES Kalendertag (Tag_ID);
+
+CREATE TABLE Lagerbestand(
+Tag_ID Int,
+Lager_ID Int,
+Lagerobjekt_Id Int,
+Anzahl Int
+);
+
+ALTER TABLE Lagerbestand
+ADD CONSTRAINT Tagesbestand PRIMARY KEY (Tag_ID, Lager_ID, Lagerobjekt_ID);
+
+ALTER TABLE Lagerbestand
+ADD CONSTRAINT fk_lagertag FOREIGN KEY (Tag_ID) REFERENCES Kalendertag(Tag_ID);
+
+ALTER TABLE Lagerbestand
+ADD CONSTRAINT fk_lagerort FOREIGN KEY (Lager_ID) REFERENCES Lager(Lager_ID);
+
+ALTER TABLE Lagerbestand
+ADD CONSTRAINT fk_lagerobjekt FOREIGN KEY (Lagerobjekt_Id) REFERENCES Lagerobjekt(Lagerobjekt_ID);
+
+CREATE TABLE Produktionsvolumen(
+Tag_ID Int,
+Fahrrad_ID Int,
+Anzahl Int
+);
+
+ALTER TABLE Produktionsvolumen
+ADD CONSTRAINT pk_produktionsvolumen PRIMARY KEY(Tag_ID, Fahrrad_ID);
+
+ALTER TABLE Produktionsvolumen
+ADD CONSTRAINT fk_prodTag FOREIGN KEY(Tag_ID) REFERENCES Kalendertag(Tag_ID);
+
+ALTER TABLE Produktionsvolumen
+ADD CONSTRAINT fk_prodBike FOREIGN KEY(Fahrrad_ID) REFERENCES Fahrrad(Modelltyp_ID);
+
+CREATE TABLE Lieferung(
+Zulieferer_ID Int,
+Komponent_ID Int,
+Anzahl Int,
+Ankunftstag_ID Int,
+Tag_der_Lieferanfrage Int
+);
+
+ALTER TABLE Lieferung
+ADD CONSTRAINT pk_Lieferung PRIMARY KEY(Tag_der_Lieferanfrage, Komponent_ID, Ankunftstag_ID);
+
+ALTER TABLE Lieferung
+ADD CONSTRAINT fk_zulieferer FOREIGN KEY(Zulieferer_ID) REFERENCES Zulieferer(Zulieferer_ID);
+
+ALTER TABLE Lieferung
+ADD CONSTRAINT fk_lieferung_komp_ID FOREIGN KEY(Komponent_ID) REFERENCES Fahrradkomponente(Komponent_ID)
+
+ALTER TABLE Lieferung
+ADD CONSTRAINT fk_ankunftstag_ID FOREIGN KEY(Ankunftstag_ID) REFERENCES Kalendertag(Tag_ID)
+
+ALTER TABLE Lieferung
+ADD CONSTRAINT fk_tag_anfrage_ID FOREIGN KEY(Tag_der_Lieferanfrage) REFERENCES Kalendertag(Tag_ID)
+
