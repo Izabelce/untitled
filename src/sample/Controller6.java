@@ -12,13 +12,13 @@ public class Controller6 extends Controller_Base {
     @FXML
     private Label datum;
 
-    //Datum wird gesetzt TESTEN!
+    //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
         backendInterface = Backend_Interface.getInstance(null);
         datum.setText(backendInterface.getHeute());
     }
 
-    //In dieser Klasse werden Reports erstellt, wie gehen wir da vor?
+    //TODO In dieser Klasse werden Reports erstellt, wie gehen wir da vor?
 
     public void button_close(Event evt) {
         Parent root1;

@@ -42,7 +42,7 @@ public class Controller8 extends Controller_Base {
     @FXML
     private CheckBox ft8;
 
-    //Datum wird gesetzt TESTEN!
+    //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
         backendInterface = Backend_Interface.getInstance(null);
         datum.setText(backendInterface.getHeute());
@@ -57,13 +57,15 @@ public class Controller8 extends Controller_Base {
         java.sql.Date getNachfrage = java.sql.Date.valueOf(erwartetNachfrage.getValue());
         SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
 
-        //Methode da wo du die reinschreiben willst methode.ft.format(gettedDatePickerDate)
+        //TODO Methode da wo du die reinschreiben willst methode.ft.format(gettedDatePickerDate)
 
-        //Methode Wert von Checkbox nehmen
+        //TODO Methode Wert von Checkbox nehmen
 
 
 
-        //Daten im System einpflegen
+        //TODO Daten im System einpflegen
+
+
         // Hide this current window (if this is what you want)
         ((Node)(evt.getSource())).getScene().getWindow().hide();
 

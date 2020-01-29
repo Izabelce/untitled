@@ -16,7 +16,7 @@ public class Controller17 extends Controller_Base {
 
     public void aenderungSpeichern(Event evt) {
         Parent root1;
-        //Daten einpflegen
+        // Daten einpflegen
         //DATEN AUSLESEN AUS CHECKBOX UND DATUMFELDER
         // Hide this current window (if this is what you want)
         ((Node)(evt.getSource())).getScene().getWindow().hide();
