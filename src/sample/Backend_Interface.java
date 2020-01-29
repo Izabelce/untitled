@@ -10,8 +10,9 @@ import javafx.stage.Stage;
 
 public class Backend_Interface {
     private Data_Manipulation_Interface dataInterface;
+    private static Backend_Interface single_instance = null;
 
-        public Backend_Interface (Data_Manipulation_Interface data_interface) {
+        private Backend_Interface (Data_Manipulation_Interface data_interface) {
             this.dataInterface = data_interface;
         }
 
@@ -22,6 +23,13 @@ public class Backend_Interface {
         public Bestellung neueBestellungAnlegen(int fahrradID, String wunschliefertermin, int anzahl){
 
           return(dataInterface.neueBestellungVersuchen(fahrradID, anzahl, wunschliefertermin));
+        }
+
+        public static Backend_Interface getInstance(Data_Manipulation_Interface dataInterface){
+        if(dataInterface != null){
+            single_instance = new Backend_Interface(dataInterface);
+        }
+            return single_instance;
         }
 
     }

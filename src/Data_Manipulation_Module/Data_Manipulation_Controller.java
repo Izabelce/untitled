@@ -541,6 +541,7 @@ public class Data_Manipulation_Controller {
     }
 
     public boolean bestellungeinbauen(Bestellung neueBestellung) {
+        System.out.println("        Bestellung wird überprüft");
         Schichtarbeitstag tag = null;
         for(Schichtarbeitstag potTag: candidates){
             tag = potTag;
@@ -558,8 +559,14 @@ public class Data_Manipulation_Controller {
             }
         }
         for(Schichtarbeitstag s: candidates){
-            s.checkMyself();
+            try {
+                s.checkMyself();
+            }catch(IllegalStateException is){
+                return false;
+            }
         }
+        System.out.println("        Bestellung ist ok");
+
         return true;
     }
 
