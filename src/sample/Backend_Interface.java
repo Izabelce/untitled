@@ -20,6 +20,11 @@ public class Backend_Interface {
             return  dataInterface.getToday();
         }
 
+        //TO-DO Methode set Heute implementieren
+        public void setHeute(String heute){
+
+        }
+
         public Bestellung neueBestellungAnlegen(int fahrradID, String wunschliefertermin, int anzahl){
           return(dataInterface.neueBestellungVersuchen(fahrradID, anzahl, wunschliefertermin));
         }

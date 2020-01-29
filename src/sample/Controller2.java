@@ -24,13 +24,10 @@ public class Controller2 extends Controller_Base implements Initializable {
     @FXML
     private Button btnOpenNewWindow;
 
-
-
-
-    public void setDatum(String datumNew) {
-
-        datum.setText(datumNew);
-
+    //Datum wird gesetzt TESTEN!
+    public void initialize() {
+        backendInterface = Backend_Interface.getInstance(null);
+        datum.setText(backendInterface.getHeute());
     }
 
 
@@ -58,8 +55,8 @@ public class Controller2 extends Controller_Base implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view4.fxml"));
             Parent root = (Parent) loader.load();
-            Controller4 c4 = loader.getController();
-            c4.setDatum(this.datum.getText());
+            //Controller4 c4 = loader.getController();
+            //c4.setDatum(this.datum.getText());
             Stage stage = new Stage();
             stage.setTitle("Adventureworks_Bikes Version 2");
             stage.setScene(new Scene(root, 450, 450));
