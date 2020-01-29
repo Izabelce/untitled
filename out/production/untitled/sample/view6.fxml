@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.View6">
+   <children>
+      <Label layoutX="37.0" layoutY="40.0" text="Heute:" />
+      <Label layoutX="72.0" layoutY="40.0" text="datum" />
+      <Button layoutX="37.0" layoutY="117.0" mnemonicParsing="false" text="Report 1 erstellen" />
+      <Button layoutX="37.0" layoutY="163.0" mnemonicParsing="false" text="Report 2 erstellen" />
+      <Button layoutX="37.0" layoutY="208.0" mnemonicParsing="false" text="Report 3 erstellen" />
+      <Button layoutX="411.0" layoutY="282.0" mnemonicParsing="false" text="Schliessen" />
+   </children>
+</AnchorPane>

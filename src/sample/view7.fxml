@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="447.0" prefWidth="474.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller7">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="464.0" minWidth="464.0" prefWidth="464.0" />
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="437.0" minHeight="437.0" prefHeight="437.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="437.0" prefWidth="570.0">
+         <children>
+         <Label layoutX="46.0" layoutY="39.0" text="Heute:" />
+         <Label layoutX="81.0" layoutY="39.0" text="Datum" />
+         <Label layoutX="46.0" layoutY="81.0" text="Gewünschter Liefertermin:" />
+         <DatePicker layoutX="30.0" layoutY="106.0" />
+         <Label layoutX="46.0" layoutY="159.0" text="Fahrradtyp 1" />
+         <Label layoutX="46.0" layoutY="192.0" text="Fahrradtyp 2" />
+         <Label layoutX="46.0" layoutY="223.0" text="Fahrradtyp 3" />
+         <Label layoutX="46.0" layoutY="256.0" text="Fahrradtyp 4" />
+         <Label layoutX="46.0" layoutY="289.0" text="Fahrradtyp 5" />
+         <Label layoutX="46.0" layoutY="320.0" text="Fahrradtyp 6" />
+         <Label layoutX="46.0" layoutY="352.0" text="Fahrradtyp 7" />
+         <Label layoutX="46.0" layoutY="383.0" text="Fahrradtyp 8" />
+         <TextField layoutX="130.0" layoutY="155.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
+         <TextField layoutX="130.0" layoutY="188.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
+         <TextField layoutX="130.0" layoutY="219.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
+         <TextField layoutX="130.0" layoutY="252.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
+         <TextField layoutX="130.0" layoutY="285.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
+         <TextField layoutX="129.0" layoutY="316.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
+         <TextField layoutX="129.0" layoutY="348.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
+         <TextField layoutX="129.0" layoutY="379.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
+         <Button layoutX="333.0" layoutY="316.0" mnemonicParsing="false" onAction="#bestellungPruefen" text="Bestellung prüfen" />
+         <Button layoutX="351.0" layoutY="361.0" mnemonicParsing="false" onAction="#button_close" text="Abbrechen" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>

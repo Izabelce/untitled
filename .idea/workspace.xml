@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Adventureworks_Bikes_version2_guis_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adventureworks_Bikes_version2_guis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Adventureworks_Bikes_version2_guis_jar/Adventureworks_Bikes_version2_guis.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller10.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller11.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller12.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller13.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller14.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller15.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller16.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller17.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller9.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/MyInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/interfaceDatum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view10.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view11.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view12.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view13.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view14.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view15.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view16.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view17.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view3.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view4.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view5.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view6.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view7.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view8.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view9.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view10.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view11.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view12.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view13.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view14.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view15.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view16.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view17.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view3.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view4.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view5.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view6.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view7.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view8.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/guis/sample/view9.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/META-INF/untitled.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view10.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view11.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view12.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view13.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view14.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view15.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view16.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view17.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view3.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view4.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view5.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view6.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view7.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view8.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/untitled/sample/view9.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller12.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller13.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller14.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller16.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller17.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/MyInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/interfaceDatum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view10.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view11.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view12.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view13.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view14.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view15.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view16.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view17.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view3.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view4.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view5.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view6.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view7.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view8.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/view9.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Marcos Ramos\IdeaProjects\untitled\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectId" id="1W4JXMbDwdTAuH1uGVMHOAu2bMW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="Adventureworks_Bikes_version2_guis" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Marcos Ramos\Downloads\javafx-sdk-13.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1302000" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="23" key="#Project_Structure" timestamp="1580244137354">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="23" key="#Project_Structure/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1580196945272" />
+    <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1580244137354" />
+    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580158041235">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580158041235" />
+    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1579638232996">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579638232996" />
+    <state x="413" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579591892062">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1579591892062" />
+    <state x="479" y="250" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579545358202">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="479" y="250" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1579545358202" />
+    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1580315965847">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580315965847" />
+    <state x="389" y="106" key="FileChooserDialogImpl" timestamp="1580315843959">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580315843959" />
+    <state x="517" y="281" width="356" height="166" key="Github.CreateGistDialog" timestamp="1578647254433">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="281" width="356" height="166" key="Github.CreateGistDialog/0.0.1366.728@0.0.1366.728" timestamp="1578647254433" />
+    <state x="565" y="258" width="260" height="211" key="Github.ShareDialog" timestamp="1580315614258">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="565" y="258" width="260" height="211" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1580315614258" />
+    <state x="381" y="70" key="Github.UntrackedFilesDialog" timestamp="1580315620819">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="381" y="70" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1580315620819" />
+    <state width="1323" height="325" key="GridCell.Tab.0.bottom" timestamp="1580315867781">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="74" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1580197009862" />
+    <state width="1323" height="325" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580315867781" />
+    <state width="1323" height="325" key="GridCell.Tab.0.center" timestamp="1580315867781">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="74" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1580197009862" />
+    <state width="1323" height="325" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580315867781" />
+    <state width="1323" height="325" key="GridCell.Tab.0.left" timestamp="1580315867780">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="74" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1580197009862" />
+    <state width="1323" height="325" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580315867780" />
+    <state width="1323" height="325" key="GridCell.Tab.0.right" timestamp="1580315867781">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="74" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1580197009862" />
+    <state width="1323" height="325" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580315867781" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1580315785687">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1580315785687" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1580316096112">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1580316096112" />
+    <state x="384" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1580243941762">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="384" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1579081669094" />
+    <state x="384" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580243941762" />
+    <state x="415" y="156" key="git4idea.merge.GitPullDialog" timestamp="1580316045878">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="415" y="156" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1580316045878" />
+    <state x="65" y="67" key="new project wizard" timestamp="1580196964531">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="67" key="new project wizard/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1580196964531" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1580315051594">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1580315051594" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578609041653">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578609041653" />
+  </component>
+</project>

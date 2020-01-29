@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.View14">
+    <children>
+        <Label layoutX="45.0" layoutY="30.0" text="Heute:" />
+        <Label layoutX="80.0" layoutY="30.0" text="Label" />
+        <Label layoutX="250.0" layoutY="30.0" text="Gewünschter Termin:" />
+        <DatePicker layoutX="369.0" layoutY="26.0" />
+        <Button layoutX="356.0" layoutY="349.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="161.0" text="Bestellung aufgeben" />
+        <Button layoutX="108.0" layoutY="349.0" mnemonicParsing="false" text="Abbrechen" />
+      <DatePicker layoutX="369.0" layoutY="63.0" />
+      <Label layoutX="269.0" layoutY="67.0" text="Ausweichstermin:" />
+          <AnchorPane layoutX="301.0" layoutY="166.0" minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="249.0">
+         <children>
+            <ScrollPane layoutX="25.0" layoutY="-42.0" prefHeight="200.0" prefWidth="200.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Label layoutX="63.0" layoutY="158.0" text="Mögliche Lieferung zu Wünschtermin:" />
+      <Label layoutX="59.0" layoutY="80.0" text="Termin ist:" />
+      <Label layoutX="62.0" layoutY="109.0" text="Grund:" />
+      <Label layoutX="117.0" layoutY="80.0" text="Label" />
+      <Label layoutX="100.0" layoutY="109.0" text="Label" />
+    </children>
+
+</AnchorPane>

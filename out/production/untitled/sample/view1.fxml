@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="329.0" prefWidth="474.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="477.0" prefWidth="464.0">
+         <children>
+            <Button layoutX="62.0" layoutY="162.0" mnemonicParsing="false" onAction="#button_pressed" prefHeight="77.0" prefWidth="110.0" text="Demo neu" />
+            <Button layoutX="282.0" layoutY="162.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="110.0" text="Demo fortführen" />
+            <Label layoutX="62.0" layoutY="42.0" text="Heute:" />
+            <Label layoutX="274.0" layoutY="42.0" prefHeight="17.0" prefWidth="43.0" text="Version:" />
+            <Label layoutX="103.0" layoutY="42.0" />
+            <Label fx:id="label" layoutX="103.0" layoutY="42.0" />
+            <Label fx:id="datum" layoutX="103.0" layoutY="42.0" />
+            <Label layoutX="323.0" layoutY="42.0" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>

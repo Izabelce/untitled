@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="329.0" prefWidth="474.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller4">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="477.0" prefWidth="464.0">
+         <children>
+         <Label layoutX="32.0" layoutY="46.0" text="Heute" />
+         <Label layoutX="64.0" layoutY="46.0" prefHeight="17.0" prefWidth="0.0" />
+         <Label layoutX="32.0" layoutY="111.0" text="Lieferungen heute:" />
+         <Label layoutX="32.0" layoutY="147.0" text="Bestellungen heute:" />
+         <Label layoutX="32.0" layoutY="183.0" text="Anzahl Schichten:" />
+         <Label layoutX="32.0" layoutY="218.0" text="Produktionsvolumen:" />
+         <Button layoutX="274.0" layoutY="107.0" mnemonicParsing="false" onAction="#geheZuLief" prefHeight="25.0" prefWidth="131.0" text="Gehe zu Lieferungen" />
+         <Button layoutX="274.0" layoutY="135.0" mnemonicParsing="false" onAction="#geheZuBestell" text="Gehe zu Bestellungen" />
+         <Button layoutX="274.0" layoutY="279.0" mnemonicParsing="false" onAction="#infos" prefHeight="25.0" prefWidth="77.0" text="Info" />
+         <Button layoutX="378.0" layoutY="279.0" mnemonicParsing="false" onAction="#button_close" text="Schliessen" />
+         <Label layoutX="131.0" layoutY="111.0" text="zahl" />
+         <Label layoutX="126.0" layoutY="183.0" text="zahl" />
+         <Label layoutX="137.0" layoutY="147.0" text="zahl" />
+         <Label layoutX="148.0" layoutY="218.0" text="zahl" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>
