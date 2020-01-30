@@ -26,6 +26,11 @@ public class Controller3 extends Controller_Base implements Initializable {
     @FXML
     private DatePicker dateNew;
 
+    public void initialize() {
+        backendInterface = Backend_Interface.getInstance(null);
+    }
+
+
     public void button_close(Event evt) {
         Parent root1;
 
@@ -38,7 +43,7 @@ public class Controller3 extends Controller_Base implements Initializable {
         LocalDate value = dateNew.getValue();
         java.sql.Date gettedDatePickerDate = java.sql.Date.valueOf(dateNew.getValue());
         SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
-        //System.out.println(ft.format(gettedDatePickerDate));
+        System.out.println(ft.format(gettedDatePickerDate));
         //TODO hier wird das neue ausgewählte Datum in das Interface Instanz geschrieben, um es später zuzugreifen METHODE IMPEMENTIEREN
         backendInterface.setHeute(ft.format(gettedDatePickerDate));
 

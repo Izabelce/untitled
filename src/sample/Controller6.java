@@ -14,8 +14,8 @@ public class Controller6 extends Controller_Base {
 
     //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
-        backendInterface = Backend_Interface.getInstance(null);
-        datum.setText(backendInterface.getHeute());
+       // backendInterface = Backend_Interface.getInstance(null);
+      //  datum.setText(backendInterface.getHeute());
     }
 
     //TODO In dieser Klasse werden Reports erstellt, wie gehen wir da vor?

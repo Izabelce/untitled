@@ -1,6 +1,7 @@
 package Data_Manipulation_Module;
 
 import Database_Connectivity_Module.Bestellung;
+import Database_Connectivity_Module.Schichtarbeitstag;
 
 public class Data_Manipulation_Interface {
     private Data_Manipulation_Controller myController;
@@ -38,5 +39,9 @@ public class Data_Manipulation_Interface {
 
     public void setToday(String heute) {
         myController.setToday(heute);
+    }
+
+    public Schichtarbeitstag getSchichtarbeitstag_heute() {
+        return myController.getTagFromID(myController.getToday(0));
     }
 }

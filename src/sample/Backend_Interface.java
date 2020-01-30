@@ -30,12 +30,27 @@ public class Backend_Interface {
         }
 
         public static Backend_Interface getInstance(Data_Manipulation_Interface dataInterface){
-        if(dataInterface != null && single_instance != null){
+        if(dataInterface != null && single_instance == null){
             single_instance = new Backend_Interface(dataInterface);
         }
             return single_instance;
         }
 
+    public String countLieferungen() {
+            return Integer.toString( dataInterface.getSchichtarbeitstag_heute().getLieferungen().size());
     }
+
+    public String countBestellungen() {
+        return Integer.toString( dataInterface.getSchichtarbeitstag_heute().getBestellungen().size());
+    }
+
+    public String getSchicht() {
+        return Integer.toString( dataInterface.getSchichtarbeitstag_heute().getSchicht_ID());
+    }
+
+    public String getProdvol() {
+        return Integer.toString( dataInterface.getSchichtarbeitstag_heute().getsum());
+    }
+}
 
 

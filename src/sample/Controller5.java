@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 public class Controller5 extends Controller_Base {
 
@@ -25,8 +26,8 @@ public class Controller5 extends Controller_Base {
 
     //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
-        backendInterface = Backend_Interface.getInstance(null);
-        datum.setText(backendInterface.getHeute());
+       // backendInterface = Backend_Interface.getInstance(null);
+       // datum.setText(backendInterface.getHeute());
     }
 
     public void erstellen_button(Event evt) {
@@ -38,7 +39,7 @@ public class Controller5 extends Controller_Base {
         //System.out.println(ft.format(gettedDatePickerDate));
         // TODO hier wird das neue ausgewählte Datum in das Interface Instanz geschrieben, um es später zuzugreifen
         //TODO BITTE EINE METHODE ZUR ÜBERGABE SCHREIBEN
-        //backendInterface.setHeute(ft.format(gettedDatePickerDate));
+       // backendInterface.setHeute(ft.format(gettedDatePickerDate));
 
         //TODO HIER SOLL EIN PDF ERSTELLT WERDEN?
         try {

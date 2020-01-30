@@ -26,8 +26,8 @@ public class Controller2 extends Controller_Base implements Initializable {
 
     //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
-        backendInterface = Backend_Interface.getInstance(null);
-        datum.setText(backendInterface.getHeute());
+      //  backendInterface = Backend_Interface.getInstance(null);
+      //  datum.setText(backendInterface.getHeute());
     }
 
 

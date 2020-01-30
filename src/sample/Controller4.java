@@ -32,13 +32,13 @@ public class Controller4 extends Controller_Base implements Initializable {
 
     //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
-        backendInterface = Backend_Interface.getInstance(null);
-        datum.setText(backendInterface.getHeute());
+       // backendInterface = Backend_Interface.getInstance(null);
+      //  datum.setText(backendInterface.getHeute());
         //hier die methoden aufrufen die den beständen liefern im setText() rein schreiben
-        lieferungen.setText("");
-        bestellungen.setText("");
-        schichten.setText("");
-        produktionsvolumen.setText("");
+      //  lieferungen.setText(backendInterface.countLieferungen());
+      //  bestellungen.setText(backendInterface.countBestellungen());
+      //  schichten.setText(backendInterface.getSchicht());
+      //  produktionsvolumen.setText(backendInterface.getProdvol());
     }
 
 

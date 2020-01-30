@@ -20,8 +20,8 @@ public class Controller10 extends Controller_Base {
 
     //TODO Datum wird gesetzt TESTEN!
     public void initialize() {
-        backendInterface = Backend_Interface.getInstance(null);
-        datum.setText(backendInterface.getHeute());
+      //  backendInterface = Backend_Interface.getInstance(null);
+       // datum.setText(backendInterface.getHeute());
     }
 
     public void button_close(Event evt) {

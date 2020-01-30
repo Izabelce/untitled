@@ -575,5 +575,11 @@ public class Data_Manipulation_Controller {
     public void setToday(String heute) {
         connectivity_interface.setToday(heute);
     }
+
+    public Schichtarbeitstag getTagFromID(int today) {
+        Schichtarbeitstag returnvalue =  alleTage.get(today-1);
+        if(returnvalue.getArbeitstag_ID() != today)throw new IllegalStateException("HEY");
+        return returnvalue;
+    }
 }
 
