@@ -26,9 +26,11 @@ public class Controller3 extends Controller_Base implements Initializable {
     @FXML
     private DatePicker dateNew;
 
-    public void initialize() {
-        backendInterface = Backend_Interface.getInstance(null);
-    }
+@Override
+
+public void initialize(URL url, ResourceBundle resourceBundle) {
+    backendInterface = Backend_Interface.getInstance(null);
+}
 
 
     public void button_close(Event evt) {
@@ -69,9 +71,6 @@ public class Controller3 extends Controller_Base implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
 };
 

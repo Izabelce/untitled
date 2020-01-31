@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -14,15 +15,9 @@ import java.io.IOException;
 public class Controller10 extends Controller_Base {
 
     @FXML
-    private Label datum;
-    @FXML
-    private Label anzahl;
+    private TextField anzahl;
 
-    //TODO Datum wird gesetzt TESTEN!
-    public void initialize() {
-      //  backendInterface = Backend_Interface.getInstance(null);
-       // datum.setText(backendInterface.getHeute());
-    }
+
 
     public void button_close(Event evt) {
         Parent root1;

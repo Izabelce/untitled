@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,33 +17,26 @@ import java.text.SimpleDateFormat;
 
 public class Controller7 extends Controller_Base {
 
-    @FXML
-    private Label datum;
+
     @FXML
     private DatePicker liefertermin;
     @FXML
-    private Label ft1;
+    private TextField ft1;
     @FXML
-    private Label ft2;
+    private TextField ft2;
     @FXML
-    private Label ft3;
+    private TextField ft3;
     @FXML
-    private Label ft4;
+    private TextField ft4;
     @FXML
-    private Label ft5;
+    private TextField ft5;
     @FXML
-    private Label ft6;
+    private TextField ft6;
     @FXML
-    private Label ft7;
+    private TextField ft7;
     @FXML
-    private Label ft8;
+    private TextField ft8;
 
-
-    //TODO Datum wird gesetzt TESTEN!
-    public void initialize() {
-       // backendInterface = Backend_Interface.getInstance(null);
-       // datum.setText(backendInterface.getHeute());
-    }
 
 
     public void bestellungPruefen(Event evt) {

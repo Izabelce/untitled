@@ -3,6 +3,7 @@ package sample;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,23 +13,18 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class Controller5 extends Controller_Base {
+public class Controller5 extends Controller_Base  {
 
-    @FXML
-    private Label datum;
     @FXML
     private DatePicker zeitraumVon;
     @FXML
     private DatePicker zeitraumBis;
 
-    //TODO Datum wird gesetzt TESTEN!
-    public void initialize() {
-       // backendInterface = Backend_Interface.getInstance(null);
-       // datum.setText(backendInterface.getHeute());
-    }
 
     public void erstellen_button(Event evt) {
         Button b = (Button) evt.getSource();
@@ -37,9 +33,8 @@ public class Controller5 extends Controller_Base {
         java.sql.Date getZeitraumBis = java.sql.Date.valueOf(zeitraumBis.getValue());
         SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
         //System.out.println(ft.format(gettedDatePickerDate));
-        // TODO hier wird das neue ausgewählte Datum in das Interface Instanz geschrieben, um es später zuzugreifen
-        //TODO BITTE EINE METHODE ZUR ÜBERGABE SCHREIBEN
-       // backendInterface.setHeute(ft.format(gettedDatePickerDate));
+        // TODO WAS IST GETTEDPICKERDATE???
+      //  backendInterface.setHeute(ft.format(gettedDatePickerDate));
 
         //TODO HIER SOLL EIN PDF ERSTELLT WERDEN?
         try {

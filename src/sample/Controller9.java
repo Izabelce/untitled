@@ -13,14 +13,8 @@ import java.io.IOException;
 
 public class Controller9 extends Controller_Base {
 
-    @FXML
-    private Label datum;
 
-    //TODO Datum wird gesetzt TESTEN!
-    public void initialize() {
-      //  backendInterface = Backend_Interface.getInstance(null);
-      //  datum.setText(backendInterface.getHeute());
-    }
+
 
     public void button_close(Event evt) {
         Parent root1;

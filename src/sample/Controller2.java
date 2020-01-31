@@ -24,11 +24,7 @@ public class Controller2 extends Controller_Base implements Initializable {
     @FXML
     private Button btnOpenNewWindow;
 
-    //TODO Datum wird gesetzt TESTEN!
-    public void initialize() {
-      //  backendInterface = Backend_Interface.getInstance(null);
-      //  datum.setText(backendInterface.getHeute());
-    }
+
 
 
     public void changeDate(Event evt) {
@@ -177,8 +173,5 @@ public class Controller2 extends Controller_Base implements Initializable {
         //((Node)(evt.getSource())).getScene().getWindow().hide();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
 }

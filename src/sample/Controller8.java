@@ -17,8 +17,7 @@ import java.text.SimpleDateFormat;
 
 public class Controller8 extends Controller_Base {
 
-    @FXML
-    private Label datum;
+
     @FXML
     private DatePicker zeitraumVon;
     @FXML
@@ -42,10 +41,6 @@ public class Controller8 extends Controller_Base {
     @FXML
     private CheckBox ft8;
 
-    //TODO Datum wird gesetzt TESTEN!
-    public void initialize() {
-      ////  datum.setText(backendInterface.getHeute());
-    }
 
     public void einpflegen(Event evt) {
         Parent root1;

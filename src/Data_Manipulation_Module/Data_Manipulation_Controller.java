@@ -35,8 +35,8 @@ public class Data_Manipulation_Controller {
         dataInferface = new Data_Manipulation_Interface();
         dataInferface.enlistController(this);
         this.connectivity_interface = conI;
-         alleTage = prepareListofAllDays();
-         monatsArbeitstage = prepareMonatsarbeitstage();
+       //  alleTage = prepareListofAllDays();
+       //  monatsArbeitstage = prepareMonatsarbeitstage();
         kwList = null;
     }
 
