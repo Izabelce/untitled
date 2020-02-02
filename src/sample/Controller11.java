@@ -20,6 +20,9 @@ public class Controller11 extends Controller_Base{
     @FXML
     private DatePicker dateNew;
 
+    @FXML
+    private TextArea textArea;
+
     public void button_close(Event evt) {
         Parent root1;
 
@@ -47,7 +50,11 @@ public class Controller11 extends Controller_Base{
             SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
             System.out.println(ft.format(gettedDatePickerDate));
             String date = "01.01.2001";//TODO HIER DEFAULT DATUM! NACH TEST ENTFERNEN
-            TextArea textArea = new TextArea();
+            textArea.setText("Eine Fahrkarte, ein Tarif und ein abgestimmtes Verkehrsangebot – das sind die Vorteile eines Verkehrsverbundes und getreu diesem Motto arbeiten wir.\n" +
+                    "\n" +
+                    "Die Bundesländer und Kreise, die als Aufgabenträger zur Organisation und Finanzierung des öffentlichen Personennahverkehrs verpflichtet sind, haben zur Umsetzung dieser Aufgabe die Gesellschaft Hamburger Verkehrsverbund GmbH (HVV GmbH) gegründet.\n" +
+                    "\n" +
+                    "Heute übernehmen wir für drei Bundesländer, sieben Kreise und rund 25 Verkehrsunternehmen das Management des gesamten Verkehrsangebots, d.h. für alle Bus-, Fähr-, U-, S-, A- und Regionalbahnleistungen im HVV. Mehr zu Zahlen, Daten und Fakten im HVV finden Sie hier.");
         }
 
     }
