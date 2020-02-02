@@ -40,6 +40,19 @@ public class Data_Manipulation_Controller {
         kwList = null;
     }
 
+    public Data_Manipulation_Controller(String[] args) {
+        mInf = new MetricsInterface();
+        plausi = new Plausibility();
+        queryA = new QueryAssembler();
+        queryA.enlistController(this);
+        dataInferface = new Data_Manipulation_Interface();
+        dataInferface.enlistController(this);
+        this.connectivity_interface = null;
+          alleTage = new LinkedList<Schichtarbeitstag>();
+          monatsArbeitstage = new int[12][15];
+        kwList = null;
+    }
+
     public Data_Manipulation_Controller() {
         mInf = null;
         plausi = null;
@@ -524,6 +537,9 @@ public class Data_Manipulation_Controller {
     }
 
     public String getToday() {
+        if(connectivity_interface == null){
+            return "01.01.1999";
+        }
         return connectivity_interface.getToday();
     }
 

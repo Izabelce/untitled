@@ -32,9 +32,7 @@ public class Controller5 extends Controller_Base  {
         java.sql.Date getZeitraumVon = java.sql.Date.valueOf(zeitraumVon.getValue());
         java.sql.Date getZeitraumBis = java.sql.Date.valueOf(zeitraumBis.getValue());
         SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
-        //System.out.println(ft.format(gettedDatePickerDate));
-        // TODO WAS IST GETTEDPICKERDATE???
-      //  backendInterface.setHeute(ft.format(gettedDatePickerDate));
+
 
         //TODO HIER SOLL EIN PDF ERSTELLT WERDEN?
         try {

@@ -8,6 +8,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public abstract class Controller_Base implements Initializable {
+
+    //Error fenster url: https://code.makery.ch/blog/javafx-dialogs-official/
+
+
     Backend_Interface backendInterface;
     @FXML
     private Label datum;

@@ -27,7 +27,6 @@ public class Controller3 extends Controller_Base implements Initializable {
     private DatePicker dateNew;
 
 @Override
-
 public void initialize(URL url, ResourceBundle resourceBundle) {
     backendInterface = Backend_Interface.getInstance(null);
 }
