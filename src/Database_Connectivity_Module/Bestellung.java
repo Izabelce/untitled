@@ -4,6 +4,14 @@ ist eine fusion der zwei tables bestellung und bestellt, weil das sinn macht
  */
 public class Bestellung {
 
+    public String getBestellungstag() {
+        return bestellungstag;
+    }
+
+    public String getLiefertag() {
+        return liefertag;
+    }
+
     private int bestell_ID;
     private String bestellungstag;
     private String liefertag;

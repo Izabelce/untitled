@@ -80,7 +80,7 @@ public class Data_Manipulation_Controller {
      * @return true, if the day is at least yesterday
      */
     public boolean isDayinPast(int tagID) {
-        return tagID < queryA.getIDDay(connectivity_interface.getToday());
+        return tagID < this.getToday(0);
     }
 
 
@@ -121,14 +121,7 @@ public class Data_Manipulation_Controller {
         return returnValue;
     }
 
-    private int getPreviousWorkingDay(int tagID) {
-        int wdID = tagID - 1;
-        while (isHoliday(wdID)) {
-            wdID--;
-        }
-        if (isDayinPast(wdID)) return -1;
-        return wdID;
-    }
+
 
     /**
      * berechnet aus den monatlichen Zielvorgaben die vorgaben für die jeweiligen arbeitstage
@@ -586,7 +579,12 @@ public class Data_Manipulation_Controller {
     }
 
     public int getTagIDFromString(String liefertag) {
-        return queryA.getIDDay(liefertag);
+        for(Schichtarbeitstag potTag : alleTage){
+            if(potTag.getDatum().equals(liefertag)){
+                return potTag.getArbeitstag_ID();
+            }
+        }
+        return -1;
     }
 
     public void setToday(String heute) {

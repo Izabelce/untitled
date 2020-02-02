@@ -25,17 +25,6 @@ public class QueryAssembler {
     }
 
 
-    /**
-     * returns the dayID of a given date
-     *
-     * @param day day as String
-     * @return the ID of the Day according to the database. Fraudulent Strings return -1
-     */
-    public int getIDDay(String day) {
-
-        return 0;
-    }
-
 
     public int queryPartStock(int partID, int tagID) {
 
