@@ -2,12 +2,6 @@ package sample;
 
 import Data_Manipulation_Module.Data_Manipulation_Interface;
 import Database_Connectivity_Module.Bestellung;
-import Database_Connectivity_Module.Lieferung;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class Backend_Interface {
     private Data_Manipulation_Interface dataInterface;
@@ -51,6 +45,38 @@ public class Backend_Interface {
 
     public String getProdvol() {
         return Integer.toString(dataInterface.getSchichtarbeitstag_heute().getsum());
+    }
+
+    /**
+     * gibt ein array über alle infos der Lieferungen des angegebenen tages durch
+     *aufbau ist bisher:
+     * 0: tag an dem die Lieferung eintrifft
+     * 1: ID der komponente (später hier der name...)
+     * 2: die anzahl der gelieferten komponenten
+     * 3: ob die lieferung schon eingetroffen ist (zur zeit "no")
+     * 4: der tag, an dem die lieferung beim Lieferanten erfasst wurde
+     * @param datum der tag, von dem die infos kommen
+     * @return zweidimensionales array, erste dimension ist die lieferung, zweite dimension sind die Infos der Lieferung
+     */
+    public String[][] getLieferwerte(String datum) {
+        dataInterface.setTagDerLieferungen(datum);
+        int anzahl_lieferungen = dataInterface.getLieferAnzahl();
+        if (anzahl_lieferungen == 0) {
+            return null;
+        }
+        String[][] infos = new String[anzahl_lieferungen][dataInterface.getInfolenght()];
+        int counter = 0;
+
+        while (dataInterface.nextLieferung()) {
+            String[] infoelement = dataInterface.getCurrentLieferungInfos();
+            for (int i = 0; i < dataInterface.getInfolenght(); i++) {
+                infos[counter][i] = infoelement[i];
+            }
+            counter++;
+        }
+
+
+        return infos;
     }
 }
 

@@ -5,19 +5,24 @@ ist eine fusion der zwei tables bestellung und bestellt, weil das sinn macht
 public class Bestellung {
 
     private int bestell_ID;
+    private String bestellungstag;
+    private String liefertag;
     private int bestelldatum_ID;
     private int lieferdatum_ID;
     private int modelltyp_ID;
     private int anzahl;
 
-    public Bestellung(int bestelldatum_ID, int lieferdatum_ID, int modelltyp_ID, int anzahl) {
+    public Bestellung(int bestelldatum_ID, int lieferdatum_ID, int modelltyp_ID, int anzahl, String bestelldatum, String lieferdatum) {
         this.bestelldatum_ID = bestelldatum_ID;
         this.lieferdatum_ID = lieferdatum_ID;
         this.modelltyp_ID = modelltyp_ID;
         this.anzahl = anzahl;
+        this.bestellungstag = bestelldatum;
+        this.liefertag = lieferdatum;
+
     }
     public Bestellung getCopy(){
-        return  new Bestellung(this.bestelldatum_ID, this.lieferdatum_ID, this.modelltyp_ID, this.anzahl);
+        return  new Bestellung(this.bestelldatum_ID, this.lieferdatum_ID, this.modelltyp_ID, this.anzahl, this.bestellungstag, this.liefertag);
     }
 
     public int getBestell_ID() {

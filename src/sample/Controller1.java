@@ -49,7 +49,7 @@ public class Controller1 implements Initializable {
         Data_Manipulation_Controller dbManCon = new Data_Manipulation_Controller(dbCtrl.getDbInterface());
         Data_Manipulation_Interface manipulation_interface = new Data_Manipulation_Interface();
         manipulation_interface.enlistController(dbManCon);
-       // dbManCon.zielVorgabenWorkflow();
+        dbManCon.zielVorgabenWorkflow();
         Backend_Interface b_int = Backend_Interface.getInstance(manipulation_interface);
 //        manipulation_interface.test();
 
