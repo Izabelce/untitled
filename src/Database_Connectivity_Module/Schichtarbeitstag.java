@@ -13,17 +13,19 @@ public class Schichtarbeitstag {
     private int kw_id;
     private int sum;
     private int monats_ID;
+    private final String datum;
     private Map<Integer, Integer> lager;
     private HashSet<Data_Manipulation_Module.Land> holidayIn;
     private List<Lieferung> heutigeLieferungen;
     private Schichtarbeitstag vortag;
     private List<Bestellung> heutigeBestellungen;
 
-    public Schichtarbeitstag(int schicht_ID, int max_output, int[] arbeitsmappe, int kw_id, int tag_ID, HashSet<Land> holidays) {
+    public Schichtarbeitstag(int schicht_ID, int max_output, int[] arbeitsmappe, int kw_id, int tag_ID, HashSet<Land> holidays, String datum) {
         this.vortag = null;
         this.schicht_ID = schicht_ID;
         this.max_output = max_output;
         this.arbeitstag_ID = tag_ID;
+        this.datum = datum;
         fahrradplan = arbeitsmappe;
         this.kw_id = kw_id;
         this.sum = 0;
@@ -308,7 +310,7 @@ public class Schichtarbeitstag {
         for(Land l : holidayIn){
             holidayCopy.add(l);
         }
-        Schichtarbeitstag returnTag = new Schichtarbeitstag(this.schicht_ID, this.max_output, fahrradplanCopy, this.kw_id, this.arbeitstag_ID, holidayCopy);
+        Schichtarbeitstag returnTag = new Schichtarbeitstag(this.schicht_ID, this.max_output, fahrradplanCopy, this.kw_id, this.arbeitstag_ID, holidayCopy, this.datum);
         for(Bestellung b: heutigeBestellungen){
             returnTag.addBestellung(b.getCopy());
         }
@@ -323,5 +325,10 @@ public class Schichtarbeitstag {
         returnTag.sum = this.sum;
 
         return returnTag;
+    }
+
+
+    public String getDatum(){
+        return this.datum;
     }
 }

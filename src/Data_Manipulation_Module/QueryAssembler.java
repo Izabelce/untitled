@@ -175,17 +175,18 @@ public class QueryAssembler {
 
         //for (int arbeitstag_ID : arbeitstage) {
         //query holt daten aus einer anzahl von tables
-        String sql = String.format("SELECT alleInfos.kw_id, alleInfos.tag_ID, alleInfos.MAX_OUTPUT, alleInfos.Schicht_ID, alleInfos.FAHRRAD_ID, alleInfos.ANZAHL, ist_feiertag_in.LANDNAME NULLABLE FROM ist_feiertag_in RIGHT OUTER JOIN\n" +
-                "(SELECT kalendertag.kw_id, auflistung.tag_ID, auflistung.MAX_OUTPUT, auflistung.SCHICHT_ID, auflistung.FAHRRAD_ID, auflistung.ANZAHL FROM \n" +
+        String sql = String.format("SELECT alleInfos.kw_id, alleInfos.tag_ID, alleInfos.MAX_OUTPUT, alleInfos.Schicht_ID, alleInfos.FAHRRAD_ID, alleInfos.ANZAHL, ist_feiertag_in.LANDNAME NULLABLE, alleInfos.Datum FROM ist_feiertag_in RIGHT OUTER JOIN\n" +
+                "(SELECT kalendertag.Datum, kalendertag.kw_id, auflistung.tag_ID, auflistung.MAX_OUTPUT, auflistung.SCHICHT_ID, auflistung.FAHRRAD_ID, auflistung.ANZAHL FROM \n" +
                 "Kalendertag join (SELECT tagesschicht.tag_ID, MAX_OUTPUT, SCHICHT_ID, FAHRRAD_ID, ANZAHL FROM( SELECT tag_ID, Max_Output,  schichtarbeit.Schicht_ID FROM Schichtarbeit JOIN \n" +
                 "nutzt on (schichtarbeit.schicht_ID = nutzt.schicht_ID)) tagesschicht JOIN (SELECT  * FROM Produktionsvolumen WHERE Tag_ID = %s)tagesverteilung On(tagesverteilung.tag_ID = tagesschicht.tag_ID))auflistung \n" +
                 "ON (kalendertag.tag_ID = auflistung.tag_ID) ORDER BY auflistung.Fahrrad_ID ASC)alleInfos  on (alleInfos.tag_ID = ist_feiertag_in.tag_ID)", arbeitstag_ID);
-
+System.out.println(sql);
 //default werte setzen
         int schicht_ID = 0;
         int max_output = 0;
         int kw_ID = 0;
         int[] fahrradanzahl = new int[8];
+        String datum = "FEHLER IN QUERYASSEMLBER, GETSCHICHT";
         HashSet<Land> holidays = new HashSet<Land>();
         try {
             ResultSet rs = myController.getQueryResult(sql);
@@ -198,6 +199,7 @@ public class QueryAssembler {
             do {
                 fahrradanzahl[rs.getInt(5) - 1] = rs.getInt(6);
                 String holiday = rs.getString(7);
+                datum = rs.getString(8);
                 if (holiday != null) {
                     if (holiday == Land.Nordrhein_Westfalen.toString().replace("_", "-")) {
                         schicht_ID = 0;
@@ -211,7 +213,7 @@ public class QueryAssembler {
         } catch (SQLException sqle) {
             System.err.println("Exception in getSchicht- tag : " + sql + "\n" + sqle.getMessage());
         }
-        Schichtarbeitstag tag = new Schichtarbeitstag(schicht_ID, max_output, fahrradanzahl, kw_ID, arbeitstag_ID, holidays);
+        Schichtarbeitstag tag = new Schichtarbeitstag(schicht_ID, max_output, fahrradanzahl, kw_ID, arbeitstag_ID, holidays, datum);
 
         String sql2 = String.format("Select Lagerobjekt_ID, Anzahl From Lagerbestand Where tag_ID = %d ORDER BY Lagerobjekt_ID ASC", arbeitstag_ID);
         try (ResultSet lagerRS = myController.getQueryResult(sql2)) {

@@ -35,8 +35,8 @@ public class Data_Manipulation_Controller {
         dataInferface = new Data_Manipulation_Interface();
         dataInferface.enlistController(this);
         this.connectivity_interface = conI;
-       //  alleTage = prepareListofAllDays();
-       //  monatsArbeitstage = prepareMonatsarbeitstage();
+         alleTage = prepareListofAllDays();
+         monatsArbeitstage = prepareMonatsarbeitstage();
         kwList = null;
     }
 
@@ -220,7 +220,7 @@ public class Data_Manipulation_Controller {
             }
             if (tag.getsum() > 0) {
                 for (int i = 1; i <= 8; i++) {
-                    tag.addBestellung(new Bestellung(tag.getArbeitstag_ID(), tag.getArbeitstag_ID(), i, tag.getLagerbestand(i)));
+                    tag.addBestellung(new Bestellung(tag.getArbeitstag_ID(), tag.getArbeitstag_ID(), i, tag.getLagerbestand(i),this.getToday(), tag.getDatum()));
                 }
             }
             while (zuBerucksichtigen.size() > 0) {
@@ -323,8 +323,8 @@ public class Data_Manipulation_Controller {
                     bedarf = bedarf + Database_Connectivity_Interface.getPuffer();
                 }
                 if (bedarf >= Komponentenzuordnung.getMBW(ktyp) && Komponentenzuordnung.getMBW(ktyp) > 0) {
-                    Lieferung lieferung = new Lieferung(i, bedarf, letzterArbeitstagVorwoche.getArbeitstag_ID(), starttagberechnen(ktyp, letzterArbeitstagVorwoche));
-                    letzterArbeitstagVorwoche.addLieferung(lieferung);
+                  //  Lieferung lieferung = new Lieferung(i, bedarf, letzterArbeitstagVorwoche.getArbeitstag_ID(), starttagberechnen(ktyp, letzterArbeitstagVorwoche));
+                   // letzterArbeitstagVorwoche.addLieferung(lieferung);
                 }
             }
             letzterArbeitstagVorwoche = letzterArbeitstag;
@@ -339,8 +339,8 @@ public class Data_Manipulation_Controller {
         }
     }
 
-    private int starttagberechnen(Komponenttyp ktyp, Schichtarbeitstag ankunftstag) {
-        int starttag = -1;
+    private Schichtarbeitstag starttagberechnen(Komponenttyp ktyp, Schichtarbeitstag ankunftstag) {
+
         Schichtarbeitstag startTag = ankunftstag;
         if (ktyp == Komponenttyp.GABEL) {
             for (int i = 0; i < 9; i++) {
@@ -377,8 +377,8 @@ public class Data_Manipulation_Controller {
         } else {
             throw new IllegalArgumentException("Das ergibt keinen sinn");
         }
-        if (startTag.getArbeitstag_ID() <= connectivity_interface.heute()) return -1;
-        return startTag.getArbeitstag_ID();
+        if (startTag.getArbeitstag_ID() <= connectivity_interface.heute()) return null;
+        return startTag;
     }
 
     private boolean lieferungworkflow(Kalenderwoche kw) {
@@ -397,9 +397,9 @@ public class Data_Manipulation_Controller {
 
         for (int i = 9; i <= 22; i++) {
             if (letzterTag.getLagerbestand(i) < Database_Connectivity_Interface.getPuffer() && letzterTag.getArbeitstag_ID()> 115) {
-                int starttagId = starttagberechnen(Komponentenzuordnung.getKtypFromID(i), letzterArbeitstagVorwoche);
-                if(starttagId < getToday(0))return false;
-                Lieferung neededLieferung = new Lieferung(i, letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(), letzterArbeitstagVorwoche.getArbeitstag_ID(), starttagId);
+               Schichtarbeitstag starttag = starttagberechnen(Komponentenzuordnung.getKtypFromID(i), letzterArbeitstagVorwoche);
+                if(starttag == null)return false;
+                Lieferung neededLieferung = new Lieferung(i, letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(), letzterArbeitstagVorwoche.getArbeitstag_ID(), starttag.getArbeitstag_ID(), letzterArbeitstagVorwoche.getDatum(), starttag.getDatum());
                 letzterArbeitstagVorwoche.addLieferung(neededLieferung);
             }
         }
@@ -555,20 +555,21 @@ public class Data_Manipulation_Controller {
         connectivity_interface.comnmit();
     }
 
-    public boolean bestellungeinbauen(Bestellung neueBestellung) {
+    public Bestellung bestellungeinbauen(int liefertag_ID, int modelltyp_ID , int anzahl ) {
         System.out.println("        Bestellung wird überprüft");
         Schichtarbeitstag tag = null;
+        Bestellung neueBestellung = new Bestellung(this.getToday(1),liefertag_ID, modelltyp_ID, anzahl,this.getToday(), getTagFromID(liefertag_ID).getDatum());
         for(Schichtarbeitstag potTag: candidates){
             tag = potTag;
             if(potTag.getArbeitstag_ID() == neueBestellung.getLieferdatum_ID())break;
         }
-        if(tag == null)return false;
+        if(tag == null)return null;
         tag.addBestellung(neueBestellung);
         int kwId = tag.getKwID();
         for(Kalenderwoche kw: kwListCopy){
             if(kw.getKwID()>= kwId){
                 lagerbestandworkflow(kw);
-                if(! lieferungworkflow(kw))return false;
+                if(! lieferungworkflow(kw))return null;
                 bestellungworkflow(kw.getVorwoche());
                 lagerbestandworkflow(kw);
             }
@@ -577,11 +578,11 @@ public class Data_Manipulation_Controller {
             try {
                 s.checkMyself();
             }catch(IllegalStateException is){
-                return false;
+                return null;
             }
         }
         System.out.println("        Bestellung ist ok");
-        return true;
+        return neueBestellung;
     }
 
     public int getTagIDFromString(String liefertag) {
@@ -596,6 +597,10 @@ public class Data_Manipulation_Controller {
         Schichtarbeitstag returnvalue =  alleTage.get(today-1);
         if(returnvalue.getArbeitstag_ID() != today)throw new IllegalStateException("HEY");
         return returnvalue;
+    }
+
+    public String getAnzeigeWertFromID(int tagID){
+        return null;
     }
 }
 
