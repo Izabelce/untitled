@@ -26,7 +26,7 @@
          <Button layoutX="259.0" layoutY="361.0" mnemonicParsing="false" onAction="#button_close" text="Schliessen" />
             <ScrollPane layoutX="64.0" layoutY="131.0" prefHeight="200.0" prefWidth="453.0">
                <content>
-                  <TextArea prefHeight="200.0" prefWidth="438.0" />
+                  <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="438.0" />
                </content>
             </ScrollPane>
            </children>

@@ -44,17 +44,24 @@ public class Controller11 extends Controller_Base{
            // alert.setContentText("Ooops, there was an error!");
 
             alert.showAndWait();
-        }else{
+        }else {
             //TODO HERE
             java.sql.Date gettedDatePickerDate = java.sql.Date.valueOf(dateNew.getValue());
             SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
             System.out.println(ft.format(gettedDatePickerDate));
-            String date = "01.01.2001";//TODO HIER DEFAULT DATUM! NACH TEST ENTFERNEN
-            textArea.setText("Eine Fahrkarte, ein Tarif und ein abgestimmtes Verkehrsangebot – das sind die Vorteile eines Verkehrsverbundes und getreu diesem Motto arbeiten wir.\n" +
-                    "\n" +
-                    "Die Bundesländer und Kreise, die als Aufgabenträger zur Organisation und Finanzierung des öffentlichen Personennahverkehrs verpflichtet sind, haben zur Umsetzung dieser Aufgabe die Gesellschaft Hamburger Verkehrsverbund GmbH (HVV GmbH) gegründet.\n" +
-                    "\n" +
-                    "Heute übernehmen wir für drei Bundesländer, sieben Kreise und rund 25 Verkehrsunternehmen das Management des gesamten Verkehrsangebots, d.h. für alle Bus-, Fähr-, U-, S-, A- und Regionalbahnleistungen im HVV. Mehr zu Zahlen, Daten und Fakten im HVV finden Sie hier.");
+            //String date = "01.01.2001";//TODO HIER DEFAULT DATUM! NACH TEST ENTFERNEN
+            String[][] lieferungenArray = backendInterface.getLieferwerte(ft.format(gettedDatePickerDate));
+
+            String text = "";
+            for(int i=0; i<lieferungenArray.length;i++){
+                for(int j=0; j<lieferungenArray[i].length; j++){
+                    text = text + (lieferungenArray[i][j]);
+                }
+                text = text + "/n";
+            }
+
+            textArea.setText(text);
+
         }
 
     }

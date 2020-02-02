@@ -282,7 +282,7 @@ public class Database_Connector {
     }
 
     public Bestellung getBestellungOnID(int bestell_ID, int bestelltag_ID, int liefertag_ID) {
-        return new Bestellung(0, 0, 0, 0);
+        return new Bestellung(0, 0, 0, 0, "", "");
     }
 
 
