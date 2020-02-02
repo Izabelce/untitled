@@ -64,12 +64,12 @@ public class Backend_Interface {
         if (anzahl_lieferungen == 0) {
             return null;
         }
-        String[][] infos = new String[anzahl_lieferungen][dataInterface.getInfolenght()];
+        String[][] infos = new String[anzahl_lieferungen][dataInterface.getLieferungeninfolength()];
         int counter = 0;
 
         while (dataInterface.nextLieferung()) {
             String[] infoelement = dataInterface.getCurrentLieferungInfos();
-            for (int i = 0; i < dataInterface.getInfolenght(); i++) {
+            for (int i = 0; i < dataInterface.getLieferungeninfolength(); i++) {
                 infos[counter][i] = infoelement[i];
             }
             counter++;
@@ -78,6 +78,37 @@ public class Backend_Interface {
 
         return infos;
     }
+
+
+    /**
+     * gibt ein array über alle infos der Bestellungen des angegebenen tages durch
+     *aufbau ist bisher:
+     * 0: der Tag an dem bestellt wurde
+     * 1: der Tag an dem die Bestellung "abgeholt" wird
+     * 2: das Modell des Fahrrads
+     * 3: die Anzahl der bestellten Fahrräder
+     * @param datum der tag, von dem die infos kommen
+     * @return zweidimensionales array, erste dimension ist die Bestellung, zweite dimension sind die Infos der Bestellung
+     */
+    public String[][] getBestellwerte(String datum){
+        dataInterface.setTagderBestellungen(datum);
+        int anzahl_bestellungen = dataInterface.getBestellanzahl();
+        if (anzahl_bestellungen == 0) {
+            return null;
+        }
+        String[][] infos = new String[anzahl_bestellungen][dataInterface.getBestellungeninfolength()];
+        int counter = 0;
+
+        while (dataInterface.nextBestellung()) {
+            String[] infoelement = dataInterface.getCurrentBestellungInfos();
+            for (int i = 0; i < dataInterface.getBestellungeninfolength(); i++) {
+                infos[counter][i] = infoelement[i];
+            }
+            counter++;
+        }
+        return infos;
+    }
+
 }
 
 

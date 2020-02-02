@@ -14,7 +14,8 @@ public class Data_Manipulation_Interface {
     private List<Kalenderwoche> relevanteKW;
     private List<Lieferung> relevanteLieferungen;
     private List<Bestellung> relevanteBestellungen;
-    private static final int INFOLENGHT =5;
+    private static final int LIEFERUNGENINFOLENGTH =5;
+    private static final int BESTELLUNGENINFOLENGTH = 4;
     private Lieferung[] heutigeLieferungen;
     int lieferungenZeiger;
     private Bestellung[] heutigeBestellungen;
@@ -80,6 +81,53 @@ public class Data_Manipulation_Interface {
     }
 
     public void setTagDerLieferungen(String datum) {
+        Schichtarbeitstag tag = getTag(datum);
+        heutigeLieferungen = tag.getLieferungen().toArray(heutigeLieferungen);
+        relevanteLieferungen.addAll(tag.getLieferungen());
+        lieferungenZeiger = -1;
+    }
+
+    public String[] getCurrentLieferungInfos() {
+        String[] infos = new String[LIEFERUNGENINFOLENGTH];
+        infos[0] = heutigeLieferungen[lieferungenZeiger].getAnkunftstag_datum();
+        infos[1] = Komponentenzuordnung.getCanonicalName(heutigeLieferungen[lieferungenZeiger].getKomponenttyp_ID());
+
+        infos[2] = Integer.toString(heutigeLieferungen[lieferungenZeiger].getAnzahl());
+        infos[3] = "no";
+        infos[4] = heutigeLieferungen[lieferungenZeiger].getStarttag_datum();
+        return infos;
+    }
+
+
+    public String[] getCurrentBestellungInfos(){
+        String[] infos = new String[BESTELLUNGENINFOLENGTH];
+
+        infos[0] = heutigeBestellungen[bestellungenzeiger].getBestellungstag();
+        infos[1] = heutigeBestellungen[bestellungenzeiger].getLiefertag();
+        infos[2] = Komponentenzuordnung.getCanonicalName( heutigeBestellungen[bestellungenzeiger].getModelltyp_ID());
+
+        infos[3] = Integer.toString(heutigeBestellungen[bestellungenzeiger].getAnzahl());
+        return infos;
+    }
+
+
+
+    public void setTagderBestellungen (String datum) {
+        Schichtarbeitstag tag = getTag(datum);
+        heutigeBestellungen = tag.getBestellungen().toArray(heutigeBestellungen);
+        relevanteBestellungen.addAll(tag.getBestellungen());
+        bestellungenzeiger = -1;
+    }
+
+    public boolean nextBestellung() {
+        bestellungenzeiger++;
+        if (bestellungenzeiger >= heutigeBestellungen.length) {
+            return false;
+        }
+        return true;
+    }
+
+    private Schichtarbeitstag getTag(String datum){
         int id = myController.getTagIDFromString(datum);
         Schichtarbeitstag tag = null;
         for (Schichtarbeitstag t : relevanteAT) {
@@ -90,29 +138,20 @@ public class Data_Manipulation_Interface {
         if (tag == null) {
             tag = myController.getTagFromID(id);
         }
-        heutigeLieferungen = tag.getLieferungen().toArray(heutigeLieferungen);
-        relevanteLieferungen.addAll(tag.getLieferungen());
-        lieferungenZeiger = -1;
+        return tag;
     }
-
-    public String[] getCurrentLieferungInfos() {
-        String[] infos = new String[INFOLENGHT];
-        infos[0] = heutigeLieferungen[lieferungenZeiger].getAnkunftstag_datum();
-        infos[1] = Integer.toString(heutigeLieferungen[lieferungenZeiger].getKomponenttyp_ID());
-        //TODO Methode einbauen die den richtigen namen der komponente mappt
-        infos[2] = Integer.toString(heutigeLieferungen[lieferungenZeiger].getAnzahl());
-        infos[3] = "no";
-        infos[4] = heutigeLieferungen[lieferungenZeiger].getStarttag_datum();
-
-        return infos;
-    }
-
 
     public int getLieferAnzahl() {
         return heutigeLieferungen.length;
     }
+    public int getBestellanzahl(){
+        return heutigeBestellungen.length;
+    }
 
-    public int getInfolenght(){
-        return  INFOLENGHT;
+    public int getLieferungeninfolength(){
+        return  LIEFERUNGENINFOLENGTH;
+    }
+    public int getBestellungeninfolength(){
+        return BESTELLUNGENINFOLENGTH;
     }
 }

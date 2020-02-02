@@ -16,10 +16,6 @@ public abstract class Controller_Base implements Initializable {
     @FXML
     private Label datum;
 
-    public void setBackendInterface(Backend_Interface backendinterface) {
-        this.backendInterface = backendinterface;
-        datum.setText(backendinterface.getHeute());
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
