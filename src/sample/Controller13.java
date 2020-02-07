@@ -6,13 +6,25 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 
+import java.awt.*;
+import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
 
 public class Controller13 extends Controller_Base {
 
     @FXML
     private DatePicker dateNew;
+    @FXML
+    private Label datum;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        backendInterface = Backend_Interface.getInstance(null);
+        datum.setText(backendInterface.getHeute());
+    }
 
     public void button_close(Event evt) {
         Parent root1;

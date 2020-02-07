@@ -12,8 +12,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
 
 public class Controller8 extends Controller_Base {
 
@@ -40,6 +43,15 @@ public class Controller8 extends Controller_Base {
     private CheckBox ft7;
     @FXML
     private CheckBox ft8;
+
+    @FXML
+    private Label datum;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        backendInterface = Backend_Interface.getInstance(null);
+        datum.setText(backendInterface.getHeute());
+    }
 
 
     public void einpflegen(Event evt) {

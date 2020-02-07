@@ -169,7 +169,7 @@ public class QueryAssembler {
                 "Kalendertag join (SELECT tagesschicht.tag_ID, MAX_OUTPUT, SCHICHT_ID, FAHRRAD_ID, ANZAHL FROM( SELECT tag_ID, Max_Output,  schichtarbeit.Schicht_ID FROM Schichtarbeit JOIN \n" +
                 "nutzt on (schichtarbeit.schicht_ID = nutzt.schicht_ID)) tagesschicht JOIN (SELECT  * FROM Produktionsvolumen WHERE Tag_ID = %s)tagesverteilung On(tagesverteilung.tag_ID = tagesschicht.tag_ID))auflistung \n" +
                 "ON (kalendertag.tag_ID = auflistung.tag_ID) ORDER BY auflistung.Fahrrad_ID ASC)alleInfos  on (alleInfos.tag_ID = ist_feiertag_in.tag_ID)", arbeitstag_ID);
-System.out.println(sql);
+
 //default werte setzen
         int schicht_ID = 0;
         int max_output = 0;

@@ -19,7 +19,7 @@
         <Pane prefHeight="477.0" prefWidth="464.0">
            <children>
          <Label layoutX="45.0" layoutY="30.0" text="Heute:" />
-         <Label layoutX="80.0" layoutY="30.0" text="01.01.2021" />
+         <Label fx:id="datum" layoutX="80.0" layoutY="30.0" text="01.01.2021" />
          <Label layoutX="45.0" layoutY="102.0" text="Neuer Tag:" />
          <DatePicker fx:id="dateNew" layoutX="45.0" layoutY="135.0" />
          <Button layoutX="337.0" layoutY="135.0" mnemonicParsing="false" onAction="#datum_OK" text="OK" />

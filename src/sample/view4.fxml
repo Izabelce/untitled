@@ -18,7 +18,7 @@
    <children>
       <Pane prefHeight="477.0" prefWidth="464.0">
          <children>
-         <Label layoutX="32.0" layoutY="46.0" text="Heute" />
+         <Label layoutX="32.0" layoutY="46.0" text="Heute:" />
          <Label layoutX="32.0" layoutY="111.0" text="Lieferungen heute:" />
          <Label layoutX="32.0" layoutY="147.0" text="Bestellungen heute:" />
          <Label layoutX="32.0" layoutY="183.0" text="Anzahl Schichten:" />

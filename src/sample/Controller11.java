@@ -8,9 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 
+import java.awt.*;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
@@ -22,6 +24,15 @@ public class Controller11 extends Controller_Base{
 
     @FXML
     private TextArea textArea;
+
+    @FXML
+    private Label datum;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        backendInterface = Backend_Interface.getInstance(null);
+        datum.setText(backendInterface.getHeute());
+    }
 
     public void button_close(Event evt) {
         Parent root1;
@@ -53,12 +64,17 @@ public class Controller11 extends Controller_Base{
             String[][] lieferungenArray = backendInterface.getLieferwerte(ft.format(gettedDatePickerDate));
 
             String text = "";
-            for(int i=0; i<lieferungenArray.length;i++){
-                for(int j=0; j<lieferungenArray[i].length; j++){
-                    text = text + (lieferungenArray[i][j]);
+            if(lieferungenArray != null){
+                for(int i=0; i<lieferungenArray.length;i++){
+                    for(int j=0; j<lieferungenArray[i].length; j++){
+                        text = text + (lieferungenArray[i][j]);
+                    }
+                    text = text + "/n";
                 }
-                text = text + "/n";
+            }else{
+                text = "heute gibt es leider keine Lieferungen :(";
             }
+
 
             textArea.setText(text);
 
