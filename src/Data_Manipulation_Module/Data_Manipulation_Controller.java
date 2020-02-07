@@ -2,9 +2,6 @@ package Data_Manipulation_Module;
 
 import Database_Connectivity_Module.*;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -12,10 +9,6 @@ import java.util.List;
 
 
 public class Data_Manipulation_Controller {
-    public MetricsInterface getmInf() {
-        return mInf;
-    }
-
     private MetricsInterface mInf;
     private Plausibility plausi;
     private QueryAssembler queryA;
@@ -548,288 +541,33 @@ public class Data_Manipulation_Controller {
         return null;
     }
 
-    public void writeInCSV() {
-        String schichtartbeitstage = "CSVDATA/loadSchichtarbeitstage.txt";
-        String kalenderwochen = "CSVDATA/loadKalenderwoche.txt";
-        String bestellungen = "CSVDATA/loadBestellungen.txt";
-        String lieferungen = "CSVDATA/loadLieferungen.txt";
-        String fahrplaene = "CSVDATA/loadFahrplaene.txt";
 
-        writeSchichtarbeitstage(schichtartbeitstage);
-        writeKalenderwochen(kalenderwochen);
-        writeBestellungen(bestellungen);
-        writeLieferungen(lieferungen);
-        writeFahrplaene(fahrplaene);
+    public void setAlleTage(Schichtarbeitstag[] alleTage) {
+        this.alleTage = alleTage;
     }
 
-    public void writeFahrplaene(String path) {
-        BufferedWriter writer = getWriter(path);
-        for (int i = 0; i < abfahrtstage.length; i++) {
-            try {
-                writer.append("" + abfahrtstage[i] + "\n");
-            } catch (IOException ioe) {
-                System.err.println(ioe.getMessage());
-            }
-            try {
-                writer.close();
-            } catch (IOException ioe) {
-                System.err.println(ioe.getMessage());
-            }
-        }
+    public void setKwList(List<Kalenderwoche> kwList) {
+        this.kwList = kwList;
     }
 
-    public void writeLieferungen(String path) {
-        BufferedWriter writer = getWriter(path);
-        for (int i = 0; i < alleTage.length; i++) {
-            Schichtarbeitstag tag = alleTage[i];
-            for (Lieferung lieferung : tag.getLieferungen()) {
-                String outputString = "";
-                outputString = outputString + lieferung.getKomponenttyp_ID() + ", ";
-                outputString = outputString + lieferung.getAnzahl() + ", ";
-                outputString = outputString + lieferung.getAnkunftstag_ID() + ", ";
-                outputString = outputString + lieferung.getAnkunftstag_datum() + ", ";
-                outputString = outputString + lieferung.getStarttag_ID() + ", ";
-                outputString = outputString + lieferung.getStarttag_datum() + "\n ";
-                try {
-                    writer.append(outputString);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        try {
-            writer.close();
-        } catch (IOException ioe) {
-            System.err.println(ioe.getMessage());
-        }
+    public void setAbfahrtstage(int[] abfahrtstage) {
+        this.abfahrtstage = abfahrtstage;
     }
 
-    private void writeBestellungen(String path) {
-        BufferedWriter writer = getWriter(path);
-        for (int i = 0; i < alleTage.length; i++) {
-            Schichtarbeitstag tag = alleTage[i];
-            for (Bestellung bestellung : tag.getBestellungen()) {
-                String outputString = "";
-                outputString = outputString + bestellung.getBestell_ID() + ", ";
-                outputString = outputString + bestellung.getBestellungstag() + ", ";
-                outputString = outputString + bestellung.getLiefertag() + ", ";
-                outputString = outputString + bestellung.getBestelldatum_ID() + ", ";
-                outputString = outputString + bestellung.getLieferdatum_ID() + ", ";
-                outputString = outputString + bestellung.getModelltyp_ID() + ", ";
-                outputString = outputString + bestellung.getAnzahl() + "\n";
-                try {
-                    writer.append(outputString);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        try {
-            writer.close();
-        } catch (IOException ioe) {
-            System.err.println(ioe.getMessage());
-        }
+    public MetricsInterface getmInf() {
+        return mInf;
     }
 
-    private void writeKalenderwochen(String path) {
-        BufferedWriter writer = getWriter(path);
-        //erstellen einen writer auf dem outputfile
-        //jeden tag der kw auslesen und mit id festschreiben
-        for (Kalenderwoche k : kwList) {
-            String outputString = "";
-            while (k.next()) {
-                Schichtarbeitstag tag = k.get();
-                outputString = outputString + tag.getArbeitstag_ID();
-                if (tag.getArbeitstag_ID() != k.getLast().getArbeitstag_ID()) {
-                    outputString = outputString + ", ";
-                }
-            }
-            outputString = outputString + "\n";
-            try {
-                writer.append(outputString);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-            writer.close();
-        } catch (IOException ioe) {
-            System.err.println(ioe.getMessage());
-        }
+    public Schichtarbeitstag[] getAlleTage() {
+        return alleTage;
     }
 
-
-    private void writeSchichtarbeitstage(String path) {
-        BufferedWriter writer = getWriter(path);
-
-        //pro schichtarbeitstag eine zeile
-        for (int i = 0; i < alleTage.length; i++) {
-            String outputstring = "";
-            Schichtarbeitstag tag = alleTage[i];
-
-            outputstring = outputstring + tag.getSchicht_ID() + ", ";
-            outputstring = outputstring + tag.getMax_output() + ", ";
-            outputstring = outputstring + tag.getSchicht_ID() + ", ";
-            for (int x = 0; x < tag.getFahrradplan().length; x++) {
-                outputstring = outputstring + tag.getFahrradplan()[x] + ", ";
-            }
-            outputstring = outputstring + tag.getKwID() + ", ";
-            outputstring = outputstring + tag.getArbeitstag_ID() + ", ";
-            if (tag.isHoldayIn(Land.China)) {
-                outputstring = outputstring + "t, ";
-            } else {
-                outputstring = outputstring + "f, ";
-            }
-            if (tag.isHoldayIn(Land.Spanien)) {
-                outputstring = outputstring + "t, ";
-            } else {
-                outputstring = outputstring + "f, ";
-            }
-            if (tag.isHoldayIn(Land.Baden_Württemberg)) {
-                outputstring = outputstring + "t, ";
-            } else {
-                outputstring = outputstring + "f, ";
-            }
-            if (tag.isHoldayIn(Land.Nordrhein_Westfalen)) {
-                outputstring = outputstring + "t, ";
-
-            } else {
-                outputstring = outputstring + "f, ";
-            }
-            outputstring = outputstring + tag.getDatum() + ", ";
-            for (int l = 0; l < tag.getLager2().length; l++) {
-                if (l == 0) {
-                    outputstring = outputstring + tag.getLager2()[l];
-                } else {
-                    outputstring = outputstring + ", " + tag.getLager2()[l];
-                }
-            }
-            outputstring = outputstring + "\n";
-            try {
-                writer.append(outputstring);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        //fertig, writer schliessen
-        try {
-            writer.close();
-        } catch (IOException ioe) {
-            System.err.println(ioe.getMessage());
-        }
+    public List<Kalenderwoche> getKwList() {
+        return kwList;
     }
 
-    public void loadFromCSV() {
-        String schichtartbeitstage = "CSVDATA/loadSchichtarbeitstage.txt";
-        String kalenderwochen = "CSVDATA/loadKalenderwoche.txt";
-        String bestellungen = "CSVDATA/loadBestellungen.txt";
-        String lieferungen = "CSVDATA/loadLieferungen.txt";
-        String fahrplaene = "CSVDATA/loadFahrplaene.txt";
-        loadSchichtarbeitstage(schichtartbeitstage);
-        loadKalenderwoche(kalenderwochen);
-        loadBestellungen(bestellungen);
-        loadLieferungen(lieferungen);
-        loadFahrplaene(fahrplaene);
-
-
+    public int[] getAbfahrtstage() {
+        return abfahrtstage;
     }
-
-    private void loadFahrplaene(String fahrplaene) {
-        List<String> strings = Database_Helper.fullFileToStringList(fahrplaene);
-        abfahrtstage = new int[strings.size()];
-        int index = 0;
-        for (String s : strings) {
-            abfahrtstage[index] = Integer.getInteger(s).intValue();
-            index++;
-        }
-    }
-
-    private void loadLieferungen(String lieferungen) {
-        List<String> strings = Database_Helper.fullFileToStringList(lieferungen);
-    }
-
-    private void loadBestellungen(String bestellungen) {
-        List<String> strings = Database_Helper.fullFileToStringList(bestellungen);
-    }
-
-    private void loadKalenderwoche(String kalenderwochen) {
-        List<String> strings = Database_Helper.fullFileToStringList(kalenderwochen);
-    }
-
-    private void loadSchichtarbeitstage(String schichtartbeitstage) {
-        List<String> strings = Database_Helper.fullFileToStringList(schichtartbeitstage);
-        for (String s : strings) {
-            String[] results = s.split(", ", 0);
-            int schichtID = Integer.getInteger(results[0]).intValue();
-            int max_output = Integer.getInteger(results[1]).intValue();
-            int[] fahrradplan = new int[8];
-            fahrradplan[0] = Integer.getInteger(results[2]).intValue();
-            fahrradplan[1] = Integer.getInteger(results[3]).intValue();
-            fahrradplan[2] = Integer.getInteger(results[4]).intValue();
-            fahrradplan[3] = Integer.getInteger(results[5]).intValue();
-            fahrradplan[4] = Integer.getInteger(results[6]).intValue();
-            fahrradplan[5] = Integer.getInteger(results[7]).intValue();
-            fahrradplan[6] = Integer.getInteger(results[8]).intValue();
-            fahrradplan[7] = Integer.getInteger(results[9]).intValue();
-            fahrradplan[7] = Integer.getInteger(results[10]).intValue();
-            int kwID = Integer.getInteger(results[11]).intValue();
-            int tagID =Integer.getInteger(results[12]).intValue();
-            HashSet<Land> holidays = new HashSet<Land>();
-            if(results[13] == "t"){
-                holidays.add(Land.China);
-            }
-            if(results[14] == "t"){
-                holidays.add(Land.Spanien);
-            }
-            if(results[15] == "t"){
-                holidays.add(Land.Baden_Württemberg);
-            }
-            if(results[16] == "t"){
-                holidays.add(Land.Nordrhein_Westfalen);
-            }
-            String datum = results[17];
-            int[] lager = new int[22];
-            lager[0] = Integer.getInteger(results[18]).intValue();
-            lager[1] = Integer.getInteger(results[19]).intValue();
-            lager[2] = Integer.getInteger(results[20]).intValue();
-            lager[3] = Integer.getInteger(results[21]).intValue();
-            lager[4] = Integer.getInteger(results[22]).intValue();
-            lager[5] = Integer.getInteger(results[23]).intValue();
-            lager[6] = Integer.getInteger(results[24]).intValue();
-            lager[7] = Integer.getInteger(results[25]).intValue();
-            lager[8] = Integer.getInteger(results[26]).intValue();
-            lager[9] = Integer.getInteger(results[27]).intValue();
-            lager[10] = Integer.getInteger(results[28]).intValue();
-            lager[11] = Integer.getInteger(results[29]).intValue();
-            lager[12] = Integer.getInteger(results[30]).intValue();
-            lager[13] = Integer.getInteger(results[31]).intValue();
-            lager[14] = Integer.getInteger(results[32]).intValue();
-            lager[15] = Integer.getInteger(results[33]).intValue();
-            lager[16] = Integer.getInteger(results[34]).intValue();
-            lager[17] = Integer.getInteger(results[35]).intValue();
-            lager[18] = Integer.getInteger(results[36]).intValue();
-            lager[19] = Integer.getInteger(results[37]).intValue();
-            lager[20] = Integer.getInteger(results[38]).intValue();
-            lager[21] = Integer.getInteger(results[39]).intValue();
-            lager[22] = Integer.getInteger(results[40]).intValue();
-            Schichtarbeitstag tag = new Schichtarbeitstag(schichtID,max_output,fahrradplan,kwID,tagID,holidays,datum);
-            for(int i=1; i<=lager.length; i++){
-                tag.setLagerbestand(i, lager[i-1]);
-            }
-            alleTage[tagID] = tag;
-        }
-    }
-
-
-    private BufferedWriter getWriter(String path) {
-        BufferedWriter writer = null;
-        try {
-            writer = new BufferedWriter(new FileWriter(path, true));
-        } catch (IOException ioe) {
-            System.err.println(ioe.getMessage());
-        }
-        return writer;
-    }
-
 }
 
