@@ -9,15 +9,15 @@ public class Kalenderwoche {
     private Schichtarbeitstag[] arbeitstageDerKW;
     private int pointer;
 
-    public static List<Kalenderwoche> getKWListFromTage(List<Schichtarbeitstag> alleTage) {
+    public static List<Kalenderwoche> getKWListFromTage(Schichtarbeitstag[] alleTage) {
         HashMap<Integer, Kalenderwoche> mapping = new HashMap<Integer, Kalenderwoche>();
         List<Kalenderwoche> kwWeek = new LinkedList<Kalenderwoche>();
-        for (Schichtarbeitstag schichtarbeitstag : alleTage) {
-            Integer kwID = schichtarbeitstag.getKwID();
+        for (int id =0; id<alleTage.length;id++){
+            Integer kwID = alleTage[id].getKwID();
             if (mapping.get(kwID) == null) {
                 mapping.put(kwID, new Kalenderwoche(kwID));
             }
-            mapping.get(kwID).add(schichtarbeitstag);
+            mapping.get(kwID).add(alleTage[id]);
         }
         for (Integer i : mapping.keySet()) {
             Kalenderwoche k = mapping.get(i);

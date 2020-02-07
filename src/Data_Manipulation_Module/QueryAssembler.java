@@ -15,6 +15,7 @@ import java.util.List;
 public class QueryAssembler {
     private Data_Manipulation_Controller myController;
     private int bestellID;
+
     public QueryAssembler() {
         bestellID = 1;
     }
@@ -23,7 +24,6 @@ public class QueryAssembler {
     public void enlistController(Data_Manipulation_Controller con) {
         myController = con;
     }
-
 
 
     public int queryPartStock(int partID, int tagID) {
@@ -206,11 +206,11 @@ public class QueryAssembler {
 
         String sql2 = String.format("Select Lagerobjekt_ID, Anzahl From Lagerbestand Where tag_ID = %d ORDER BY Lagerobjekt_ID ASC", arbeitstag_ID);
         try (ResultSet lagerRS = myController.getQueryResult(sql2)) {
-            while(lagerRS.next()){
+            while (lagerRS.next()) {
                 tag.setLagerbestand(lagerRS.getInt(1), lagerRS.getInt(2));
             }
 
-        }catch (SQLException sqleLager){
+        } catch (SQLException sqleLager) {
             System.err.println("Exception in getSchicht-Lager : " + sql + "\n" + sqleLager.getMessage());
         }
 
@@ -235,7 +235,6 @@ public class QueryAssembler {
         String sql = String.format("UPDATE nutzt SET Schicht_ID = %d WHERE Tag_ID =%d", schicht, tag_ID);
         myController.changeTable(sql);
     }
-
 
 
     public int getKW_IDFromDay(int tag_Id) {
@@ -287,7 +286,7 @@ public class QueryAssembler {
     public void setLagerbestand(Schichtarbeitstag schichtarbeitstag) {
         List<String> queries = new LinkedList<String>();
         int arbeitstagID = schichtarbeitstag.getArbeitstag_ID();
-        for (int i = 1; i <=22; i++) {
+        for (int i = 1; i <= 22; i++) {
             queries.add(String.format("UPDATE Lagerbestand SET ANZAHL = %d WHERE Tag_ID = %d AND Lagerobjekt_ID = %d and Lager_ID =1", schichtarbeitstag.getLagerbestand(i), arbeitstagID, i));
         }
         for (String query : queries) {
@@ -306,11 +305,32 @@ public class QueryAssembler {
         myController.changeTable(sqlString);
     }
 
-    public void bestellungenfestschreiben(Bestellung b){
-        String sqlString = String.format("INSERT INTO BESTELLUNG VALUES(%d, %d, %d)",bestellID, b.getBestelldatum_ID(), b.getLieferdatum_ID());
+    public void bestellungenfestschreiben(Bestellung b) {
+        String sqlString = String.format("INSERT INTO BESTELLUNG VALUES(%d, %d, %d)", bestellID, b.getBestelldatum_ID(), b.getLieferdatum_ID());
         myController.changeTable(sqlString);
-        sqlString = String.format("INSERT INTO BESTELLT VALUES(%d, %d, %d)",bestellID, b.getModelltyp_ID(), b.getAnzahl());
+        sqlString = String.format("INSERT INTO BESTELLT VALUES(%d, %d, %d)", bestellID, b.getModelltyp_ID(), b.getAnzahl());
         myController.changeTable(sqlString);
         this.bestellID++;
+    }
+
+    public int[] getFahrplanTage() {
+        String sqlString = "SELECT Abfahrtstag_ID FROM Fahrplan ORDER BY Abfahrtstag_ID ASC";
+        List<Integer> intList = new LinkedList<Integer>();
+        ResultSet rs = myController.getQueryResult(sqlString);
+        try {
+            while (rs.next()) {
+                intList.add(rs.getInt(1));
+            }
+            rs.close();
+        } catch (SQLException sqle) {
+            System.err.println(sqle.getMessage() + "\n" + sqlString);
+        }
+        int[] ints = new int[intList.size()];
+        int index =0;
+        while(intList.size()>0){
+            ints[index] = ((LinkedList<Integer>) intList).removeFirst().intValue();
+            index++;
+        }
+        return ints;
     }
 }

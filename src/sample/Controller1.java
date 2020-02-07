@@ -44,7 +44,7 @@ public class Controller1 implements Initializable {
         Database_Connector dbcon = new Database_Connector();
         Database_Helper dbHelper = new Database_Helper();
         Database_Controller dbCtrl = new Database_Controller(dbcon, dbHelper);
-       // dbcon.populate_Tablespace();
+        dbcon.populate_Tablespace();
         System.out.println("Building Data_Manipulation_Module...");
         Data_Manipulation_Controller dbManCon = new Data_Manipulation_Controller(dbCtrl.getDbInterface());
         Data_Manipulation_Interface manipulation_interface = new Data_Manipulation_Interface();
