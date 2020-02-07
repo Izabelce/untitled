@@ -3,9 +3,13 @@ package Database_Connectivity_Module;
 import Data_Manipulation_Module.Komponentenzuordnung;
 import Data_Manipulation_Module.Land;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Schichtarbeitstag {
+
+
     private int schicht_ID;
     private int arbeitstag_ID;
     private int max_output;
@@ -14,11 +18,12 @@ public class Schichtarbeitstag {
     private int sum;
     private int monats_ID;
     private final String datum;
-    private Map<Integer, Integer> lager;
+
     private HashSet<Data_Manipulation_Module.Land> holidayIn;
     private List<Lieferung> heutigeLieferungen;
     private Schichtarbeitstag vortag;
     private List<Bestellung> heutigeBestellungen;
+    private int[] lager2;
 
     public Schichtarbeitstag(int schicht_ID, int max_output, int[] arbeitsmappe, int kw_id, int tag_ID, HashSet<Land> holidays, String datum) {
         this.vortag = null;
@@ -32,14 +37,11 @@ public class Schichtarbeitstag {
         this.holidayIn = holidays;
         heutigeLieferungen = new LinkedList<Lieferung>();
         heutigeBestellungen = new LinkedList<Bestellung>();
-        lager = new HashMap<Integer, Integer>();
         monats_ID = 0;
-        for (int i = 1; i <= 22; i++) {
-            lager.put(i, 0);
-        }
         for (int i = 0; i < fahrradplan.length; i++) {
             sum = sum + fahrradplan[i];
         }
+        lager2 = new int[22];
     }
 
     public void setVortag(Schichtarbeitstag vortag) {
@@ -65,35 +67,44 @@ public class Schichtarbeitstag {
     public void lagerbestandBerechnen(Schichtarbeitstag vortag) {
         //wenn vortag null, dann ist das wohl der erste tag
         if (vortag != null) {
-            for (Integer key : lager.keySet()) {
-                lager.put(key, vortag.getLagerbestand(key));
+            for (int i = 0; i < lager2.length; i++) {
+                //lagerobjektIDs sind immer +1 dem i
+                lager2[i] = vortag.getLagerbestand(i + 1);
             }
+            // for (Integer key : lager.keySet()) {
+            //     lager.put(key, vortag.getLagerbestand(key));
+            // }
 
             for (int i = 0; i < fahrradplan.length; i++) {
                 int anzahl = fahrradplan[i];
                 int gabelId = Komponentenzuordnung.getGabelID(i + 1);
                 int sattelId = Komponentenzuordnung.getSattelID(i + 1);
                 int rahmenId = Komponentenzuordnung.getRahmenID(i + 1);
+                lager2[gabelId - 1] = lager2[gabelId - 1] - anzahl;
+                lager2[sattelId - 1] = lager2[sattelId - 1] - anzahl;
+                lager2[rahmenId - 1] = lager2[rahmenId - 1] - anzahl;
 
-                lager.put(gabelId, lager.get(gabelId) - anzahl);
-                lager.put(sattelId, lager.get(sattelId) - anzahl);
-                lager.put(rahmenId, lager.get(rahmenId) - anzahl);
+                // lager.put(gabelId, lager.get(gabelId) - anzahl);
+                // lager.put(sattelId, lager.get(sattelId) - anzahl);
+                // lager.put(rahmenId, lager.get(rahmenId) - anzahl);
             }
 
             for (Lieferung l : vortag.heutigeLieferungen) {
-                lager.put(l.getKomponenttyp_ID(), lager.get(l.getKomponenttyp_ID()) + l.getAnzahl());
+                lager2[l.getKomponenttyp_ID() - 1] = lager2[l.getKomponenttyp_ID() - 1] + l.getAnzahl();
+                //lager.put(l.getKomponenttyp_ID(), lager.get(l.getKomponenttyp_ID()) + l.getAnzahl());
             }
 
             for (int i = 0; i < 8; i++) {
-                lager.put(i + 1, lager.get(i + 1) + vortag.fahrradplan[i] - vortag.getBestellmenge(i+1) );
+                lager2[i] = lager2[i] + vortag.fahrradplan[i] - vortag.getBestellmenge(i + 1);
+                //lager.put(i + 1, lager.get(i + 1) + vortag.fahrradplan[i] - vortag.getBestellmenge(i+1) );
             }
         }
     }
 
     private int getBestellmenge(int i) {
-        int returnvalue =0;
-        for(Bestellung b: heutigeBestellungen){
-            if(b.getModelltyp_ID() == i){
+        int returnvalue = 0;
+        for (Bestellung b : heutigeBestellungen) {
+            if (b.getModelltyp_ID() == i) {
                 returnvalue += b.getAnzahl();
             }
         }
@@ -101,16 +112,9 @@ public class Schichtarbeitstag {
 
     }
 
-    public boolean isNegativeLager() {
-        boolean boo = false;
-        for (Integer i : lager.keySet()) {
-            if (lager.get(i) < 0) boo = true;
-        }
-        return boo;
-    }
 
     public int getNeededAmount(int komponentID) {
-        if (lager.get(komponentID) < 0) return (-1)*lager.get(komponentID);
+        if (lager2[komponentID - 1] < 0) return (-1) * lager2[komponentID - 1];
         return 0;
     }
 
@@ -122,21 +126,11 @@ public class Schichtarbeitstag {
         this.schicht_ID = schicht_ID;
     }
 
-    public int getMax_output() {
-        return max_output;
-    }
-
-    public void setMax_output(int max_output) {
-        this.max_output = max_output;
-    }
 
     public boolean hasDeficit() {
         return (sum > max_output);
     }
 
-    public int getDeficitAmount(int fahrrad_Id) {
-        return sum - max_output;
-    }
 
     public int extractDeficit(int fahrrad_id) {
         int returnvalue = 0;
@@ -201,18 +195,18 @@ public class Schichtarbeitstag {
     }
 
     public int getLagerbestand(int lagerobjektID) {
-        return lager.get(lagerobjektID);
+        return lager2[lagerobjektID - 1];
     }
 
     public int getFahrradBestand(int fahrrad_ID) {
         if (fahrrad_ID > 10 || fahrrad_ID > 22)
             throw new IllegalArgumentException("Es gibt kein Fahrrad mit dieser ID");
-        return lager.get(fahrrad_ID);
+        return lager2[fahrrad_ID - 1];
     }
 
     public int getPartBestand(int partID) {
         if (partID < 0 || partID > 9) throw new IllegalArgumentException("Es gibt kein Fahrradteil mit dieser ID");
-        return lager.get(partID);
+        return lager2[partID - 1];
     }
 
 
@@ -264,20 +258,20 @@ public class Schichtarbeitstag {
     }
 
     public void setLagerbestand(int part_ID, int anzahl) {
-        lager.put(part_ID, anzahl);
+        lager2[part_ID - 1] = anzahl;
     }
 
     public List<Lieferung> getLieferungen() {
         return this.heutigeLieferungen;
     }
-    public void addBestellung(Bestellung b){
+
+    public void addBestellung(Bestellung b) {
         heutigeBestellungen.add(b);
     }
 
-    public List<Bestellung> getBestellungen(){
+    public List<Bestellung> getBestellungen() {
         return this.heutigeBestellungen;
     }
-
 
 
     public void checkMyself() {
@@ -287,40 +281,40 @@ public class Schichtarbeitstag {
                 throw new IllegalStateException(String.format("Fahrradplan unter null! Tag_ID: %d, Anzahl: %d", this.arbeitstag_ID, fahrradplan[c]));
             }
         }
-
-        for (Integer key : lager.keySet()) {
-            if (lager.get(key) < 0) {
-                throw new IllegalStateException(String.format("Lager unter null! Tag_ID: %d, Anzahl: %d, Teil: %d ", this.arbeitstag_ID, lager.get(key), key));
+        for (int i = 0; i < lager2.length; i++) {
+            if (lager2[i] < 0) {
+                throw new IllegalStateException(String.format("Lager unter null! Tag_ID: %d, Anzahl: %d, Teil: %d ", this.arbeitstag_ID, lager2[i],i+1));
             }
         }
 
+
         for (Lieferung l : heutigeLieferungen) {
             if (l.getAnzahl() < 0) {
-                throw new IllegalStateException(String.format("Lieferung unter null! Tag_ID: %d, Anzahl: %d, Teil: %d",arbeitstag_ID, l.getAnzahl(), l.getKomponenttyp_ID()));
+                throw new IllegalStateException(String.format("Lieferung unter null! Tag_ID: %d, Anzahl: %d, Teil: %d", arbeitstag_ID, l.getAnzahl(), l.getKomponenttyp_ID()));
             }
         }
     }
 
     public Schichtarbeitstag getCopy() {
         int[] fahrradplanCopy = new int[fahrradplan.length];
-        for(int i=0; i< fahrradplan.length; i++){
+        for (int i = 0; i < fahrradplan.length; i++) {
             fahrradplanCopy[i] = fahrradplan[i];
         }
         HashSet<Land> holidayCopy = new HashSet<Land>();
-        for(Land l : holidayIn){
+        for (Land l : holidayIn) {
             holidayCopy.add(l);
         }
         Schichtarbeitstag returnTag = new Schichtarbeitstag(this.schicht_ID, this.max_output, fahrradplanCopy, this.kw_id, this.arbeitstag_ID, holidayCopy, this.datum);
-        for(Bestellung b: heutigeBestellungen){
+        for (Bestellung b : heutigeBestellungen) {
             returnTag.addBestellung(b.getCopy());
         }
-        for(Lieferung l : heutigeLieferungen){
+        for (Lieferung l : heutigeLieferungen) {
             returnTag.addLieferung(l.getCopy());
         }
 
         returnTag.setMonats_ID(this.monats_ID);
-        for(Integer key : lager.keySet()){
-            returnTag.setLagerbestand(key, lager.get(key));
+        for (int i = 0; i < lager2.length; i++) {
+            returnTag.setLagerbestand(i+1, lager2[i]);
         }
         returnTag.sum = this.sum;
 
@@ -328,7 +322,43 @@ public class Schichtarbeitstag {
     }
 
 
-    public String getDatum(){
+    public String getDatum() {
         return this.datum;
+    }
+
+    public int getMax_output() {
+        return max_output;
+    }
+
+    public int[] getFahrradplan() {
+        return fahrradplan;
+    }
+
+    public int getKw_id() {
+        return kw_id;
+    }
+
+    public int getSum() {
+        return sum;
+    }
+
+    public int getMonats_ID() {
+        return monats_ID;
+    }
+
+    public HashSet<Land> getHolidayIn() {
+        return holidayIn;
+    }
+
+    public List<Lieferung> getHeutigeLieferungen() {
+        return heutigeLieferungen;
+    }
+
+    public List<Bestellung> getHeutigeBestellungen() {
+        return heutigeBestellungen;
+    }
+
+    public int[] getLager2() {
+        return lager2;
     }
 }

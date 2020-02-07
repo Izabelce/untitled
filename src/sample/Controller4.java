@@ -37,10 +37,10 @@ public class Controller4 extends Controller_Base implements Initializable {
           backendInterface = Backend_Interface.getInstance(null);
           datum.setText(backendInterface.getHeute());
         //hier die methoden aufrufen die den beständen liefern im setText() rein schreiben
-          //lieferungen.setText(backendInterface.countLieferungen());
-         // bestellungen.setText(backendInterface.countBestellungen());
-         // schichten.setText(backendInterface.getSchicht());
-         // produktionsvolumen.setText(backendInterface.getProdvol());
+          lieferungen.setText(backendInterface.countLieferungen());
+         bestellungen.setText(backendInterface.countBestellungen());
+          schichten.setText(backendInterface.getSchicht());
+          produktionsvolumen.setText(backendInterface.getProdvol());
     }
 
     public void button_close(Event evt) {

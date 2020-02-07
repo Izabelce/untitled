@@ -304,11 +304,20 @@ ALTER TABLE Lieferung
 ADD CONSTRAINT fk_zulieferer FOREIGN KEY(Zulieferer_ID) REFERENCES Zulieferer(Zulieferer_ID);
 
 ALTER TABLE Lieferung
-ADD CONSTRAINT fk_lieferung_komp_ID FOREIGN KEY(Komponent_ID) REFERENCES Fahrradkomponente(Komponent_ID)
+ADD CONSTRAINT fk_lieferung_komp_ID FOREIGN KEY(Komponent_ID) REFERENCES Fahrradkomponente(Komponent_ID);
 
 ALTER TABLE Lieferung
-ADD CONSTRAINT fk_ankunftstag_ID FOREIGN KEY(Ankunftstag_ID) REFERENCES Kalendertag(Tag_ID)
+ADD CONSTRAINT fk_ankunftstag_ID FOREIGN KEY(Ankunftstag_ID) REFERENCES Kalendertag(Tag_ID);
 
 ALTER TABLE Lieferung
-ADD CONSTRAINT fk_tag_anfrage_ID FOREIGN KEY(Tag_der_Lieferanfrage) REFERENCES Kalendertag(Tag_ID)
+ADD CONSTRAINT fk_tag_anfrage_ID FOREIGN KEY(Tag_der_Lieferanfrage) REFERENCES Kalendertag(Tag_ID);
 
+CREATE TABLE Fahrplan(
+Abfahrtstag_ID Int,
+);
+
+ALTER TABLE Fahrplan
+ADD CONSTRAINT pk_fahrplan PRIMARY KEY(Abfahrtstag_ID);
+
+ALTER TABLE Fahrplan
+ADD CONSTRAINT fk_fahrplan FOREIGN KEY(Abfahrtstag_ID) REFERENCES Kalendertag(Tag_ID);

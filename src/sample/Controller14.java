@@ -4,8 +4,14 @@ import javafx.event.Event;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 
-public class Controller14 extends Controller_Base {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class Controller14 extends Controller_Base {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        backendInterface = Backend_Interface.getInstance(null);
+    }
     public void button_close(Event evt) {
         Parent root1;
 

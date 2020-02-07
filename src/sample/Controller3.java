@@ -45,7 +45,7 @@ public void initialize(URL url, ResourceBundle resourceBundle) {
         java.sql.Date gettedDatePickerDate = java.sql.Date.valueOf(dateNew.getValue());
         SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
         System.out.println(ft.format(gettedDatePickerDate));
-        //TODO hier wird das neue ausgewählte Datum in das Interface Instanz geschrieben, um es später zuzugreifen METHODE IMPEMENTIEREN
+
         backendInterface.setHeute(ft.format(gettedDatePickerDate));
 
         try {
