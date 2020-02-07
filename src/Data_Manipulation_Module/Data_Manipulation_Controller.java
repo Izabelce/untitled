@@ -68,7 +68,7 @@ public class Data_Manipulation_Controller {
     }
 
     private void fahrplanGenerieren() {
-        abfahrtstage = queryA.getFahrplanTage();
+       // abfahrtstage = queryA.getFahrplanTage();
     }
 
     private int[][] prepareMonatsarbeitstage() {
