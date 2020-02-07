@@ -2,6 +2,7 @@ package sample;
 
 import Data_Manipulation_Module.Data_Manipulation_Controller;
 import Data_Manipulation_Module.Data_Manipulation_Interface;
+import Data_Manipulation_Module.Datamanipulation_data;
 import Database_Connectivity_Module.Database_Connector;
 import Database_Connectivity_Module.Database_Controller;
 import Database_Connectivity_Module.Database_Helper;
@@ -49,7 +50,9 @@ public class Controller1 implements Initializable {
         Data_Manipulation_Controller dbManCon = new Data_Manipulation_Controller(dbCtrl.getDbInterface());
         Data_Manipulation_Interface manipulation_interface = new Data_Manipulation_Interface();
         manipulation_interface.enlistController(dbManCon);
-        //dbManCon.zielVorgabenWorkflow();
+        dbManCon.zielVorgabenWorkflow();
+        Datamanipulation_data dbManData = new Datamanipulation_data(dbManCon);
+        dbManData.writeInCSV();
         Backend_Interface b_int = Backend_Interface.getInstance(manipulation_interface);
 //        manipulation_interface.test();
 
@@ -77,6 +80,8 @@ public class Controller1 implements Initializable {
         Data_Manipulation_Controller dbManCon = new Data_Manipulation_Controller(new String[1]);
         Data_Manipulation_Interface manipulation_interface = new Data_Manipulation_Interface();
         manipulation_interface.enlistController(dbManCon);
+        Datamanipulation_data dataHelper = new Datamanipulation_data((dbManCon));
+        dataHelper.loadFromCSV();
 
         Backend_Interface b_int = Backend_Interface.getInstance(manipulation_interface);
         try {

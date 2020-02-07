@@ -53,19 +53,14 @@ ALTER TABLE Lager
 ADD CONSTRAINT Produktionsort FOREIGN KEY (Produktionsort_ID) REFERENCES Produktionsort(Produktionsort_ID);
 
 CREATE TABLE Fahrplan(
-Fahrplannummer Int,
-Ankunftstag Int,
-Abfahrtstag Int
+Abfahrtstag_ID Int
 );
 
 ALTER TABLE Fahrplan
-ADD CONSTRAINT Fahrplan_ID PRIMARY KEY (Fahrplannummer);
+ADD CONSTRAINT pk_fahrplan PRIMARY KEY(Abfahrtstag_ID);
 
 ALTER TABLE Fahrplan
-ADD CONSTRAINT Abfahrtstag FOREIGN KEY (Ankunftstag) References Kalendertag(Tag_ID);
-
-ALTER TABLE Fahrplan
-ADD CONSTRAINT Ankunftstag FOREIGN KEY (Abfahrtstag) REFERENCES Kalendertag(Tag_ID);
+ADD CONSTRAINT fk_fahrplan FOREIGN KEY(Abfahrtstag_ID) REFERENCES Kalendertag(Tag_ID);
 
 CREATE TABLE Zulieferer(
 Zulieferer_ID Int,
@@ -172,7 +167,7 @@ ALTER TABLE Transportmittel
 ADD CONSTRAINT Transportmittel_ID PRIMARY KEY (Transportmittel_ID);
 
 ALTER TABLE Transportmittel
-ADD CONSTRAINT Fahrplannummer FOREIGN KEY (Fahrplan) REFERENCES Fahrplan(Fahrplannummer);
+ADD CONSTRAINT Fahrplannummer FOREIGN KEY (Fahrplan) REFERENCES Fahrplan(Abfahrtstag_ID);
 
 ALTER TABLE Transportmittel
 ADD CONSTRAINT Komponent_ID FOREIGN KEY (Komponent_ID) REFERENCES Fahrradkomponente(Komponent_ID);
@@ -312,12 +307,3 @@ ADD CONSTRAINT fk_ankunftstag_ID FOREIGN KEY(Ankunftstag_ID) REFERENCES Kalender
 ALTER TABLE Lieferung
 ADD CONSTRAINT fk_tag_anfrage_ID FOREIGN KEY(Tag_der_Lieferanfrage) REFERENCES Kalendertag(Tag_ID);
 
-CREATE TABLE Fahrplan(
-Abfahrtstag_ID Int,
-);
-
-ALTER TABLE Fahrplan
-ADD CONSTRAINT pk_fahrplan PRIMARY KEY(Abfahrtstag_ID);
-
-ALTER TABLE Fahrplan
-ADD CONSTRAINT fk_fahrplan FOREIGN KEY(Abfahrtstag_ID) REFERENCES Kalendertag(Tag_ID);
