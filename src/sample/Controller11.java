@@ -8,9 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 
+import java.awt.*;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
@@ -19,6 +21,18 @@ public class Controller11 extends Controller_Base{
 
     @FXML
     private DatePicker dateNew;
+
+    @FXML
+    private TextArea textArea;
+
+    @FXML
+    private Label datum;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        backendInterface = Backend_Interface.getInstance(null);
+        datum.setText(backendInterface.getHeute());
+    }
 
     public void button_close(Event evt) {
         Parent root1;
@@ -41,13 +55,29 @@ public class Controller11 extends Controller_Base{
            // alert.setContentText("Ooops, there was an error!");
 
             alert.showAndWait();
-        }else{
+        }else {
             //TODO HERE
             java.sql.Date gettedDatePickerDate = java.sql.Date.valueOf(dateNew.getValue());
             SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
             System.out.println(ft.format(gettedDatePickerDate));
-            String date = "01.01.2001";//TODO HIER DEFAULT DATUM! NACH TEST ENTFERNEN
-            TextArea textArea = new TextArea();
+            //String date = "01.01.2001";//TODO HIER DEFAULT DATUM! NACH TEST ENTFERNEN
+            String[][] lieferungenArray = backendInterface.getLieferwerte(ft.format(gettedDatePickerDate));
+
+            String text = "";
+            if(lieferungenArray != null){
+                for(int i=0; i<lieferungenArray.length;i++){
+                    for(int j=0; j<lieferungenArray[i].length; j++){
+                        text = text + (lieferungenArray[i][j]);
+                    }
+                    text = text + "/n";
+                }
+            }else{
+                text = "heute gibt es leider keine Lieferungen :(";
+            }
+
+
+            textArea.setText(text);
+
         }
 
     }

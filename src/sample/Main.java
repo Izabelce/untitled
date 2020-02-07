@@ -18,7 +18,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("view1.fxml"));
 
         primaryStage.setTitle("Adventureworks_Bikes Version 2");
-        primaryStage.setScene(new Scene(root, 450, 450));
+        Scene scene = new Scene(root, 450, 450);
+        primaryStage.setScene(scene);
         primaryStage.setMaximized(true);
         primaryStage.show();
 

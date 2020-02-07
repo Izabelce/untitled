@@ -82,7 +82,7 @@ public class Data_Manipulation_Interface {
 
     public void setTagDerLieferungen(String datum) {
         Schichtarbeitstag tag = getTag(datum);
-        heutigeLieferungen = tag.getLieferungen().toArray(heutigeLieferungen);
+        heutigeLieferungen = tag.getLieferungen().toArray(new Lieferung[0]);
         relevanteLieferungen.addAll(tag.getLieferungen());
         lieferungenZeiger = -1;
     }
@@ -114,7 +114,7 @@ public class Data_Manipulation_Interface {
 
     public void setTagderBestellungen (String datum) {
         Schichtarbeitstag tag = getTag(datum);
-        heutigeBestellungen = tag.getBestellungen().toArray(heutigeBestellungen);
+        heutigeBestellungen = tag.getBestellungen().toArray(new Bestellung[0]);
         relevanteBestellungen.addAll(tag.getBestellungen());
         bestellungenzeiger = -1;
     }

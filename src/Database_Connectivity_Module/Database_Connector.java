@@ -54,7 +54,21 @@ public class Database_Connector {
         }
     }
 
-
+    private void populateProduktionsvolumen() {
+        int anzahlTage = 0;
+        String sqlAnzahlTage = "SELECT COUNT (Tag_ID) FROM Kalendertag";
+        try {
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sqlAnzahlTage);
+            rs.next();
+            anzahlTage = rs.getInt(1);
+            stmt.close();
+        } catch (SQLException ex) {
+            System.err.println("Exception in populateProduktionsvolumen: " + ex.getMessage() + "\n query:" + sqlAnzahlTage);
+        }
+        String sqlBestellungtage = "SELECT Modelltyp_ID, Anzahl FROM bestellt WHERE ";
+        for (int i = 1; i <= anzahlTage; i++) ;
+    }
 
     private void createAllTables() {
         String path = "CSVDATA/table_definitons.txt";
@@ -127,6 +141,36 @@ public class Database_Connector {
     }
 
 
+    public void emptyAllTables() {
+        String sql = "SELECT table_name FROM user_tables ORDER BY table_name";
+        try {
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            String tablename = "";
+            while (rs.next()) {
+                tablename = rs.getString(1);
+                emptyTable(tablename);
+            }
+            stmt.close();
+        } catch (SQLException sqle) {
+            System.err.println("Exception in empty all tables: " + sqle.getMessage() + "\n query:" + sql);
+        }
+    }
+
+
+    public void dropTable(String tablename) {
+        if (tableExists(tablename)) {
+            String sql = "DROP TABLE " + tablename + " CASCADE CONSTRAINTS";
+            try {
+                Statement stmt = con.createStatement();
+                stmt.executeUpdate(sql);
+                stmt.close();
+            } catch (SQLException sqle) {
+                System.err.println("Exception in Drop Table: " + sqle.getMessage() + "\n query:" + sql);
+            }
+        }
+    }
 
 
     public void emptyTable(String tablename) {
@@ -166,6 +210,59 @@ public class Database_Connector {
     }
 
 
+    public boolean deleteEntry(String tablename, int target_ID) {
+        if (!tableExists(tablename)) return false;
+        //TODO
+        return false;
+    }
+
+
+    public boolean writeEntry(String tablename, int target_ID) {
+        if (!tableExists(tablename)) return false;
+        switch (tablename) {
+            case "Land":
+                return true;
+            case "Bestellung":
+                return true;
+            case "Transportmittel":
+                return true;
+            case "Lagerbestand":
+                return true;
+            case "bestellt":
+                return true;
+
+            default:
+                return false;
+        }
+    }
+
+
+    public boolean resetTable(String target_tablename) {
+        if (!tableExists(target_tablename)) return false;
+        return false;
+    }
+
+    public void printConnection() {
+        String sql = "SELECT table_name FROM User_Tables";
+        try {
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (rs.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    if (i > 1) System.out.print(",  ");
+                    String columnValue = rs.getString(i);
+                    System.out.print(columnValue + " " + rsmd.getColumnName(i));
+                }
+                System.out.println("");
+            }
+            stmt.close();
+        } catch (SQLException sqlEx) {
+            System.err.println(sqlEx);
+        }
+    }
+
 
     private boolean connectToDatabase() {
 
@@ -185,7 +282,7 @@ public class Database_Connector {
     }
 
     public Bestellung getBestellungOnID(int bestell_ID, int bestelltag_ID, int liefertag_ID) {
-        return new Bestellung(0, 0, 0, 0,"","");
+        return new Bestellung(0, 0, 0, 0, "", "");
     }
 
 

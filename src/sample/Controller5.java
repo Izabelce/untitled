@@ -7,11 +7,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -25,34 +27,50 @@ public class Controller5 extends Controller_Base  {
     @FXML
     private DatePicker zeitraumBis;
 
+    @FXML
+    private Label datum;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        backendInterface = Backend_Interface.getInstance(null);
+        datum.setText(backendInterface.getHeute());
+    }
+
 
     public void erstellen_button(Event evt) {
         Button b = (Button) evt.getSource();
         //LocalDate value = dateNew.getValue();
-        java.sql.Date getZeitraumVon = java.sql.Date.valueOf(zeitraumVon.getValue());
-        java.sql.Date getZeitraumBis = java.sql.Date.valueOf(zeitraumBis.getValue());
-        SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
+
+        if(zeitraumVon.getValue() == null || zeitraumBis.getValue() == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ungültige Eingabe");
+            alert.setHeaderText("Bitte ein gültiges Datum auswählen");
+            // alert.setContentText("Ooops, there was an error!");
+
+            alert.showAndWait();
+        }else {
+            java.sql.Date getZeitraumVon = java.sql.Date.valueOf(zeitraumVon.getValue());
+            java.sql.Date getZeitraumBis = java.sql.Date.valueOf(zeitraumBis.getValue());
+            SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
 
 
-        //TODO HIER SOLL EIN PDF ERSTELLT WERDEN?
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view2.fxml"));
-            Parent root = (Parent) loader.load();
+            //TODO HIER SOLL EIN PDF ERSTELLT WERDEN?
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("view2.fxml"));
+                Parent root = (Parent) loader.load();
 
-            //Controller2 c2 = loader.getController();
-            //c2.setDatum(ft.format(gettedDatePickerDate));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.isMaximized();
-            stage.show();
+                //Controller2 c2 = loader.getController();
+                //c2.setDatum(ft.format(gettedDatePickerDate));
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.isMaximized();
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
-
-        catch (IOException e){
-            e.printStackTrace();
-        }
-
-
 
 
     }

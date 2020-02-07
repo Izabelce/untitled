@@ -18,7 +18,7 @@
       <Pane prefHeight="477.0" prefWidth="464.0">
          <children>
 
-            <Button layoutX="62.0" layoutY="162.0" mnemonicParsing="false" onAction="#button_demoNeu" prefHeight="77.0" prefWidth="110.0" text="Demo neu" />
+            <Button layoutX="62.0" layoutY="162.0" mnemonicParsing="false" onAction="#button_demoNeu" prefHeight="77.0" prefWidth="110.0" styleClass="w3-button" text="Demo neu" />
             <Button layoutX="282.0" layoutY="162.0" mnemonicParsing="false" onAction="#button_demoCont" prefHeight="77.0" prefWidth="110.0" text="Demo fortführen" />
          </children>
       </Pane>
