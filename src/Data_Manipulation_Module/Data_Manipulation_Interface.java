@@ -142,7 +142,7 @@ public class Data_Manipulation_Interface {
 
     public String[] getLagerbestandTag(int datum) {
         String[] bestand = new String[22];
-        Schichtarbeitstag tag = myController.getAlleTage()[myController.getTagIDFromString(datum)];
+        Schichtarbeitstag tag = myController.getAlleTage()[datum];
         for(int i =0; i<22; i++){
             bestand[i] = Integer.toString(tag.getLager2()[i]);
         }
