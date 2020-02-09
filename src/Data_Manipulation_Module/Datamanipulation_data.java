@@ -3,6 +3,7 @@ package Data_Manipulation_Module;
 import Database_Connectivity_Module.*;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
@@ -23,6 +24,7 @@ public class Datamanipulation_data {
         String bestellungen = "CSVDATA/loadBestellungen.txt";
         String lieferungen = "CSVDATA/loadLieferungen.txt";
         String fahrplaene = "CSVDATA/loadFahrplaene.txt";
+
 
         writeSchichtarbeitstage(schichtartbeitstage);
         writeKalenderwochen(kalenderwochen);
@@ -334,6 +336,8 @@ public class Datamanipulation_data {
 
 
     private BufferedWriter getWriter(String path) {
+        File file = new File(path);
+        file.delete();
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(path, true));

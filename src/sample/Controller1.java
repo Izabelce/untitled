@@ -3,6 +3,7 @@ package sample;
 import Data_Manipulation_Module.Data_Manipulation_Controller;
 import Data_Manipulation_Module.Data_Manipulation_Interface;
 import Data_Manipulation_Module.Datamanipulation_data;
+import Database_Connectivity_Module.Database_Connectivity_Interface;
 import Database_Connectivity_Module.Database_Connector;
 import Database_Connectivity_Module.Database_Controller;
 import Database_Connectivity_Module.Database_Helper;
@@ -82,8 +83,13 @@ public class Controller1 implements Initializable {
         manipulation_interface.enlistController(dbManCon);
         Datamanipulation_data dataHelper = new Datamanipulation_data((dbManCon));
         dataHelper.loadFromCSV();
-
         Backend_Interface b_int = Backend_Interface.getInstance(manipulation_interface);
+        Database_Connector dbconnector = new Database_Connector();
+        Database_Helper dbHelper = new Database_Helper();
+        Database_Controller dbcon = new Database_Controller(dbconnector, dbHelper, dbManCon.getAlleTage()[1].getDatum());
+        Database_Connectivity_Interface dbconnectorI = new Database_Connectivity_Interface(dbconnector, dbcon);
+        dbManCon.enlistDatabaseConnectivity_Interface(dbconnectorI);
+
         try {
             root1 = FXMLLoader.load(getClass().getResource("view2.fxml"));
             Stage stage = new Stage();
