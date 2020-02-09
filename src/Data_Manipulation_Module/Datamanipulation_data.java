@@ -24,6 +24,7 @@ public class Datamanipulation_data {
         String bestellungen = "CSVDATA/loadBestellungen.txt";
         String lieferungen = "CSVDATA/loadLieferungen.txt";
         String fahrplaene = "CSVDATA/loadFahrplaene.txt";
+        String zulieferer = "CSVDATA/loadZulieferer.txt";
 
 
         writeSchichtarbeitstage(schichtartbeitstage);
@@ -31,6 +32,14 @@ public class Datamanipulation_data {
         writeBestellungen(bestellungen);
         writeLieferungen(lieferungen);
         writeFahrplaene(fahrplaene);
+        writeZulieferer(zulieferer);
+    }
+
+    public void writeZulieferer(String path){
+        System.out.println("        Zulieferer...");
+        BufferedWriter writer = getWriter(path);
+        //TODO
+
     }
 
     public void writeFahrplaene(String path) {
@@ -202,13 +211,19 @@ public class Datamanipulation_data {
         String bestellungen = "CSVDATA/loadBestellungen.txt";
         String lieferungen = "CSVDATA/loadLieferungen.txt";
         String fahrplaene = "CSVDATA/loadFahrplaene.txt";
+        String zulieferer = "CSVDATA/loadZulieferer.txt";
+
         loadSchichtarbeitstage(schichtartbeitstage);
         loadKalenderwoche(kalenderwochen);
         loadBestellungen(bestellungen);
         loadLieferungen(lieferungen);
         loadFahrplaene(fahrplaene);
+        loadZulieferer(zulieferer);
+    }
 
-
+    private void loadZulieferer(String zulieferer){
+        List<String> strings = Database_Helper.fullFileToStringList(zulieferer);
+        //TODO
     }
 
     private void loadFahrplaene(String fahrplaene) {
