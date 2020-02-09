@@ -1,41 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="GUIs verbessert">
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Interface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Datamanipulation_data.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Komponentenzuordnung$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Komponentenzuordnung.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Komponenttyp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Land.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/MetricsInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Plausibility.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/QueryAssembler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Bestellung.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Connectivity_Interface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Connector.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Helper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Fahrplan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Kalenderwoche.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Lieferung.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Schichtarbeitstag.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Backend_Interface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller_Base.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/w3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Database_Connectivity_Module/Zulieferer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Database_Connectivity_Module/ZuliefererManager.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="irgendwas ist komisch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSVDATA/loadFahrplaene.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CSVDATA/loadFahrplaene.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSVDATA/loadLieferungen.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CSVDATA/loadLieferungen.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data_Manipulation_Module/Datamanipulation_data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_Manipulation_Module/Datamanipulation_data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Backend_Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Backend_Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,12 +120,12 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sternke\IdeaProjects\untitled\CSVDATA" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Marcos Ramos\IdeaProjects\untitled\src\sample" />
       <recent name="C:\Users\Marcos Ramos\IdeaProjects\untitled\src\sample\META-INF" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sternke\IdeaProjects\untitled\CSVDATA" />
     </key>
   </component>
   <component name="RunManager">
@@ -406,7 +373,8 @@
     <MESSAGE value="Eine interface methode für lieferungen hinzugefügt. backend hier für angepasst. viele code und einen query geändert. ich habe 14 kroketten in meinem bauch und bin sehr satt. das war sehr lecker" />
     <MESSAGE value="test" />
     <MESSAGE value="GUIs verbessert" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUIs verbessert" />
+    <MESSAGE value="irgendwas ist komisch" />
+    <option name="LAST_COMMIT_MESSAGE" value="irgendwas ist komisch" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="23" key="#Project_Structure" timestamp="1580244137354">
@@ -430,10 +398,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="479" y="250" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1581063501138" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1581276908079">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1581277935453">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581276908079" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581277935453" />
     <state x="389" y="106" key="FileChooserDialogImpl" timestamp="1580315843959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -495,14 +463,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="156" key="git4idea.merge.GitMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1581277149234" />
-    <state x="415" y="156" key="git4idea.merge.GitPullDialog" timestamp="1581277132954">
+    <state x="415" y="156" key="git4idea.merge.GitPullDialog" timestamp="1581279005171">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="415" y="156" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1581277132954" />
-    <state x="472" y="259" key="git4idea.ui.GitResetDialog" timestamp="1581276943165">
+    <state x="415" y="156" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1581279005171" />
+    <state x="488" y="229" key="git4idea.rebase.GitRebaseDialog" timestamp="1581277734603">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="472" y="259" key="git4idea.ui.GitResetDialog/0.0.1366.728@0.0.1366.728" timestamp="1581276943165" />
+    <state x="488" y="229" key="git4idea.rebase.GitRebaseDialog/0.0.1366.728@0.0.1366.728" timestamp="1581277734603" />
+    <state x="472" y="259" key="git4idea.ui.GitResetDialog" timestamp="1581277579505">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="472" y="259" key="git4idea.ui.GitResetDialog/0.0.1366.728@0.0.1366.728" timestamp="1581277579505" />
+    <state x="443" y="197" key="git4idea.ui.GitUnstashDialog" timestamp="1581277565603">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="443" y="197" key="git4idea.ui.GitUnstashDialog/0.0.1366.728@0.0.1366.728" timestamp="1581277565603" />
     <state x="65" y="67" key="new project wizard" timestamp="1580196964531">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
