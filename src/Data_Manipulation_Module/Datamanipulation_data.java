@@ -3,6 +3,7 @@ package Data_Manipulation_Module;
 import Database_Connectivity_Module.*;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
@@ -23,12 +24,22 @@ public class Datamanipulation_data {
         String bestellungen = "CSVDATA/loadBestellungen.txt";
         String lieferungen = "CSVDATA/loadLieferungen.txt";
         String fahrplaene = "CSVDATA/loadFahrplaene.txt";
+        String zulieferer = "CSVDATA/loadZulieferer.txt";
+
 
         writeSchichtarbeitstage(schichtartbeitstage);
         writeKalenderwochen(kalenderwochen);
         writeBestellungen(bestellungen);
         writeLieferungen(lieferungen);
         writeFahrplaene(fahrplaene);
+        writeZulieferer(zulieferer);
+    }
+
+    public void writeZulieferer(String path){
+        System.out.println("        Zulieferer...");
+        BufferedWriter writer = getWriter(path);
+        //TODO
+
     }
 
     public void writeFahrplaene(String path) {
@@ -200,13 +211,19 @@ public class Datamanipulation_data {
         String bestellungen = "CSVDATA/loadBestellungen.txt";
         String lieferungen = "CSVDATA/loadLieferungen.txt";
         String fahrplaene = "CSVDATA/loadFahrplaene.txt";
+        String zulieferer = "CSVDATA/loadZulieferer.txt";
+
         loadSchichtarbeitstage(schichtartbeitstage);
         loadKalenderwoche(kalenderwochen);
         loadBestellungen(bestellungen);
         loadLieferungen(lieferungen);
         loadFahrplaene(fahrplaene);
+        loadZulieferer(zulieferer);
+    }
 
-
+    private void loadZulieferer(String zulieferer){
+        List<String> strings = Database_Helper.fullFileToStringList(zulieferer);
+        //TODO
     }
 
     private void loadFahrplaene(String fahrplaene) {
@@ -334,6 +351,8 @@ public class Datamanipulation_data {
 
 
     private BufferedWriter getWriter(String path) {
+        File file = new File(path);
+        file.delete();
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(path, true));

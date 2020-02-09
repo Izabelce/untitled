@@ -59,6 +59,9 @@ public class Data_Manipulation_Controller {
         monatsArbeitstage = null;
         kwList = null;
     }
+    public void enlistDatabaseConnectivity_Interface(Database_Connectivity_Interface database_connectivity_interface){
+        this.connectivity_interface = database_connectivity_interface;
+    }
 
     private void fahrplanGenerieren() {
         abfahrtstage = queryA.getFahrplanTage();

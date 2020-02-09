@@ -14,7 +14,7 @@ public class Data_Manipulation_Interface {
     private List<Kalenderwoche> relevanteKW;
     private List<Lieferung> relevanteLieferungen;
     private List<Bestellung> relevanteBestellungen;
-    private static final int LIEFERUNGENINFOLENGTH =5;
+    private static final int LIEFERUNGENINFOLENGTH = 5;
     private static final int BESTELLUNGENINFOLENGTH = 4;
     private Lieferung[] heutigeLieferungen;
     int lieferungenZeiger;
@@ -99,20 +99,19 @@ public class Data_Manipulation_Interface {
     }
 
 
-    public String[] getCurrentBestellungInfos(){
+    public String[] getCurrentBestellungInfos() {
         String[] infos = new String[BESTELLUNGENINFOLENGTH];
 
         infos[0] = heutigeBestellungen[bestellungenzeiger].getBestellungstag();
         infos[1] = heutigeBestellungen[bestellungenzeiger].getLiefertag();
-        infos[2] = Komponentenzuordnung.getCanonicalName( heutigeBestellungen[bestellungenzeiger].getModelltyp_ID());
+        infos[2] = Komponentenzuordnung.getCanonicalName(heutigeBestellungen[bestellungenzeiger].getModelltyp_ID());
 
         infos[3] = Integer.toString(heutigeBestellungen[bestellungenzeiger].getAnzahl());
         return infos;
     }
 
 
-
-    public void setTagderBestellungen (String datum) {
+    public void setTagderBestellungen(String datum) {
         Schichtarbeitstag tag = getTag(datum);
         heutigeBestellungen = tag.getBestellungen().toArray(new Bestellung[0]);
         relevanteBestellungen.addAll(tag.getBestellungen());
@@ -127,7 +126,7 @@ public class Data_Manipulation_Interface {
         return true;
     }
 
-    private Schichtarbeitstag getTag(String datum){
+    private Schichtarbeitstag getTag(String datum) {
         int id = myController.getTagIDFromString(datum);
         Schichtarbeitstag tag = null;
         for (Schichtarbeitstag t : relevanteAT) {
@@ -141,17 +140,41 @@ public class Data_Manipulation_Interface {
         return tag;
     }
 
+    public String[] getLagerbestandTag(int datum) {
+        String[] bestand = new String[22];
+        Schichtarbeitstag tag = myController.getAlleTage()[myController.getTagIDFromString(datum)];
+        for(int i =0; i<22; i++){
+            bestand[i] = Integer.toString(tag.getLager2()[i]);
+        }
+        return bestand;
+    }
+
+    public String[][] getLagerbestandInRange(String datumErsterTag, String datumLetzterTag){
+        int erstertag = myController.getTagIDFromString(datumErsterTag);
+        int letzterTag = myController.getTagIDFromString(datumLetzterTag);
+        String[][] returnvalue = new String[(letzterTag-erstertag) + 1][22];
+        Schichtarbeitstag tag = myController.getAlleTage()[letzterTag];
+        for(int i= returnvalue.length-1; i>=0;i--){
+        returnvalue[i] = getLagerbestandTag(tag.getArbeitstag_ID());
+        tag = tag.getVortag();
+        }
+        return returnvalue;
+    }
+
+
     public int getLieferAnzahl() {
         return heutigeLieferungen.length;
     }
-    public int getBestellanzahl(){
+
+    public int getBestellanzahl() {
         return heutigeBestellungen.length;
     }
 
-    public int getLieferungeninfolength(){
-        return  LIEFERUNGENINFOLENGTH;
+    public int getLieferungeninfolength() {
+        return LIEFERUNGENINFOLENGTH;
     }
-    public int getBestellungeninfolength(){
+
+    public int getBestellungeninfolength() {
         return BESTELLUNGENINFOLENGTH;
     }
 }

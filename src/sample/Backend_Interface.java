@@ -49,12 +49,13 @@ public class Backend_Interface {
 
     /**
      * gibt ein array über alle infos der Lieferungen des angegebenen tages durch
-     *aufbau ist bisher:
+     * aufbau ist bisher:
      * 0: tag an dem die Lieferung eintrifft
      * 1: ID der komponente (später hier der name...)
      * 2: die anzahl der gelieferten komponenten
      * 3: ob die lieferung schon eingetroffen ist (zur zeit "no")
      * 4: der tag, an dem die lieferung beim Lieferanten erfasst wurde
+     *
      * @param datum der tag, von dem die infos kommen
      * @return zweidimensionales array, erste dimension ist die lieferung, zweite dimension sind die Infos der Lieferung
      */
@@ -82,15 +83,16 @@ public class Backend_Interface {
 
     /**
      * gibt ein array über alle infos der Bestellungen des angegebenen tages durch
-     *aufbau ist bisher:
+     * aufbau ist bisher:
      * 0: der Tag an dem bestellt wurde
      * 1: der Tag an dem die Bestellung "abgeholt" wird
      * 2: das Modell des Fahrrads
      * 3: die Anzahl der bestellten Fahrräder
+     *
      * @param datum der tag, von dem die infos kommen
      * @return zweidimensionales array, erste dimension ist die Bestellung, zweite dimension sind die Infos der Bestellung
      */
-    public String[][] getBestellwerte(String datum){
+    public String[][] getBestellwerte(String datum) {
         dataInterface.setTagderBestellungen(datum);
         int anzahl_bestellungen = dataInterface.getBestellanzahl();
         if (anzahl_bestellungen == 0) {
@@ -107,6 +109,10 @@ public class Backend_Interface {
             counter++;
         }
         return infos;
+    }
+
+    public String[][] bestandsreport(String datumErsterTag, String datumLetzterTag) {
+        return dataInterface.getLagerbestandInRange(datumErsterTag, datumLetzterTag);
     }
 
 }
