@@ -15,7 +15,7 @@ public class Backend_Interface {
         return dataInterface.getToday();
     }
 
-    //TO-DO Methode set Heute implementieren
+
     public void setHeute(String heute) {
         dataInterface.setToday(heute);
     }
@@ -75,8 +75,6 @@ public class Backend_Interface {
             }
             counter++;
         }
-
-
         return infos;
     }
 

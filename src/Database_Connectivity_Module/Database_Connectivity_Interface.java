@@ -1,6 +1,8 @@
 package Database_Connectivity_Module;
 
 
+import Data_Manipulation_Module.Land;
+
 import java.sql.ResultSet;
 
 public class Database_Connectivity_Interface {
@@ -12,8 +14,13 @@ public class Database_Connectivity_Interface {
         myController = dbController;
     }
 
-    public static int getPuffer() {
-        return 50;
+    public static int getPuffer(Land l){
+        switch (l){
+            case Spanien: return 50;
+            case China: return 100;
+            case Baden_Württemberg: return 25;
+        }
+        return -1;
     }
 
     public int heute() {

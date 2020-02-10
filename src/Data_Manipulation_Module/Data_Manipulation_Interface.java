@@ -45,18 +45,11 @@ public class Data_Manipulation_Interface {
         return neueBestellungVersuchen(fahrradID, anzahl, myController.getTagIDFromString(liefertag));
     }
 
-    public void calculateDayZielvorgaben() {
-        myController.zielVorgabenWorkflow();
-    }
 
     public String getToday() {
         return myController.getToday();
     }
 
-    public void test() {
-        System.out.println(neueBestellungVersuchen(2, 33, 129));
-        System.out.println(neueBestellungVersuchen(2, 33, 123));
-    }
 
     public void setToday(String heute) {
         myController.setToday(heute);
@@ -141,22 +134,28 @@ public class Data_Manipulation_Interface {
     }
 
     public String[] getLagerbestandTag(int datum) {
-        String[] bestand = new String[22];
+        String[] bestand = new String[44];
         Schichtarbeitstag tag = myController.getAlleTage()[datum];
-        for(int i =0; i<22; i++){
-            bestand[i] = Integer.toString(tag.getLager2()[i]);
+        int offset = 0;
+        for (int i = 0; i < 44; i += 2) {
+            bestand[i] = Komponentenzuordnung.getCanonicalName(i + 1);
+            bestand[i + 1] = Integer.toString(tag.getLager2()[i - offset]);
+            if (i != 0) {
+                offset++;
+            }
         }
+
         return bestand;
     }
 
-    public String[][] getLagerbestandInRange(String datumErsterTag, String datumLetzterTag){
+    public String[][] getLagerbestandInRange(String datumErsterTag, String datumLetzterTag) {
         int erstertag = myController.getTagIDFromString(datumErsterTag);
         int letzterTag = myController.getTagIDFromString(datumLetzterTag);
-        String[][] returnvalue = new String[(letzterTag-erstertag) + 1][22];
+        String[][] returnvalue = new String[(letzterTag - erstertag) + 1][44];
         Schichtarbeitstag tag = myController.getAlleTage()[letzterTag];
-        for(int i= returnvalue.length-1; i>=0;i--){
-        returnvalue[i] = getLagerbestandTag(tag.getArbeitstag_ID());
-        tag = tag.getVortag();
+        for (int i = returnvalue.length - 1; i >= 0; i--) {
+            returnvalue[i] = getLagerbestandTag(tag.getArbeitstag_ID());
+            tag = tag.getVortag();
         }
         return returnvalue;
     }
