@@ -63,7 +63,7 @@ public class Controller1 implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view2.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Adventureworks_Bikes Version 2");
+            stage.setTitle("Adventureworks_Bikes Version 2 - 2. Main Menu");
             stage.setScene(new Scene(root1, 450, 450));
             stage.show();
             stage.setMaximized(true);
@@ -94,7 +94,7 @@ public class Controller1 implements Initializable {
             root1 = FXMLLoader.load(getClass().getResource("view2.fxml"));
             Stage stage = new Stage();
             stage.isFullScreen();
-            stage.setTitle("Adventureworks_Bikes Version 2");
+            stage.setTitle("Adventureworks_Bikes Version 2 - 2. Main Menu");
 
             stage.setScene(new Scene(root1, 450, 450));
 

@@ -57,7 +57,7 @@ public class Controller4 extends Controller_Base implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view11.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Adventureworks_Bikes Version 2");
+            stage.setTitle("Adventureworks_Bikes Version 2 - 11. Lieferungen");
             stage.setScene(new Scene(root1, 450, 450));
             stage.setMaximized(true);
             stage.show();
@@ -67,7 +67,7 @@ public class Controller4 extends Controller_Base implements Initializable {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
-        //((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node)(evt.getSource())).getScene().getWindow().hide();
     }
 
     public void geheZuBestell(Event evt) {
@@ -76,7 +76,7 @@ public class Controller4 extends Controller_Base implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view12.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Adventureworks_Bikes Version 2");
+            stage.setTitle("Adventureworks_Bikes Version 2 - 12. Bestellungen");
             stage.setScene(new Scene(root1, 450, 450));
             stage.setMaximized(true);
             stage.show();
@@ -86,7 +86,7 @@ public class Controller4 extends Controller_Base implements Initializable {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
-        //((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node)(evt.getSource())).getScene().getWindow().hide();
     }
 
     public void infos(Event evt) {
@@ -95,7 +95,7 @@ public class Controller4 extends Controller_Base implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view13.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Adventureworks_Bikes Version 2");
+            stage.setTitle("Adventureworks_Bikes Version 2 - 13. Infos");
             stage.setScene(new Scene(root1, 450, 450));
             stage.setMaximized(true);
             stage.show();
@@ -107,7 +107,7 @@ public class Controller4 extends Controller_Base implements Initializable {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
-        //((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node)(evt.getSource())).getScene().getWindow().hide();
     }
 
 

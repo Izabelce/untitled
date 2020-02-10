@@ -85,7 +85,7 @@ public class Controller7 extends Controller_Base {
                 e.printStackTrace();
             }
             // Hide this current window (if this is what you want)
-            //((Node)(evt.getSource())).getScene().getWindow().hide();
+            ((Node)(evt.getSource())).getScene().getWindow().hide();
         }
     }
 

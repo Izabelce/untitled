@@ -52,6 +52,7 @@ public class Controller5 extends Controller_Base  {
             java.sql.Date getZeitraumVon = java.sql.Date.valueOf(zeitraumVon.getValue());
             java.sql.Date getZeitraumBis = java.sql.Date.valueOf(zeitraumBis.getValue());
             SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
+            String[][] bestandArray = backendInterface.bestandsreport(ft.format(getZeitraumVon),ft.format(getZeitraumBis));
 
 
             //TODO HIER SOLL EIN PDF ERSTELLT WERDEN?
@@ -71,6 +72,9 @@ public class Controller5 extends Controller_Base  {
             }
 
         }
+
+        // Hide this current window (if this is what you want)
+        ((Node) (evt.getSource())).getScene().getWindow().hide();
 
 
     }

@@ -1,20 +1,22 @@
 package sample;
 
 import Database_Connectivity_Module.Lieferung;
+
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-
-import java.awt.*;
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.util.Date;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class Controller11 extends Controller_Base{
@@ -22,8 +24,18 @@ public class Controller11 extends Controller_Base{
     @FXML
     private DatePicker dateNew;
 
+
+    //private TableView<Table> table
     @FXML
-    private TextArea textArea;
+    private TableColumn textArea;
+    @FXML
+    private TableColumn zwei;
+    @FXML
+    private TableColumn drei;
+    @FXML
+    private TableColumn vier;
+    @FXML
+    private TableColumn fünf;
 
     @FXML
     private Label datum;
@@ -32,6 +44,16 @@ public class Controller11 extends Controller_Base{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         backendInterface = Backend_Interface.getInstance(null);
         datum.setText(backendInterface.getHeute());
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+
+        Date date = null;
+        try {
+            date = formatter.parse(backendInterface.getHeute());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        dateNew.setValue(date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
     }
 
     public void button_close(Event evt) {
@@ -64,19 +86,21 @@ public class Controller11 extends Controller_Base{
             String[][] lieferungenArray = backendInterface.getLieferwerte(ft.format(gettedDatePickerDate));
 
             String text = "";
+            //private int iNumber = 1:
             if(lieferungenArray != null){
                 for(int i=0; i<lieferungenArray.length;i++){
                     for(int j=0; j<lieferungenArray[i].length; j++){
                         text = text + (lieferungenArray[i][j]);
+                        text = text + " ";
                     }
-                    text = text + "/n";
+                    text = text + "\r\n";
                 }
             }else{
                 text = "heute gibt es leider keine Lieferungen :(";
             }
 
 
-            textArea.setText(text);
+            drei.setText(text);
 
         }
 

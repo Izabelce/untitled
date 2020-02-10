@@ -69,11 +69,16 @@ public class Controller3 extends Controller_Base implements Initializable {
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.isMaximized();
+                stage.isFullScreen();
+                stage.setTitle("Adventureworks_Bikes Version 2 - 2. Main Menu");
                 stage.show();
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            // Hide this current window (if this is what you want)
+            ((Node) (evt.getSource())).getScene().getWindow().hide();
         }
 
 

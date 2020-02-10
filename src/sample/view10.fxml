@@ -22,8 +22,6 @@
          <Label fx:id="datum" layoutX="80.0" layoutY="30.0" text="Label" />
          <Label layoutX="47.0" layoutY="112.0" text="Lager:" />
          <TextField fx:id="anzahl" layoutX="80.0" layoutY="108.0" prefHeight="25.0" prefWidth="56.0" promptText="Anzahl" />
-         <TextField layoutX="177.0" layoutY="244.0" prefHeight="25.0" prefWidth="247.0" />
-         <Label layoutX="259.0" layoutY="219.0" text="Pfad CSV-Datei:" />
          <Button layoutX="264.0" layoutY="308.0" mnemonicParsing="false" onAction="#button_close" text="Abbrechen" />
          <Button layoutX="226.0" layoutY="348.0" mnemonicParsing="false" onAction="#einpflegen" text="Lagerschaden einpflegen" />
          </children>
