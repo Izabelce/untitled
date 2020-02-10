@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -147,8 +146,8 @@
       <file leaf-file-name="Controller1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="43" column="41" lean-forward="true" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+            <state relative-caret-position="663">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -457,7 +456,7 @@
       <workItem from="1581105470579" duration="2815000" />
       <workItem from="1581182088688" duration="5967000" />
       <workItem from="1581257451899" duration="16096000" />
-      <workItem from="1581328256424" duration="3250000" />
+      <workItem from="1581328256424" duration="3878000" />
     </task>
     <task id="LOCAL-00001" summary="alles eingebunden. superporno">
       <created>1580326356950</created>
@@ -592,11 +591,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581329656653</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Erweiterung für lieferungen eingebaut. helfer für anzeigen eingefügt">
+      <created>1581333002321</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1581333002321</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72473000" />
+    <option name="totallyTimeSpent" value="73101000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1229,8 +1235,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="43" column="41" lean-forward="true" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+        <state relative-caret-position="663">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
