@@ -346,6 +346,9 @@ public class Datamanipulation_data {
             }
             alleTage[tagID] = tag;
         }
+        for(int i= alleTage.length-1; i>0; i--){
+            alleTage[i].setVortag(alleTage[i-1]);
+        }
         dmc.setAlleTage(alleTage);
     }
 
