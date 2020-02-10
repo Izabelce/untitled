@@ -31,6 +31,7 @@
          <DatePicker fx:id="zeitraumBis" layoutX="260.0" layoutY="87.0" />
                <TableView fx:id="bestand" layoutX="8.0" layoutY="140.0" prefHeight="446.0" prefWidth="688.0">
                    <columns>
+                       <TableColumn fx:id="tag" prefWidth="70.0" text="Tag" />
                        <TableColumn fx:id="Allrounder" prefWidth="70.0" text="MTB Allrounder" />
                        <TableColumn fx:id="Competition" prefWidth="70.0" text="MTB Competition" />
                        <TableColumn fx:id="Downhill" prefWidth="70.0" text="MTB Downhill" />

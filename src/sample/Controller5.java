@@ -34,8 +34,8 @@ public class Controller5 extends Controller_Base  {
 
     @FXML
     private TableView<BestandAnzeigeHelfer> bestand;
-    //@FXML
-   // private TableColumn<BestandAnzeigeHelfer, String> tag;
+    @FXML
+    private TableColumn<BestandAnzeigeHelfer, String> tag;
     @FXML
     private TableColumn<BestandAnzeigeHelfer, String> Allrounder;
     @FXML
@@ -118,11 +118,11 @@ public class Controller5 extends Controller_Base  {
                             bestandArray[i][3], bestandArray[i][4], bestandArray[i][5], bestandArray[i][6], bestandArray[i][7],
                             bestandArray[i][8], bestandArray[i][9], bestandArray[i][10], bestandArray[i][11], bestandArray[i][12],
                             bestandArray[i][13], bestandArray[i][14], bestandArray[i][15], bestandArray[i][16], bestandArray[i][17],
-                            bestandArray[i][18], bestandArray[i][19], bestandArray[i][20], bestandArray[i][21]);
+                            bestandArray[i][18], bestandArray[i][19], bestandArray[i][20], bestandArray[i][21], bestandArray[i][22]);
                     data.addAll(l);
                 }
 
-              //  tag.setCellValueFactory(new PropertyValueFactory<BestandAnzeigeHelfer, String>("tag"));
+                tag.setCellValueFactory(new PropertyValueFactory<BestandAnzeigeHelfer, String>("tag"));
                 Allrounder.setCellValueFactory(new PropertyValueFactory<BestandAnzeigeHelfer, String>("Allrounder"));
                 Competition.setCellValueFactory(new PropertyValueFactory<BestandAnzeigeHelfer, String>("Competition"));
                 Downhill.setCellValueFactory(new PropertyValueFactory<BestandAnzeigeHelfer, String>("Downhill"));
@@ -146,7 +146,6 @@ public class Controller5 extends Controller_Base  {
                 SL.setCellValueFactory(new PropertyValueFactory<BestandAnzeigeHelfer, String>("SL"));
                 Raidon.setCellValueFactory(new PropertyValueFactory<BestandAnzeigeHelfer, String>("Raidon"));
 
-                //drei.setText(text);
                 bestand.setItems(data);
             }
 

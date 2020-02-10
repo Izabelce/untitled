@@ -4,19 +4,73 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class BestandAnzeigeHelfer {
 
-//    private final SimpleStringProperty tag;
 
- //   public String getTag() {
-   //     return tag.get();
-  //  }
+    private final SimpleStringProperty tag;
+    private final SimpleStringProperty Allrounder;
+    private final SimpleStringProperty Competition;
+    private final SimpleStringProperty Downhill;
+    private final SimpleStringProperty Extreme;
+    private final SimpleStringProperty Freeride;
+    private final SimpleStringProperty Marathon;
+    private final SimpleStringProperty Performance;
+    private final SimpleStringProperty Trail;
+    private final SimpleStringProperty Tundra;
+    private final SimpleStringProperty Raceline;
+    private final SimpleStringProperty Spark;
+    private final SimpleStringProperty Speedline;
+    private final SimpleStringProperty a7005DB;
+    private final SimpleStringProperty a7005TB;
+    private final SimpleStringProperty Monocoque;
+    private final SimpleStringProperty F100;
+    private final SimpleStringProperty F80;
+    private final SimpleStringProperty Talas;
+    private final SimpleStringProperty Reba;
+    private final SimpleStringProperty f351;
+    private final SimpleStringProperty SL;
+    private final SimpleStringProperty Raidon;
 
-   // public SimpleStringProperty tagProperty() {
-   //     return tag;
-  //  }
+    public BestandAnzeigeHelfer(String tag, String Allrounder, String Competition, String Downhill, String Extreme,
+                                String Freeride, String Marathon, String Performance, String Trail, String Tundra,
+                                String Raceline, String Spark, String Speedline, String a7005DB, String a7005TB,
+                                String Monocoque, String F100, String F80, String Talas, String Reba, String f351,
+                                String SL, String Raidon) {
+        this.tag = new SimpleStringProperty(tag);
+        this.Allrounder = new SimpleStringProperty(Allrounder);
+        this.Competition = new SimpleStringProperty(Competition);
+        this.Downhill = new SimpleStringProperty(Downhill);
+        this.Extreme = new SimpleStringProperty(Extreme);
+        this.Freeride = new SimpleStringProperty(Freeride);
+        this.Marathon = new SimpleStringProperty(Marathon);
+        this.Performance = new SimpleStringProperty(Performance);
+        this.Trail = new SimpleStringProperty(Trail);
+        this.Tundra = new SimpleStringProperty(Tundra);
+        this.Raceline = new SimpleStringProperty(Raceline);
+        this.Spark = new SimpleStringProperty(Spark);
+        this.Speedline = new SimpleStringProperty(Speedline);
+        this.a7005DB = new SimpleStringProperty(a7005DB);
+        this.a7005TB = new SimpleStringProperty(a7005TB);
+        this.Monocoque = new SimpleStringProperty(Monocoque);
+        this.F100 = new SimpleStringProperty(F100);
+        this.F80 = new SimpleStringProperty(F80);
+        this.Talas = new SimpleStringProperty(Talas);
+        this.Reba = new SimpleStringProperty(Reba);
+        this.f351 = new SimpleStringProperty(f351);
+        this.SL = new SimpleStringProperty(SL);
+        this.Raidon = new SimpleStringProperty(Raidon);
+    }
 
-   // public void setTag(String tag) {
-    //    this.tag.set(tag);
-    //}
+
+    public String getTag() {
+        return tag.get();
+    }
+
+    public SimpleStringProperty tagProperty() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag.set(tag);
+    }
 
     public String getAllrounder() {
         return Allrounder.get();
@@ -280,58 +334,5 @@ public class BestandAnzeigeHelfer {
 
     public void setRaidon(String raidon) {
         this.Raidon.set(raidon);
-    }
-
-    private final SimpleStringProperty Allrounder;
-    private final SimpleStringProperty Competition;
-    private final SimpleStringProperty Downhill;
-    private final SimpleStringProperty Extreme;
-    private final SimpleStringProperty Freeride;
-    private final SimpleStringProperty Marathon;
-    private final SimpleStringProperty Performance;
-    private final SimpleStringProperty Trail;
-    private final SimpleStringProperty Tundra;
-    private final SimpleStringProperty Raceline;
-    private final SimpleStringProperty Spark;
-    private final SimpleStringProperty Speedline;
-    private final SimpleStringProperty a7005DB;
-    private final SimpleStringProperty a7005TB;
-    private final SimpleStringProperty Monocoque;
-    private final SimpleStringProperty F100;
-    private final SimpleStringProperty F80;
-    private final SimpleStringProperty Talas;
-    private final SimpleStringProperty Reba;
-    private final SimpleStringProperty f351;
-    private final SimpleStringProperty SL;
-    private final SimpleStringProperty Raidon;
-
-    public BestandAnzeigeHelfer(String Allrounder, String Competition, String Downhill,String Extreme,
-                                String Freeride, String Marathon, String Performance, String Trail, String Tundra,
-                                String Raceline, String Spark, String Speedline, String a7005DB, String a7005TB,
-                                String Monocoque, String F100, String F80, String Talas, String Reba, String f351,
-                                String SL, String Raidon) {
-       // this.tag = new SimpleStringProperty(tag);
-        this.Allrounder = new SimpleStringProperty(Allrounder);
-        this.Competition = new SimpleStringProperty(Competition);
-        this.Downhill = new SimpleStringProperty(Downhill);
-        this.Extreme = new SimpleStringProperty(Extreme);
-        this.Freeride = new SimpleStringProperty(Freeride);
-        this.Marathon = new SimpleStringProperty(Marathon);
-        this.Performance = new SimpleStringProperty(Performance);
-        this.Trail = new SimpleStringProperty(Trail);
-        this.Tundra = new SimpleStringProperty(Tundra);
-        this.Raceline = new SimpleStringProperty(Raceline);
-        this.Spark = new SimpleStringProperty(Spark);
-        this.Speedline = new SimpleStringProperty(Speedline);
-        this.a7005DB = new SimpleStringProperty(a7005DB);
-        this.a7005TB = new SimpleStringProperty(a7005TB);
-        this.Monocoque = new SimpleStringProperty(Monocoque);
-        this.F100 = new SimpleStringProperty(F100);
-        this.F80 = new SimpleStringProperty(F80);
-        this.Talas = new SimpleStringProperty(Talas);
-        this.Reba = new SimpleStringProperty(Reba);
-        this.f351 = new SimpleStringProperty(f351);
-        this.SL = new SimpleStringProperty(SL);
-        this.Raidon = new SimpleStringProperty(Raidon);
     }
 }

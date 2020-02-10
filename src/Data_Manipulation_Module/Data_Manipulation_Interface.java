@@ -137,7 +137,7 @@ public class Data_Manipulation_Interface {
         String[] bestand = new String[23];
         Schichtarbeitstag tag = myController.getAlleTage()[datum];
         bestand[0] = tag.getDatum();
-        for (int i = 1; i <tag.getLager2().length; i ++) {
+        for (int i = 1; i <=tag.getLager2().length; i ++) {
             bestand[i] = Integer.toString(tag.getLager2()[i-1]);
         }
 
@@ -149,7 +149,7 @@ public class Data_Manipulation_Interface {
         int letzterTag = myController.getTagIDFromString(datumLetzterTag);
         String[][] returnvalue = new String[(letzterTag - erstertag) + 1][23];
         Schichtarbeitstag tag = myController.getAlleTage()[letzterTag];
-        for (int i = returnvalue.length - 1; i >= 1; i--) {
+        for (int i = returnvalue.length - 1; i >= 0; i--) {
             returnvalue[i] = getLagerbestandTag(tag.getArbeitstag_ID());
             tag = tag.getVortag();
         }
