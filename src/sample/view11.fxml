@@ -24,19 +24,15 @@
           <DatePicker fx:id="dateNew" layoutX="336.0" layoutY="84.0" />
           <Button layoutX="530.0" layoutY="84.0" mnemonicParsing="false" onAction="#datum_OK" prefHeight="17.0" prefWidth="50.0" text="OK" />
          <Button layoutX="259.0" layoutY="361.0" mnemonicParsing="false" onAction="#button_close" text="Schliessen" />
-            <ScrollPane layoutX="64.0" layoutY="131.0" prefHeight="200.0" prefWidth="483.0">
-               <content>
-                  <TableView prefHeight="200.0" prefWidth="470.0">
-                     <columns>
-                        <TableColumn fx:id="drei" prefWidth="82.0" text="Ankunft" />
-                        <TableColumn prefWidth="157.0" text="ID" />
-                        <TableColumn prefWidth="61.0" text="Anzahl" />
-                        <TableColumn prefWidth="77.0" text="Eingetroffen" />
-                        <TableColumn prefWidth="92.0" text="Liefererfassung" />
-                     </columns>
-                  </TableView>
-               </content>
-            </ScrollPane>
+            <TableView layoutX="22.0" layoutY="140.0" prefHeight="200.0" prefWidth="550.0">
+               <columns>
+                  <TableColumn fx:id="drei" prefWidth="79.0" text="Ankunft" />
+                  <TableColumn prefWidth="242.0" text="ID" />
+                  <TableColumn prefWidth="53.0" text="Anzahl" />
+                  <TableColumn prefWidth="83.0" text="Eingetroffen" />
+                  <TableColumn prefWidth="92.0" text="Liefererfassung" />
+               </columns>
+            </TableView>
            </children>
         </Pane>
    </children>
