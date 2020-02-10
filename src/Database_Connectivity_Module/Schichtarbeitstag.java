@@ -24,6 +24,7 @@ public class Schichtarbeitstag {
     private Schichtarbeitstag vortag;
     private List<Bestellung> heutigeBestellungen;
     private int[] lager2;
+    private int[] ruckstand;
 
     public Schichtarbeitstag(int schicht_ID, int max_output, int[] arbeitsmappe, int kw_id, int tag_ID, HashSet<Land> holidays, String datum) {
         this.vortag = null;
@@ -42,6 +43,7 @@ public class Schichtarbeitstag {
             sum = sum + fahrradplan[i];
         }
         lager2 = new int[22];
+
     }
 
     public void setVortag(Schichtarbeitstag vortag) {

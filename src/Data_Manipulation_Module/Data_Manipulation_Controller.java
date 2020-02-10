@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
+import static java.lang.StrictMath.max;
+
 
 public class Data_Manipulation_Controller {
     private MetricsInterface mInf;
@@ -59,7 +61,8 @@ public class Data_Manipulation_Controller {
         monatsArbeitstage = null;
         kwList = null;
     }
-    public void enlistDatabaseConnectivity_Interface(Database_Connectivity_Interface database_connectivity_interface){
+
+    public void enlistDatabaseConnectivity_Interface(Database_Connectivity_Interface database_connectivity_interface) {
         this.connectivity_interface = database_connectivity_interface;
     }
 
@@ -336,10 +339,18 @@ public class Data_Manipulation_Controller {
         Schichtarbeitstag letzterTag = kw.getLast();
 
         for (int i = 9; i <= 22; i++) {
-            if (letzterTag.getLagerbestand(i) < Database_Connectivity_Interface.getPuffer() && letzterTag.getArbeitstag_ID() > 115) {
+            if (letzterTag.getLagerbestand(i) < Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()) && letzterTag.getArbeitstag_ID() > 115) {
                 Schichtarbeitstag starttag = starttagberechnen(Komponentenzuordnung.getKtypFromID(i), letzterArbeitstagVorwoche);
                 if (starttag == null) return false;
-                Lieferung neededLieferung = new Lieferung(i, letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(), letzterArbeitstagVorwoche.getArbeitstag_ID(), starttag.getArbeitstag_ID(), letzterArbeitstagVorwoche.getDatum(), starttag.getDatum());
+                int bedarf = max(ZuliefererManager.getZulieferer(i).getMindestLiefermenge(),letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()));
+                Lieferung neededLieferung = new Lieferung(
+                        i,
+                       // letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()),
+                        //ZuliefererManager.getZulieferer(i).getMindestLiefermenge(),
+                        bedarf,
+                        letzterArbeitstagVorwoche.getArbeitstag_ID(), starttag.getArbeitstag_ID(),
+                        letzterArbeitstagVorwoche.getDatum(),
+                        starttag.getDatum());
                 letzterArbeitstagVorwoche.addLieferung(neededLieferung);
             }
         }
@@ -538,10 +549,6 @@ public class Data_Manipulation_Controller {
         Schichtarbeitstag returnvalue = alleTage[today];
         if (returnvalue.getArbeitstag_ID() != today) throw new IllegalStateException("HEY");
         return returnvalue;
-    }
-
-    public String getAnzeigeWertFromID(int tagID) {
-        return null;
     }
 
 

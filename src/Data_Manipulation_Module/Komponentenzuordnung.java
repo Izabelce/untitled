@@ -143,7 +143,7 @@ public class Komponentenzuordnung {
             case 8:
                 return "MTBTrail";
             case 9:
-                return "Aluminkum 7005DB";
+                return "Aluminium 7005DB";
             case 10:
                 return "Aluminium 7005TB";
             case 11:
