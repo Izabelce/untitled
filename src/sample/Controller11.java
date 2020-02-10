@@ -24,8 +24,8 @@ public class Controller11 extends Controller_Base{
     @FXML
     private DatePicker dateNew;
 
-
-    //private TableView<Table> table
+    @FXML
+    private TableView<LieferungAnzeigeHelfer> table;
     @FXML
     private TableColumn textArea;
     @FXML

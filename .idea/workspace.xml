@@ -5,32 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Interface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Datamanipulation_data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Datamanipulation_data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Komponentenzuordnung.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Komponentenzuordnung.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Connectivity_Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Connectivity_Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Schichtarbeitstag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Schichtarbeitstag.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Backend_Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Backend_Interface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view10.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view10.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view11.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view11.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/view5.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/view10.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/view10.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/view11.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/view11.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/view5.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/view5.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581279025696</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="irgendwas ist komisch">
+      <created>1581330991089</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1581330991093</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -427,10 +413,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="479" y="250" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1581063501138" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1581279023501">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1581330987072">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581279023501" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581330987072" />
     <state x="389" y="106" key="FileChooserDialogImpl" timestamp="1580315843959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -467,10 +453,10 @@
     </state>
     <state width="1323" height="74" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1580197009862" />
     <state width="1109" height="244" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581288271130" />
-    <state x="395" y="81" key="MultipleFileMergeDialog" timestamp="1581279044258">
+    <state x="395" y="81" key="MultipleFileMergeDialog" timestamp="1581331023950">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="395" y="81" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1581279044258" />
+    <state x="395" y="81" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1581331023950" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1580315785687">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -492,10 +478,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="156" key="git4idea.merge.GitMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1581277149234" />
-    <state x="415" y="156" key="git4idea.merge.GitPullDialog" timestamp="1581279036801">
+    <state x="415" y="156" key="git4idea.merge.GitPullDialog" timestamp="1581333021753">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="415" y="156" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1581279036801" />
+    <state x="415" y="156" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1581333021753" />
     <state x="488" y="229" key="git4idea.rebase.GitRebaseDialog" timestamp="1581277734603">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
