@@ -40,31 +40,6 @@ public class Controller1 implements Initializable {
 
     }
 
-
-//TODO diese ausgegraute methode benutzen
-    //@FXML
-    //private TableView<LieferunganzeigeHelfer> lieferung;
-    //@FXML
-    //private TableColumn<LieferungAnzeigeHelfer, String> ankunftstag;
-    //@FXML
-    //private TableColumn<LieferungAnzeigeHelfer, String> komponente;
-    // @FXML
-    // private TableColumn<LieferungAnzeigeHelfer, String> anzahl;
-    // @FXML
-    // private TableColumn<LieferungAnzeigeHelfer, String> istEingetroffen;
-    // @FXML
-    // private TableColumn<LieferungAnzeigeHelfer, String> erfassungstag;
-    //@Override
-    //public void initialize(URL url, ResourceBundle resourceBundle) {
-//
-   //ankunftstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("ankunftstag"));
-   // komponente.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("komponente"));
-   //  anzahl.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("anzahl"));
-   //   istEingetroffen.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("istEingetroffen"));
-   //    erfassungstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("erfassungstag"));
-
-    //}
-
     public void button_demoNeu(Event evt) {
         //init die wichtigen objekte
 

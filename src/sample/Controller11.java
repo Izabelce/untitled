@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.text.ParseException;
@@ -19,26 +20,24 @@ import java.util.Date;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class Controller11 extends Controller_Base{
+public class Controller11 extends Controller_Base {
 
     @FXML
     private DatePicker dateNew;
 
+    //TODO diese ausgegraute methode benutzen
     @FXML
-    private TableView<LieferungAnzeigeHelfer> table;
+    private TableView<LieferungAnzeigeHelfer> lieferung;
     @FXML
-    private TableColumn textArea;
+    private TableColumn<LieferungAnzeigeHelfer, String> ankunftstag;
     @FXML
-    private TableColumn zwei;
+    private TableColumn<LieferungAnzeigeHelfer, String> komponente;
     @FXML
-    private TableColumn drei;
+    private TableColumn<LieferungAnzeigeHelfer, String> anzahl;
     @FXML
-    private TableColumn vier;
+    private TableColumn<LieferungAnzeigeHelfer, String> istEingetroffen;
     @FXML
-    private TableColumn fünf;
-
-    @FXML
-    private Label datum;
+    private TableColumn<LieferungAnzeigeHelfer, String> erfassungstag;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,13 +53,24 @@ public class Controller11 extends Controller_Base{
         }
 
         dateNew.setValue(date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+
+        ankunftstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("ankunftstag"));
+        komponente.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("komponente"));
+        anzahl.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("anzahl"));
+        istEingetroffen.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("istEingetroffen"));
+        erfassungstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("erfassungstag"))
     }
+
+    @FXML
+    private Label datum;
+
+
 
     public void button_close(Event evt) {
         Parent root1;
 
         // Hide this current window (if this is what you want)
-        ((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node) (evt.getSource())).getScene().getWindow().hide();
 
     }
 
@@ -70,14 +80,14 @@ public class Controller11 extends Controller_Base{
     public void datum_OK(Event evt) {
         Button b = (Button) evt.getSource();
 
-        if(dateNew.getValue() == null){
+        if (dateNew.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Ungültige Eingabe");
             alert.setHeaderText("Bitte ein gültiges Datum auswählen");
-           // alert.setContentText("Ooops, there was an error!");
+            // alert.setContentText("Ooops, there was an error!");
 
             alert.showAndWait();
-        }else {
+        } else {
             //TODO HERE
             java.sql.Date gettedDatePickerDate = java.sql.Date.valueOf(dateNew.getValue());
             SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
@@ -87,24 +97,24 @@ public class Controller11 extends Controller_Base{
 
             String text = "";
             //private int iNumber = 1:
-            if(lieferungenArray != null){
-                for(int i=0; i<lieferungenArray.length;i++){
-                    for(int j=0; j<lieferungenArray[i].length; j++){
+            if (lieferungenArray != null) {
+                for (int i = 0; i < lieferungenArray.length; i++) {
+                    for (int j = 0; j < lieferungenArray[i].length; j++) {
                         text = text + (lieferungenArray[i][j]);
                         text = text + " ";
                     }
                     text = text + "\r\n";
                 }
-            }else{
+            } else {
                 text = "heute gibt es leider keine Lieferungen :(";
             }
 
 
-            drei.setText(text);
+            //drei.setText(text);
 
         }
 
     }
 
 
-    }
+}
