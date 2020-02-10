@@ -1,15 +1,12 @@
 package sample;
 
-import Database_Connectivity_Module.Lieferung;
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -17,7 +14,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.ZoneId;
 import java.util.Date;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class Controller11 extends Controller_Base {
@@ -39,6 +35,8 @@ public class Controller11 extends Controller_Base {
     @FXML
     private TableColumn<LieferungAnzeigeHelfer, String> erfassungstag;
 
+    private final ObservableList<LieferungAnzeigeHelfer> data = FXCollections.observableArrayList();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         backendInterface = Backend_Interface.getInstance(null);
@@ -51,19 +49,11 @@ public class Controller11 extends Controller_Base {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         dateNew.setValue(date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-
-        ankunftstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("ankunftstag"));
-        komponente.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("komponente"));
-        anzahl.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("anzahl"));
-        istEingetroffen.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("istEingetroffen"));
-        erfassungstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("erfassungstag"))
     }
 
     @FXML
     private Label datum;
-
 
 
     public void button_close(Event evt) {
@@ -99,22 +89,21 @@ public class Controller11 extends Controller_Base {
             //private int iNumber = 1:
             if (lieferungenArray != null) {
                 for (int i = 0; i < lieferungenArray.length; i++) {
-                    for (int j = 0; j < lieferungenArray[i].length; j++) {
-                        text = text + (lieferungenArray[i][j]);
-                        text = text + " ";
-                    }
-                    text = text + "\r\n";
+                    LieferungAnzeigeHelfer l = new LieferungAnzeigeHelfer(lieferungenArray[i][0], lieferungenArray[i][1], lieferungenArray[i][2], lieferungenArray[i][3], lieferungenArray[i][4]);
+                    data.addAll(l);
                 }
-            } else {
-                text = "heute gibt es leider keine Lieferungen :(";
+
+                ankunftstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("ankunftstag"));
+                komponente.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("komponente"));
+                anzahl.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("anzahl"));
+                istEingetroffen.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("istEingetroffen"));
+                erfassungstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("erfassungstag"));
+
+                //drei.setText(text);
+                lieferung.setItems(data);
             }
 
-
-            //drei.setText(text);
-
         }
-
     }
-
-
 }
+
