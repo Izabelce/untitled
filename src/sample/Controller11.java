@@ -86,6 +86,8 @@ public class Controller11 extends Controller_Base {
             String[][] lieferungenArray = backendInterface.getLieferwerte(ft.format(gettedDatePickerDate));
 
             String text = "";
+            data.removeAll(data);
+            lieferung.setItems(data);
             //private int iNumber = 1:
             if (lieferungenArray != null) {
                 for (int i = 0; i < lieferungenArray.length; i++) {

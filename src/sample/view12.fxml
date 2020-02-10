@@ -23,12 +23,15 @@
            <Label layoutX="259.0" layoutY="88.0" text="Anzeigen für:" />
            <DatePicker fx:id="dateNew" layoutX="336.0" layoutY="84.0" />
            <Button layoutX="530.0" layoutY="84.0" mnemonicParsing="false" onAction="#datum_OK" prefHeight="17.0" prefWidth="50.0" text="OK" />
-           <ScrollPane layoutX="52.0" layoutY="123.0" prefHeight="220.0" prefWidth="496.0">
-               <content>
-                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="219.0" prefWidth="494.0" />
-               </content>
-           </ScrollPane>
            <Button layoutX="259.0" layoutY="361.0" mnemonicParsing="false" onAction="#button_close" text="Schliessen" />
+            <TableView fx:id="bestellung" layoutX="19.0" layoutY="131.0" prefHeight="200.0" prefWidth="550.0">
+               <columns>
+                  <TableColumn fx:id="bestellungstag" prefWidth="87.0" text="Bestellt am" />
+                  <TableColumn fx:id="abholungstag" prefWidth="98.0" text="Abholungstag" />
+                  <TableColumn fx:id="anzahl" prefWidth="72.0" text="Anzahl" />
+                  <TableColumn fx:id="modell" prefWidth="292.0" text="Modell" />
+               </columns>
+            </TableView>
            </children>
         </Pane>
     </children>
