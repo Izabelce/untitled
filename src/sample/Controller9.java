@@ -41,7 +41,7 @@ public class Controller9 extends Controller_Base {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view15.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Adventureworks_Bikes Version 2");
+            stage.setTitle("Adventureworks_Bikes Version 2 - 15. Verspätete Lieferung");
             stage.setScene(new Scene(root1, 450, 450));
             stage.setMaximized(true);
             stage.show();
@@ -51,7 +51,7 @@ public class Controller9 extends Controller_Base {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
-        //((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node)(evt.getSource())).getScene().getWindow().hide();
     }
 
     public void maschienenausfall(Event evt) {
@@ -60,7 +60,7 @@ public class Controller9 extends Controller_Base {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view16.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Adventureworks_Bikes Version 2");
+            stage.setTitle("Adventureworks_Bikes Version 2 - 16. Maschinenausfall");
             stage.setScene(new Scene(root1, 450, 450));
             stage.setMaximized(true);
             stage.show();
@@ -70,7 +70,7 @@ public class Controller9 extends Controller_Base {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
-        //((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node)(evt.getSource())).getScene().getWindow().hide();
     }
 
     public void ladungsverlust(Event evt) {
@@ -79,7 +79,7 @@ public class Controller9 extends Controller_Base {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view17.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Adventureworks_Bikes Version 2");
+            stage.setTitle("Adventureworks_Bikes Version 2 - 17. Ladungsverlust");
             stage.setScene(new Scene(root1, 450, 450));
             stage.setMaximized(true);
             stage.show();
@@ -89,6 +89,6 @@ public class Controller9 extends Controller_Base {
             e.printStackTrace();
         }
         // Hide this current window (if this is what you want)
-        //((Node)(evt.getSource())).getScene().getWindow().hide();
+        ((Node)(evt.getSource())).getScene().getWindow().hide();
     }
 }
