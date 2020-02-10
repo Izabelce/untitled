@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="471.0" prefWidth="598.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller12">
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="598.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller12">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />
@@ -23,8 +23,8 @@
            <Label layoutX="259.0" layoutY="88.0" text="Anzeigen für:" />
            <DatePicker fx:id="dateNew" layoutX="336.0" layoutY="84.0" />
            <Button layoutX="530.0" layoutY="84.0" mnemonicParsing="false" onAction="#datum_OK" prefHeight="17.0" prefWidth="50.0" text="OK" />
-           <Button layoutX="259.0" layoutY="361.0" mnemonicParsing="false" onAction="#button_close" text="Schliessen" />
-            <TableView fx:id="bestellung" layoutX="19.0" layoutY="131.0" prefHeight="200.0" prefWidth="550.0">
+           <Button layoutX="259.0" layoutY="503.0" mnemonicParsing="false" onAction="#button_close" text="Schliessen" />
+            <TableView fx:id="bestellung" layoutX="19.0" layoutY="131.0" prefHeight="363.0" prefWidth="550.0">
                <columns>
                   <TableColumn fx:id="bestellungstag" prefWidth="87.0" text="Bestellt am" />
                   <TableColumn fx:id="abholungstag" prefWidth="98.0" text="Abholungstag" />
