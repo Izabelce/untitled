@@ -11,8 +11,6 @@ public class Database_Controller {
     private String heute;
     private int heuteId;
 
-    private List<Bestellung> allBestellung;
-
     public Database_Controller(Database_Connector dbCon, Database_Helper dbHelp) {
         this(dbCon, dbHelp, "01.10.2020");
     }
@@ -26,26 +24,11 @@ public class Database_Controller {
 
         this.heute = heute;
         heuteId = dbCon.getKalendertagID(heute);
-        allBestellung = new LinkedList<Bestellung>();
+
+
     }
 
 
-
-    private Bestellung hasIssuedBestellung(int bestellID){
-        for(Bestellung b: allBestellung){
-            if(b.getBestell_ID() == bestellID) return b;
-        }
-        return null;
-    }
-
-    public Bestellung  getBestellungOnID(int bestellID){
-        Bestellung b = hasIssuedBestellung(bestellID);
-        if ( b == null){
-            // dbCon.
-        }
-
-        return b;
-    }
 
     public String getToday(){
         return heute;

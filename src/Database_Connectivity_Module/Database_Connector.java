@@ -338,4 +338,10 @@ public class Database_Connector {
             System.out.println("ERROR IN commit:" + err.getMessage());
         }
     }
+
+    public void fillStammdatenmanager() {
+
+
+
+    }
 }

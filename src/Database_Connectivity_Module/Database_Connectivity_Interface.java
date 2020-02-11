@@ -33,9 +33,7 @@ public class Database_Connectivity_Interface {
         return dbCon.doQuery(sql);
     }
 
-    public Bestellung getBestellung(int bestellID) {
-        return myController.getBestellungOnID(bestellID);
-    }
+
 
 
 

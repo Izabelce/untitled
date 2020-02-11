@@ -25,6 +25,7 @@ public class Datamanipulation_data {
         String lieferungen = "CSVDATA/loadLieferungen.txt";
         String fahrplaene = "CSVDATA/loadFahrplaene.txt";
         String zulieferer = "CSVDATA/loadZulieferer.txt";
+        String stammdaten = "CSVDATA/loadStammdaten.txt";
 
 
         writeSchichtarbeitstage(schichtartbeitstage);
@@ -33,9 +34,49 @@ public class Datamanipulation_data {
         writeLieferungen(lieferungen);
         writeFahrplaene(fahrplaene);
         writeZulieferer(zulieferer);
+        writeStammdaten(stammdaten);
     }
 
-    public void writeZulieferer(String path){
+    private void writeStammdaten(String path) {
+        System.out.println("        Stammdaten...");
+        BufferedWriter writer = getWriter(path);
+        try {
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilJanuar()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilFebruar()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilMaerz()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilApril()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilMai()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilJuni()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilJuli()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilAugust()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilSeptember()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilOktober()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilNovember()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilDezember()) + ", ");
+
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell1()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell2()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell3()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell4()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell5()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell5()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell6()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell7()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getAnteilModell8()) + ", ");
+
+            writer.append(Integer.toString(Stammdatenmanager.getVorlaufzeitChina()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getVorlaufzeitSpanien()) + ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getVorlaufZeitBW())+ ", ");
+
+            writer.append(Integer.toString(Stammdatenmanager.getGesamtProduktion()));
+
+        } catch (IOException ioe) {
+            System.err.println(ioe.getMessage());
+        }
+
+    }
+
+    public void writeZulieferer(String path) {
         System.out.println("        Zulieferer...");
         BufferedWriter writer = getWriter(path);
         //TODO
@@ -212,6 +253,7 @@ public class Datamanipulation_data {
         String lieferungen = "CSVDATA/loadLieferungen.txt";
         String fahrplaene = "CSVDATA/loadFahrplaene.txt";
         String zulieferer = "CSVDATA/loadZulieferer.txt";
+        String stammdaten = "CSVDATA/loadStammdaten.txt";
 
         loadSchichtarbeitstage(schichtartbeitstage);
         loadKalenderwoche(kalenderwochen);
@@ -219,9 +261,45 @@ public class Datamanipulation_data {
         loadLieferungen(lieferungen);
         loadFahrplaene(fahrplaene);
         loadZulieferer(zulieferer);
+        loadStammdaten(stammdaten);
+        dmc.candidatesherstellen();
     }
 
-    private void loadZulieferer(String zulieferer){
+    private void loadStammdaten(String stammdaten) {
+        List<String> strings = Database_Helper.fullFileToStringList(stammdaten);
+        for (String s : strings) {
+            String[] results = s.split(", ", 0);
+            Stammdatenmanager.setAnteilJanuar(Integer.parseInt(results[0]));
+            Stammdatenmanager.setAnteilFebruar(Integer.parseInt(results[1]));
+            Stammdatenmanager.setAnteilMaerz(Integer.parseInt(results[2]));
+            Stammdatenmanager.setAnteilApril(Integer.parseInt(results[3]));
+            Stammdatenmanager.setAnteilMai(Integer.parseInt(results[4]));
+            Stammdatenmanager.setAnteilJuni(Integer.parseInt(results[5]));
+            Stammdatenmanager.setAnteilJuli(Integer.parseInt(results[6]));
+            Stammdatenmanager.setAnteilAugust(Integer.parseInt(results[7]));
+            Stammdatenmanager.setAnteilSeptember(Integer.parseInt(results[8]));
+            Stammdatenmanager.setAnteilOktober(Integer.parseInt(results[9]));
+            Stammdatenmanager.setAnteilNovember(Integer.parseInt(results[10]));
+            Stammdatenmanager.setAnteilDezember(Integer.parseInt(results[11]));
+
+            Stammdatenmanager.setAnteilModell1(Integer.parseInt(results[12]));
+            Stammdatenmanager.setAnteilModell2(Integer.parseInt(results[13]));
+            Stammdatenmanager.setAnteilModell3(Integer.parseInt(results[14]));
+            Stammdatenmanager.setAnteilModell4(Integer.parseInt(results[15]));
+            Stammdatenmanager.setAnteilModell5(Integer.parseInt(results[16]));
+            Stammdatenmanager.setAnteilModell6(Integer.parseInt(results[17]));
+            Stammdatenmanager.setAnteilModell7(Integer.parseInt(results[18]));
+            Stammdatenmanager.setAnteilModell8(Integer.parseInt(results[19]));
+
+            Stammdatenmanager.setVorlaufzeitChina(Integer.parseInt(results[20]));
+            Stammdatenmanager.setVorlaufzeitSpanien(Integer.parseInt(results[21]));
+            Stammdatenmanager.setVorlaufZeitBW(Integer.parseInt(results[22]));
+
+            Stammdatenmanager.setGesamtProduktion(Integer.parseInt(results[23]));
+        }
+    }
+
+    private void loadZulieferer(String zulieferer) {
         List<String> strings = Database_Helper.fullFileToStringList(zulieferer);
         //TODO
     }
@@ -270,7 +348,8 @@ public class Datamanipulation_data {
 
     private void loadKalenderwoche(String kalenderwochen) {
         List<String> strings = Database_Helper.fullFileToStringList(kalenderwochen);
-        LinkedList<Kalenderwoche> kwList = new LinkedList<Kalenderwoche>();
+        Kalenderwoche[] kwList = new Kalenderwoche[dmc.getAlleTage()[dmc.getAlleTage().length-1].getKwID()];
+        int index =0;
         for (String s : strings) {
             String[] results = s.split(", ", 0);
             int kwID = dmc.getAlleTage()[Integer.parseInt(results[0])].getKwID();
@@ -278,7 +357,8 @@ public class Datamanipulation_data {
             for (int i = 0; i < results.length; i++) {
                 k.add(dmc.getAlleTage()[Integer.parseInt(results[i])]);
             }
-            kwList.add(k);
+           kwList[index] = k;
+            index++;
         }
         dmc.setKwList(kwList);
     }
@@ -346,8 +426,8 @@ public class Datamanipulation_data {
             }
             alleTage[tagID] = tag;
         }
-        for(int i= alleTage.length-1; i>0; i--){
-            alleTage[i].setVortag(alleTage[i-1]);
+        for (int i = alleTage.length - 1; i > 0; i--) {
+            alleTage[i].setVortag(alleTage[i - 1]);
         }
         dmc.setAlleTage(alleTage);
     }

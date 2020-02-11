@@ -9,7 +9,7 @@ public class Kalenderwoche {
     private Schichtarbeitstag[] arbeitstageDerKW;
     private int pointer;
 
-    public static List<Kalenderwoche> getKWListFromTage(Schichtarbeitstag[] alleTage) {
+    public static Kalenderwoche[] getKWListFromTage(Schichtarbeitstag[] alleTage) {
         HashMap<Integer, Kalenderwoche> mapping = new HashMap<Integer, Kalenderwoche>();
         List<Kalenderwoche> kwWeek = new LinkedList<Kalenderwoche>();
         for (int id =0; id<alleTage.length;id++){
@@ -25,7 +25,12 @@ public class Kalenderwoche {
             k.reset();
             kwWeek.add(k);
         }
-        return kwWeek;
+        Kalenderwoche[] alleKw = new Kalenderwoche[kwWeek.size()];
+        while(kwWeek.size()>0){
+            Kalenderwoche k = ((LinkedList<Kalenderwoche>) kwWeek).removeLast();
+            alleKw[k.getKwID()] = k;
+        }
+        return alleKw;
     }
 
     public int getKwID() {
