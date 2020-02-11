@@ -1,35 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane alignment="center" hgap="10" prefHeight="471.0" prefWidth="598.0" vgap="10" xmlns="http://javafx.com/javafx/8"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller11">
+
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="598.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller11">
     <columnConstraints>
-        <ColumnConstraints/>
-        <ColumnConstraints/>
+        <ColumnConstraints />
+        <ColumnConstraints />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints/>
-        <RowConstraints/>
+        <RowConstraints />
+        <RowConstraints />
     </rowConstraints>
     <children>
         <Pane prefHeight="542.0" prefWidth="649.0">
-            <children>
-                <Label layoutX="45.0" layoutY="30.0" text="Heute:"/>
-                <Label fx:id="datum" layoutX="80.0" layoutY="30.0" text="heutiges Datum"/>
-                <Label layoutX="259.0" layoutY="88.0" text="Anzeigen für:"/>
-                <DatePicker fx:id="dateNew" layoutX="336.0" layoutY="84.0"/>
-                <Button layoutX="530.0" layoutY="84.0" mnemonicParsing="false" onAction="#datum_OK" prefHeight="17.0"
-                        prefWidth="50.0" text="OK"/>
-                <Button layoutX="259.0" layoutY="361.0" mnemonicParsing="false" onAction="#button_close"
-                        text="Schliessen"/>
-                <TableView fx:id="lieferung" layoutX="22.0" layoutY="140.0" prefHeight="200.0" prefWidth="550.0">
+            <children>                <Label layoutX="45.0" layoutY="30.0" text="Heute:" />
+                <Label fx:id="datum" layoutX="80.0" layoutY="30.0" text="heutiges Datum" />
+                <Label layoutX="259.0" layoutY="88.0" text="Anzeigen für:" />
+                <DatePicker fx:id="dateNew" layoutX="336.0" layoutY="84.0" />
+                <Button layoutX="530.0" layoutY="84.0" mnemonicParsing="false" onAction="#datum_OK" prefHeight="17.0" prefWidth="50.0" text="OK" />
+                <Button layoutX="258.0" layoutY="503.0" mnemonicParsing="false" onAction="#button_close" text="Schliessen" />
+                <TableView fx:id="lieferung" layoutX="22.0" layoutY="140.0" prefHeight="353.0" prefWidth="550.0">
                     <columns>
-                        <TableColumn fx:id="ankunftstag" prefWidth="79.0" text="Ankunft"/>
-                        <TableColumn fx:id="komponente" prefWidth="242.0" text="Komponenttyp"/>
-                        <TableColumn fx:id="anzahl" prefWidth="53.0" text="Anzahl"/>
-                        <TableColumn fx:id="istEingetroffen" prefWidth="83.0" text="Eingetroffen"/>
-                        <TableColumn fx:id="erfassungstag" prefWidth="92.0" text="Liefererfassung"/>
+                        <TableColumn fx:id="ankunftstag" prefWidth="79.0" text="Ankunft" />
+                        <TableColumn fx:id="komponente" prefWidth="242.0" text="Komponenttyp" />
+                        <TableColumn fx:id="anzahl" prefWidth="53.0" text="Anzahl" />
+                        <TableColumn fx:id="istEingetroffen" prefWidth="83.0" text="Eingetroffen" />
+                        <TableColumn fx:id="erfassungstag" prefWidth="92.0" text="Liefererfassung" />
                     </columns>
                 </TableView>
             </children>

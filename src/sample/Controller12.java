@@ -1,13 +1,15 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.awt.*;
 import java.net.URL;
@@ -24,6 +26,19 @@ public class Controller12 extends Controller_Base{
 
     @FXML
     private Label datum;
+
+    @FXML
+    private TableView<BestellungAnzeigeHelfer> bestellung;
+    @FXML
+    private TableColumn<BestellungAnzeigeHelfer, String> bestellungstag;
+    @FXML
+    private TableColumn<BestellungAnzeigeHelfer, String> abholungstag;
+    @FXML
+    private TableColumn<BestellungAnzeigeHelfer, String> anzahl;
+    @FXML
+    private TableColumn<BestellungAnzeigeHelfer, String> modell;
+
+    private final ObservableList<BestellungAnzeigeHelfer> data = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -64,6 +79,29 @@ public class Controller12 extends Controller_Base{
             java.sql.Date gettedDatePickerDate = java.sql.Date.valueOf(dateNew.getValue());
             SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
             System.out.println(ft.format(gettedDatePickerDate));
+
+            String[][] bestellungenArray = backendInterface.getBestellwerte(ft.format(gettedDatePickerDate));
+
+            String text = "";
+            //private int iNumber = 1:
+            data.removeAll(data);
+            bestellung.setItems(data);
+
+            if (bestellungenArray != null) {
+                for (int i = 0; i < bestellungenArray.length; i++) {
+                    BestellungAnzeigeHelfer l = new BestellungAnzeigeHelfer(bestellungenArray[i][0], bestellungenArray[i][1], bestellungenArray[i][2], bestellungenArray[i][3]);
+                    data.addAll(l);
+                }
+
+                bestellungstag.setCellValueFactory(new PropertyValueFactory<BestellungAnzeigeHelfer, String>("bestellungstag"));
+                abholungstag.setCellValueFactory(new PropertyValueFactory<BestellungAnzeigeHelfer, String>("abholungstag"));
+                anzahl.setCellValueFactory(new PropertyValueFactory<BestellungAnzeigeHelfer, String>("modell"));
+                modell.setCellValueFactory(new PropertyValueFactory<BestellungAnzeigeHelfer, String>("anzahl"));
+
+                bestellung.setItems(data);
+            }else {
+                bestellung.setItems(null);
+            }
         }
     }
 }
