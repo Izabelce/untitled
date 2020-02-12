@@ -80,7 +80,7 @@ public class Controller1 implements Initializable {
     public void button_demoCont(Event evt) {
         Parent root1;
         System.out.println("Building Data_Manipulation_Module...");
-        Data_Manipulation_Controller dbManCon = new Data_Manipulation_Controller(new String[1]);
+        Data_Manipulation_Controller dbManCon = new Data_Manipulation_Controller((String[])null);
         Data_Manipulation_Interface manipulation_interface = new Data_Manipulation_Interface();
         manipulation_interface.enlistController(dbManCon);
         Datamanipulation_data dataHelper = new Datamanipulation_data((dbManCon));

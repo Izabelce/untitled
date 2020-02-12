@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Datamanipulation_data {
@@ -66,7 +65,7 @@ public class Datamanipulation_data {
 
             writer.append(Integer.toString(Stammdatenmanager.getVorlaufzeitChina()) + ", ");
             writer.append(Integer.toString(Stammdatenmanager.getVorlaufzeitSpanien()) + ", ");
-            writer.append(Integer.toString(Stammdatenmanager.getVorlaufZeitBW())+ ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getVorlaufZeitBW()) + ", ");
 
             writer.append(Integer.toString(Stammdatenmanager.getGesamtProduktion()));
 
@@ -348,8 +347,8 @@ public class Datamanipulation_data {
 
     private void loadKalenderwoche(String kalenderwochen) {
         List<String> strings = Database_Helper.fullFileToStringList(kalenderwochen);
-        Kalenderwoche[] kwList = new Kalenderwoche[dmc.getAlleTage()[dmc.getAlleTage().length-1].getKwID()];
-        int index =0;
+        Kalenderwoche[] kwList = new Kalenderwoche[dmc.getAlleTage()[dmc.getAlleTage().length-1].getKwID()+1];
+        int index = 0;
         for (String s : strings) {
             String[] results = s.split(", ", 0);
             int kwID = dmc.getAlleTage()[Integer.parseInt(results[0])].getKwID();
@@ -357,9 +356,10 @@ public class Datamanipulation_data {
             for (int i = 0; i < results.length; i++) {
                 k.add(dmc.getAlleTage()[Integer.parseInt(results[i])]);
             }
-           kwList[index] = k;
+            kwList[index] = k;
             index++;
         }
+
         dmc.setKwList(kwList);
     }
 

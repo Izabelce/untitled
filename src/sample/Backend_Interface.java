@@ -113,6 +113,104 @@ public class Backend_Interface {
         return dataInterface.getLagerbestandInRange(datumErsterTag, datumLetzterTag);
     }
 
+    /**
+     * Gibt eine Zahl als String zurück, die die Summe aller am angegebenen Tag zur Produktion eingeplanten Fahrräder ist (also Fahrradtyp 1 bis 8 summiert)
+     *
+     * @param datum der tag an dem die Summe erhalten werden soll
+     * @return summe als String
+     */
+    String getGesamtSummeProduktionTag(String datum) {
+        return dataInterface.getGesamtzahlProduktionDay(datum);
+    }
+
+    /**
+     * Gibt eine Zahl als String zurück, die die Summe aller geplanten Fahrräder in der Woche sind, zu der der tag gehört (fahrradtyp 1 bis summiert, wenn z.B. datum ein Dienstag ist,
+     * werden montag bis sonntag der selben woche summiert)
+     *
+     * @param datum der tag, von dem die woche summiert werden soll
+     * @return summe als string
+     */
+    String getGesamtSummeProduktionWoche(String datum) {
+        return dataInterface.getGesamtzahlProduktionWeek(datum);
+    }
+
+    /**
+     * gibt eine Zahl als String zurück, die die Summe aller geplanten Fahrräder in dem Monat sind, zu dem der Tag gehört (fahrradtyp 1 bis 8 summiert, ist datum z.b. 11.02.2021, wird 01.02.2021 bis 28.02.2021 summiert)
+     *
+     * @param datum der Tag, von dem der Monat summiert werden soll
+     * @return summe als String
+     */
+    String getGesamtSummeProduktionMonat(String datum) {
+        return dataInterface.getGesamtzahlProduktionMonth(datum);
+    }
+
+    /**
+     * gibt die gesamtzahl Produktion in 2021 zurück, das Datum wird ignoriert
+     *
+     * @param datum egal
+     * @return Die Summe als String
+     */
+    String getGesamtSummeProduktionJahr(String datum) {
+        return dataInterface.getGesamtProduktionJahr();
+    }
+
+    /**
+     * Gibt ein 2-d array String[i][j] über strings zurück
+     * aber nur der erste eintrag der ersten dimension [i] ist relevant
+     * für die daten der dimension 2, [j] gilt: erster Eintrag ist das Datum des tages, alle anderen einträge stehen für die jeweiligen komponenten
+     *
+     * @param datum das datum, an dem die bedarfe abgefragt werden
+     * @return s. beschreibung
+     */
+    String[][] getsekundarBedarfTag(String datum) {
+        return dataInterface.getSekundarBedarfTag(datum);
+    }
+
+    /**
+     * Gibt ein 2-d array String[i][j] über Strings zurück
+     * Die daten sind alle tage der woche, in der sich der angegebene tag befindet
+     * die dimension [i] steht für jeweils einen tag
+     * die dimension[j] steht für die bedarfe an dem tag[i]
+     * für die daten der dimension 2, [j] gilt: erster Eintrag ist das Datum des tages, alle anderen einträge stehen für die jeweiligen komponenten
+     * der letzte eintrag der Dimension[i] beschreibt die summe aller bedarfe
+     *
+     * @param datum der tag, von dem die woche abgefragt wird
+     * @return s. beschreibung
+     */
+    String[][] getSekundarBedarfWoche(String datum) {
+        return dataInterface.getSekundarbedarfWoche(datum);
+    }
+
+    /**
+     * Gibt ein 2-d array String[i][j] über Strings zurück
+     * Die daten sind alle tage des monats, in der sich der angegebene tag befindet
+     * die dimension [i] steht für jeweils einen tag
+     * die dimension[j] steht für die bedarfe an dem tag[i]
+     * für die daten der dimension 2, [j] gilt: erster Eintrag ist das Datum des tages, alle anderen einträge stehen für die jeweiligen komponenten
+     * der letzte eintrag der Dimension[i] beschreibt die summe aller bedarfe
+     *
+     * @param datum der tag, von dem der Monat abgefragt wird
+     * @return s. beschreibung
+     */
+    String[][] getSukndarBedarfMonat(String datum) {
+        return dataInterface.getSekundarbedarfMonat(datum);
+    }
+
+    /**
+     * Gibt ein 2-d array String[i][j] über Strings zurück
+     * Die daten sind alle tage des jahres 2021
+     * die dimension [i] steht für jeweils einen tag
+     * die dimension[j] steht für die bedarfe an dem tag[i]
+     * für die daten der dimension 2, [j] gilt: erster Eintrag ist das Datum des tages, alle anderen
+     * der letzte eintrag der Dimension[i] beschreibt die summe aller bedarfe
+     * @param datum egal kann auch null sein
+     * @return s. beschreibung
+     */
+    String[][] getSekundarBedarfJahr(String datum){
+        return dataInterface.getSekundarbedarfeJahr();
+    }
+
+
 }
 
 

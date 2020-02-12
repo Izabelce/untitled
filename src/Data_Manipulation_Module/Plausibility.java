@@ -7,11 +7,13 @@ public class Plausibility {
     }
 
     public static boolean isWrongID(int fahrradID) {
-        return(fahrradID<0 || fahrradID>9);
+        return (fahrradID < 0 || fahrradID > 9);
     }
 
 
-
+    public boolean isPlausibleDatum(String datum) {
+        return false;
+    }
 
     public void enlistController(Data_Manipulation_Controller con) {
         myController = con;

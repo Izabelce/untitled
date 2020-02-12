@@ -25,6 +25,7 @@ public class Schichtarbeitstag {
     private List<Bestellung> heutigeBestellungen;
     private int[] lager2;
     private int[] ruckstand;
+    private int[] sekundarbedarf;
 
     public Schichtarbeitstag(int schicht_ID, int max_output, int[] arbeitsmappe, int kw_id, int tag_ID, HashSet<Land> holidays, String datum) {
         this.vortag = null;
@@ -43,7 +44,21 @@ public class Schichtarbeitstag {
             sum = sum + fahrradplan[i];
         }
         lager2 = new int[22];
+        sekundarbedarfBerechnen();
 
+    }
+
+    private void sekundarbedarfBerechnen() {
+        this.sekundarbedarf = new int[14];
+        for (int i = 0; i < fahrradplan.length; i++) {
+            int anzahl = fahrradplan[i];
+            int gabelId = Komponentenzuordnung.getGabelID(i + 1);
+            int sattelId = Komponentenzuordnung.getSattelID(i + 1);
+            int rahmenId = Komponentenzuordnung.getRahmenID(i + 1);
+            sekundarbedarf[gabelId - 1] = sekundarbedarf[gabelId - 1] + anzahl;
+            sekundarbedarf[sattelId - 1] = sekundarbedarf[sattelId - 1] + anzahl;
+            sekundarbedarf[rahmenId - 1] = sekundarbedarf[rahmenId - 1] + anzahl;
+        }
     }
 
     public void setVortag(Schichtarbeitstag vortag) {
@@ -362,5 +377,17 @@ public class Schichtarbeitstag {
 
     public int[] getLager2() {
         return lager2;
+    }
+
+    public String[] getSekundarBedarfe(String[] args) {
+        String[] returnvalue = new String[sekundarbedarf.length];
+        for(int i=0; i<returnvalue.length;i++){
+            returnvalue[i] = Integer.toString(sekundarbedarf[i]);
+        }
+        return returnvalue;
+    }
+
+    public int[] getSekundarBedarfe(){
+        return this.sekundarbedarf;
     }
 }
