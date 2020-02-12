@@ -298,15 +298,11 @@ public class Data_Manipulation_Interface {
         String[] summen = new String[15];
         summen[0] = "SUMMEN:";
         int id= ersterTagID;
-        for(int i=1; i<bedarfe.length; i++){
-            String[] all = new String[15];
-            all[0] = myController.getAlleTage()[id].getDatum();
-            for(int j =1; j< myController.getAlleTage()[id].getSekundarBedarfe().length; j++){
-                all[j] = myController.getAlleTage()[id].getSekundarBedarfe((String[]) null)[j-1];
-                sums[j-1] = sums[j-1] + myController.getAlleTage()[id].getSekundarBedarfe()[j-1];
-                myController.getAlleTage()[id].getSekundarBedarfe((String[])null);
+        for(int i=0; i<bedarfe.length; i++){
+            for(int j =0; j< myController.getAlleTage()[id].getSekundarBedarfe().length; j++){
+                sums[j] = sums[j] + myController.getAlleTage()[id].getSekundarBedarfe()[j];
             }
-            bedarfe[i] = all;
+            bedarfe[i] = myController.getAlleTage()[id].getSekundarBedarfe((String[])null);
             id++;
         }
         for(int l = 1; l<15; l++){
@@ -351,6 +347,36 @@ public class Data_Manipulation_Interface {
     public String[][] getSekundarbedarfeJahr(){
         return  getsekundarBedarfInRange(myController.getAlleTage()[0].getDatum(), myController.getAlleTage()[myController.getAlleTage().length-1].getDatum());
     }
+
+    public String[][] getProduktionsplanungInRange(String datumErsterTag, String datumLetzterTag){
+        int ersterTagID = myController.getTagIDFromString(datumErsterTag);
+        int letzterTagID = myController.getTagIDFromString(datumLetzterTag);
+        String[][] returnvalue = new String[letzterTagID-ersterTagID+1][9];
+        int id= ersterTagID;
+        for(int i =0; i< returnvalue.length; i++){
+            returnvalue[i] = myController.getAlleTage()[id].getFahrradplanStrings();
+        }
+        return returnvalue;
+    }
+
+    public String[][] getProduktionsplanungTag(String datum){
+        return getProduktionsplanungInRange(datum, datum);
+    }
+
+    public String[][] getProduktionsplanungWoche(String datum){
+        Kalenderwoche kw = myController.getKwList()[myController.getAlleTage()[myController.getTagIDFromString(datum)].getKwID()];
+        return getProduktionsplanungInRange(kw.getFirst().getDatum(), kw.getLast().getDatum());
+    }
+
+    public String[][] getProduktionsplanungMonat(String datum){
+        String[] monatsdaten = getDatumMonthEnden(datum);
+        return getProduktionsplanungInRange(monatsdaten[0], monatsdaten[1]);
+    }
+
+    public String[][] getProduktionsplanungJahr(String datum){
+        return getProduktionsplanungInRange(myController.getAlleTage()[0].getDatum(), myController.getAlleTage()[myController.getAlleTage().length-1].getDatum());
+    }
+
 
     /**
      * gibt die anzahl der an dem tag vorgesehenen lieferungen zurück

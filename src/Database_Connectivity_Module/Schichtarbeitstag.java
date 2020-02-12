@@ -380,14 +380,25 @@ public class Schichtarbeitstag {
     }
 
     public String[] getSekundarBedarfe(String[] args) {
-        String[] returnvalue = new String[sekundarbedarf.length];
-        for(int i=0; i<returnvalue.length;i++){
-            returnvalue[i] = Integer.toString(sekundarbedarf[i]);
+        String[] returnvalue = new String[sekundarbedarf.length+1];
+        for(int i=1; i<returnvalue.length;i++){
+            returnvalue[i] = Integer.toString(sekundarbedarf[i-1]);
         }
+        returnvalue[0] = datum;
         return returnvalue;
     }
 
     public int[] getSekundarBedarfe(){
         return this.sekundarbedarf;
     }
+
+    public String[] getFahrradplanStrings(){
+        String[] returnvalue = new String[9];
+        for(int i=1; i<fahrradplan.length; i++){
+            returnvalue [i] = Integer.toString(fahrradplan[i-1]);
+        }
+        returnvalue[0] = datum;
+        return returnvalue;
+    }
+
 }

@@ -211,32 +211,67 @@ public class Backend_Interface {
     }
 
 
+    /**
+     * Gibt 2-d array String[i][j] über Strings zurück
+     * die daten sind alle tage des jahres 2021
+     * die dimension [i] steht für jeweils einen tag
+     * die dimension[j] steht für die bedarfe an dem tag[i]
+     * für die daten der dimension 2, [j] gilt: erster Eintrag ist das Datum des tages, alle anderen sind die fahrräder
+     * die Länge ist also insgesamt 9 (j =0 ist datum, j =1 bis J=8 sind fahrräder)
+     *
+     * @param datum egal, kann auch null sein
+     * @return s.beschreibung
+     */
+    public String[][] produktionsplanungJahr(String datum) {
 
-
-    //Methode, die die Produktionsplanung der Fahrräder für das aktuelle Jahr anzeigt (22 Stellen )
-    public String[][] produktionsplanungJahr(String jahr) {
-        return null;
+        return dataInterface.getProduktionsplanungJahr(datum);
     }
 
-    //Methode, die die Produktionsplanung der Fahrräder für das aktuelle Monat nzeigt (22 Stellen )
-    public String[][] produktionsplanungMonat(String monat) {
-        return null;
+    /**
+     * gibt 2-d array String[i][j] über Strings zurück
+     * die daten sind alle tage des monats, zu dem der tag (datum) gehört
+     * die dimension [i] steht für jeweils einen tag
+     * die dimension[j] steht für die bedarfe an dem tag[i]
+     * für die daten der dimension 2, [j] gilt: erster Eintrag ist das Datum des tages, alle anderen sind die fahrräder
+     * die Länge ist also insgesamt 9 (j =0 ist datum, j =1 bis J=8 sind fahrräder)
+     * @param datum tag, von dem der monat angezeigt werden soll
+     * @return s. beschreibung
+     */
+    public String[][] produktionsplanungMonat(String datum) {
+
+        return dataInterface.getProduktionsplanungMonat(datum);
     }
 
-    //Methode, die die Produktionsplanung der Fahrräder für das aktuelle Woche nzeigt (22 Stellen )
-    public String[][] produktionsplanungWoche(String woche) {
-        return null;
+    /**
+     * gibt 2-d array String[i][j] über Strings zurück
+     * die daten sind alle tage der woche, zu dem der tag (datum) gehört
+     * die dimension [i] steht für jeweils einen tag
+     * die dimension[j] steht für die bedarfe an dem tag[i]
+     * für die daten der dimension 2, [j] gilt: erster Eintrag ist das Datum des tages, alle anderen sind die fahrräder
+     * die Länge ist also insgesamt 9 (j =0 ist datum, j =1 bis J=8 sind fahrräder)
+     * @param datum tag, von dem die woche angezeigt werden soll
+     * @return s. beschreibung
+     */
+    public String[][] produktionsplanungWoche(String datum) {
+
+        return  dataInterface.getSekundarbedarfWoche(datum);
     }
 
-    //Methode, die die Produktionsplanung der Fahrräder für das aktuelle Tag nzeigt (22 Stellen )
-    public String[][] produktionsplanungTag(String tag) {
-        return null;
+    /**
+     * gibt 2-d array String[i][j] über Strings zurück
+     * die daten sind der tag, der im datum angegeben ist
+     * die dimension [i] steht für jeweils einen tag und hat somit nur 1 stelle (index =0)
+     * die dimension[j] steht für die bedarfe an dem tag[i]
+     * für die daten der dimension 2, [j] gilt: erster Eintrag ist das Datum des tages, alle anderen sind die fahrräder
+     * die Länge ist also insgesamt 9 (j =0 ist datum, j =1 bis J=8 sind fahrräder)
+     * @param datum
+     * @return
+     */
+    public String[][] produktionsplanungTag(String datum) {
+
+        return dataInterface.getProduktionsplanungTag(datum);
     }
 
-    //Methode, die die Produktion der Fahrräder in dem jeweiligen Monat anzeigt (23 Stellen )
-    public String[][] produktionTag(String monat) {
-        return null;
-    }
 
 }
 
