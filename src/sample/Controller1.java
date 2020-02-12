@@ -18,8 +18,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,11 +36,24 @@ public class Controller1 implements Initializable {
     private Label datumLabel;
     @FXML
     private Button btnOpenNewWindow;
+    @FXML
+    private ImageView logo;
 
 
     public void initialize() {
 
-        datumLabel.setText("PLATZHALTER");
+        try {
+            Image image = new Image(new FileInputStream("C:\\Users\\Public\\logo_adventure_works.png"));
+
+            //Setting the image view
+            ImageView imageView = new ImageView(image);
+            //Image image = new Image("file: C:\\Users\\Public\\logo_adventure_works.png");
+
+            logo.setImage(image);
+            logo.setCache(true);
+        } catch (FileNotFoundException f) {
+            f.printStackTrace();
+        }
 
     }
 
@@ -64,8 +81,13 @@ public class Controller1 implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view2.fxml"));
             Stage stage = new Stage();
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
+
+
             stage.setTitle("Adventureworks_Bikes Version 2 - 2. Main Menu");
-            stage.setScene(new Scene(root1, 450, 450));
+            stage.setScene(scene);
             stage.show();
             stage.setMaximized(true);
 
@@ -93,12 +115,16 @@ public class Controller1 implements Initializable {
 
         try {
             root1 = FXMLLoader.load(getClass().getResource("view2.fxml"));
+
             Stage stage = new Stage();
-            stage.isFullScreen();
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
+
+
+
             stage.setTitle("Adventureworks_Bikes Version 2 - 2. Main Menu");
-
-            stage.setScene(new Scene(root1, 450, 450));
-
+            stage.setScene(scene);
             stage.show();
             stage.setMaximized(true);
 

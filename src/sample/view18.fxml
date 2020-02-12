@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="100.0" prefHeight="600.0" prefWidth="615.0" vgap="100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller5">
+<GridPane alignment="center" hgap="100.0" prefHeight="600.0" prefWidth="615.0" stylesheets="@../../../../Desktop/bootstrap3.css" vgap="100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller18">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />
@@ -23,15 +23,10 @@
             <children>
                 <Label layoutX="37.0" layoutY="14.0" text="Heute:" />
                 <Label fx:id="datum" layoutX="72.0" layoutY="14.0" text="Label" />
-                <Label layoutX="14.0" layoutY="54.0" text="Zeitraum inklusive:" />
-                <DatePicker fx:id="zeitraumVon" layoutX="14.0" layoutY="87.0" />
                 <Button layoutX="441.0" layoutY="87.0" mnemonicParsing="false" onAction="#erstellen_button" prefHeight="25.0" prefWidth="74.0" text="Erstellen" />
                 <Button layoutX="517.0" layoutY="87.0" mnemonicParsing="false" onAction="#button_close" text="Abbrechen" />
-                <Label layoutX="217.0" layoutY="91.0" text="bis" />
-                <DatePicker fx:id="zeitraumBis" layoutX="260.0" layoutY="87.0" />
-                <TableView fx:id="bestand" layoutX="8.0" layoutY="140.0" prefHeight="446.0" prefWidth="688.0">
+                <TableView fx:id="produktionHeute" layoutX="8.0" layoutY="140.0" prefHeight="446.0" prefWidth="688.0">
                     <columns>
-                        <TableColumn fx:id="tag" prefWidth="70.0" text="Tag" />
                         <TableColumn fx:id="Allrounder" prefWidth="70.0" text="MTB Allrounder" />
                         <TableColumn fx:id="Competition" prefWidth="70.0" text="MTB Competition" />
                         <TableColumn fx:id="Downhill" prefWidth="70.0" text="MTB Downhill" />

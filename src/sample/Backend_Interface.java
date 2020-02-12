@@ -113,6 +113,33 @@ public class Backend_Interface {
         return dataInterface.getLagerbestandInRange(datumErsterTag, datumLetzterTag);
     }
 
+
+
+    //Methode, die die Produktionsplanung der Fahrräder für das aktuelle Jahr anzeigt (22 Stellen )
+    public String[][] produktionsplanungJahr(String jahr) {
+        return null;
+    }
+
+    //Methode, die die Produktionsplanung der Fahrräder für das aktuelle Monat nzeigt (22 Stellen )
+    public String[][] produktionsplanungMonat(String monat) {
+        return null;
+    }
+
+    //Methode, die die Produktionsplanung der Fahrräder für das aktuelle Woche nzeigt (22 Stellen )
+    public String[][] produktionsplanungWoche(String woche) {
+        return null;
+    }
+
+    //Methode, die die Produktionsplanung der Fahrräder für das aktuelle Tag nzeigt (22 Stellen )
+    public String[][] produktionsplanungTag(String tag) {
+        return null;
+    }
+
+    //Methode, die die Produktion der Fahrräder in dem jeweiligen Monat anzeigt (23 Stellen )
+    public String[][] produktionTag(String monat) {
+        return null;
+    }
+
 }
 
 

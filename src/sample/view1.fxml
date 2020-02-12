@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="329.0" prefWidth="474.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1">
+<GridPane alignment="center" hgap="10" prefHeight="329.0" prefWidth="474.0" stylesheets="@../../../../Desktop/bootstrap3.css" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1">
 <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -18,8 +19,13 @@
       <Pane prefHeight="477.0" prefWidth="464.0">
          <children>
 
-            <Button layoutX="62.0" layoutY="162.0" mnemonicParsing="false" onAction="#button_demoNeu" prefHeight="77.0" prefWidth="110.0" styleClass="w3-button" text="Demo neu" />
-            <Button layoutX="282.0" layoutY="162.0" mnemonicParsing="false" onAction="#button_demoCont" prefHeight="77.0" prefWidth="110.0" text="Demo fortführen" />
+            <Button layoutX="62.0" layoutY="162.0" mnemonicParsing="false" onAction="#button_demoNeu" prefHeight="32.0" prefWidth="119.0" styleClass="w3-button" text="Demo neu" />
+            <Button layoutX="266.0" layoutY="162.0" mnemonicParsing="false" onAction="#button_demoCont" prefHeight="32.0" prefWidth="126.0" text="Demo fortführen" />
+            <ImageView fx:id="logo" fitHeight="83.0" fitWidth="233.0" layoutX="116.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Public/logo_adventure_works.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

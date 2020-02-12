@@ -156,7 +156,7 @@ public class Data_Manipulation_Controller {
         System.out.println("    Lagerbestände werden berechnet...");
         System.out.println("    Lieferungen werden berechnet...");
         for (Kalenderwoche kw : kwList) {
-            lagerbestandworkflow(kw);
+            lagerbestandworkflow(kw);//TODO täglich statt wöchentlich
             lieferungworkflow(kw);
             bestellungworkflow(kw.getVorwoche());
             lagerbestandworkflow(kw);
@@ -525,7 +525,7 @@ public class Data_Manipulation_Controller {
         tag.addBestellung(neueBestellung);//gab einen, bestellung hinzufügen
         int kwId = tag.getKwID();
         for (Kalenderwoche kw : kwListCopy) {
-            if (kw.getKwID() >= kwId) {
+            if (kw.getKwID() >= kwId) {//TODO
                 lagerbestandworkflow(kw);
                 if (!lieferungworkflow(kw)) return null;
                 bestellungworkflow(kw.getVorwoche());
