@@ -55,9 +55,9 @@ public class Schichtarbeitstag {
             int gabelId = Komponentenzuordnung.getGabelID(i + 1);
             int sattelId = Komponentenzuordnung.getSattelID(i + 1);
             int rahmenId = Komponentenzuordnung.getRahmenID(i + 1);
-            sekundarbedarf[gabelId - 1] = sekundarbedarf[gabelId - 1] + anzahl;
-            sekundarbedarf[sattelId - 1] = sekundarbedarf[sattelId - 1] + anzahl;
-            sekundarbedarf[rahmenId - 1] = sekundarbedarf[rahmenId - 1] + anzahl;
+            sekundarbedarf[gabelId - 9] = sekundarbedarf[gabelId - 9] + anzahl;
+            sekundarbedarf[sattelId - 9] = sekundarbedarf[sattelId - 9] + anzahl;
+            sekundarbedarf[rahmenId - 9] = sekundarbedarf[rahmenId - 9] + anzahl;
         }
     }
 

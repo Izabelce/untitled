@@ -22,6 +22,10 @@ public class Database_Connector {
         helper = null;
     }
 
+    public Database_Connector(boolean falsey){
+        controller = null;
+        helper = null;
+    }
 
     public void populate_Tablespace() {
         System.out.println("    Removing old tables...");

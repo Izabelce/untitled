@@ -298,7 +298,7 @@ public class Data_Manipulation_Interface {
         String[] summen = new String[15];
         summen[0] = "SUMMEN:";
         int id= ersterTagID;
-        for(int i=0; i<bedarfe.length; i++){
+        for(int i=0; i<bedarfe.length-1; i++){
             for(int j =0; j< myController.getAlleTage()[id].getSekundarBedarfe().length; j++){
                 sums[j] = sums[j] + myController.getAlleTage()[id].getSekundarBedarfe()[j];
             }
@@ -306,7 +306,7 @@ public class Data_Manipulation_Interface {
             id++;
         }
         for(int l = 1; l<15; l++){
-            summen[l] = Integer.toString(sums[l]);
+            summen[l] = Integer.toString(sums[l-1]);
         }
         bedarfe[bedarfe.length-1] = summen;
         return bedarfe;

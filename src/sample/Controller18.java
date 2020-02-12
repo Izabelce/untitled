@@ -86,7 +86,7 @@ public class Controller18 extends Controller_Base  {
     public void erstellen_button(Event evt) {
         Button b = (Button) evt.getSource();
 
-            String[][] prodArray = backendInterface.produktionTag(backendInterface.getHeute());
+            String[][] prodArray = backendInterface.produktionsplanungTag(backendInterface.getHeute());
 
             String text = "";
             data.removeAll(data);
