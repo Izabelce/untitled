@@ -19,9 +19,9 @@ public class Data_Manipulation_Controller {
     //private List<Schichtarbeitstag> alleTage;
     private Schichtarbeitstag[] alleTage;
     private int[][] monatsArbeitstage;
-    List<Kalenderwoche> kwList;
+    Kalenderwoche[] kwList;
     private Schichtarbeitstag[] candidates;
-    private List<Kalenderwoche> kwListCopy;
+    private Kalenderwoche[] kwListCopy;
     private Fahrplan fahrplan;
     private int[] abfahrtstage;
 
@@ -35,8 +35,9 @@ public class Data_Manipulation_Controller {
         this.connectivity_interface = conI;
         fahrplanGenerieren();
         prepareListofAllDays();
+        this.kwList = Kalenderwoche.getKWListFromTage(alleTage);
         monatsArbeitstage = prepareMonatsarbeitstage();
-        kwList = null;
+        //kwList = null;
         ZuliefererManager.enlistController(this);
     }
 
@@ -50,20 +51,11 @@ public class Data_Manipulation_Controller {
         this.connectivity_interface = null;
         alleTage = new Schichtarbeitstag[520];
         monatsArbeitstage = new int[12][15];
-        kwList = null;
+        this.kwList = Kalenderwoche.getKWListFromTage(alleTage);
+        //kwList = null;
         ZuliefererManager.enlistController(this);
     }
 
-    public Data_Manipulation_Controller() {
-        mInf = null;
-        plausi = null;
-        dataInferface = null;
-        connectivity_interface = null;
-        alleTage = null;
-        monatsArbeitstage = null;
-        kwList = null;
-        ZuliefererManager.enlistController(this);
-    }
 
     public void enlistDatabaseConnectivity_Interface(Database_Connectivity_Interface database_connectivity_interface) {
         this.connectivity_interface = database_connectivity_interface;
@@ -148,7 +140,7 @@ public class Data_Manipulation_Controller {
             }
             queryA.produktionsvolumenAnlegen(arbeitstageDiesenMonat);
         }
-        this.kwList = Kalenderwoche.getKWListFromTage(alleTage);
+
         System.out.println("    Schichten werden berechnet...");
         schichtenworkflow();
         //schichtenStabilisieren();
@@ -177,7 +169,7 @@ public class Data_Manipulation_Controller {
         candidatesherstellen();
     }
 
-    private void candidatesherstellen() {
+    void candidatesherstellen() {
         candidates = new Schichtarbeitstag[alleTage.length];
         Schichtarbeitstag vortag = null;
         for (int original = 0; original < alleTage.length; original++) {
@@ -285,47 +277,47 @@ public class Data_Manipulation_Controller {
         kw.reset();
     }
 
-   //private Schichtarbeitstag starttagberechnen(Komponenttyp ktyp, Schichtarbeitstag ankunftstag) {
+    //private Schichtarbeitstag starttagberechnen(Komponenttyp ktyp, Schichtarbeitstag ankunftstag) {
 
-   //    Schichtarbeitstag startTag = ankunftstag;
-   //    if (ktyp == Komponenttyp.GABEL) {
-   //        for (int i = 0; i < 9; i++) {
-   //            startTag = startTag.getVortag();
-   //        }
-   //        int vorlaufzeit = 0;
-   //        while (vorlaufzeit != 14) {
-   //            startTag = startTag.getVortag();
-   //            if (!startTag.isHoldayIn(Land.Spanien)) {
-   //                vorlaufzeit++;
-   //            }
-   //        }
-   //    } else if (ktyp == Komponenttyp.RAHMEN) {
-   //        int vorlaufzeit = 0;
-   //        //3 tage lieferzeit, 7 tage vorlaufzeit
-   //        while (vorlaufzeit != (7 + 3)) {
-   //            startTag = startTag.getVortag();
-   //            if (!startTag.isHoldayIn(Land.Baden_Württemberg)) {
-   //                vorlaufzeit++;
-   //            }
-   //        }
-   //    } else if (ktyp == Komponenttyp.SATTEL) {
-   //        for (int i = 0; i < 31; i++) {
-   //            startTag = startTag.getVortag();
-   //        }
-   //        int vorlaufzeit = 0;
-   //        //7 wochen vorlaufzeit, davon 30 tage verschiffung und 18 tage (von 7*7 = 49 Tagen) in China als Arbeitstage
-   //        while (vorlaufzeit != 18) {
-   //            startTag = startTag.getVortag();
-   //            if (!startTag.isHoldayIn(Land.China)) {
-   //                vorlaufzeit++;
-   //            }
-   //        }
-   //    } else {
-   //        throw new IllegalArgumentException("Das ergibt keinen sinn");
-   //    }
-   //    if (startTag.getArbeitstag_ID() <= connectivity_interface.heute()) return null;
-   //    return startTag;
-   //}
+    //    Schichtarbeitstag startTag = ankunftstag;
+    //    if (ktyp == Komponenttyp.GABEL) {
+    //        for (int i = 0; i < 9; i++) {
+    //            startTag = startTag.getVortag();
+    //        }
+    //        int vorlaufzeit = 0;
+    //        while (vorlaufzeit != 14) {
+    //            startTag = startTag.getVortag();
+    //            if (!startTag.isHoldayIn(Land.Spanien)) {
+    //                vorlaufzeit++;
+    //            }
+    //        }
+    //    } else if (ktyp == Komponenttyp.RAHMEN) {
+    //        int vorlaufzeit = 0;
+    //        //3 tage lieferzeit, 7 tage vorlaufzeit
+    //        while (vorlaufzeit != (7 + 3)) {
+    //            startTag = startTag.getVortag();
+    //            if (!startTag.isHoldayIn(Land.Baden_Württemberg)) {
+    //                vorlaufzeit++;
+    //            }
+    //        }
+    //    } else if (ktyp == Komponenttyp.SATTEL) {
+    //        for (int i = 0; i < 31; i++) {
+    //            startTag = startTag.getVortag();
+    //        }
+    //        int vorlaufzeit = 0;
+    //        //7 wochen vorlaufzeit, davon 30 tage verschiffung und 18 tage (von 7*7 = 49 Tagen) in China als Arbeitstage
+    //        while (vorlaufzeit != 18) {
+    //            startTag = startTag.getVortag();
+    //            if (!startTag.isHoldayIn(Land.China)) {
+    //                vorlaufzeit++;
+    //            }
+    //        }
+    //    } else {
+    //        throw new IllegalArgumentException("Das ergibt keinen sinn");
+    //    }
+    //    if (startTag.getArbeitstag_ID() <= connectivity_interface.heute()) return null;
+    //    return startTag;
+    //}
 
     private boolean lieferungworkflow(Kalenderwoche kw) {
         Schichtarbeitstag ersterTag = kw.getFirst();//immer montag
@@ -345,17 +337,17 @@ public class Data_Manipulation_Controller {
             if (letzterTag.getLagerbestand(i) < Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()) && letzterTag.getArbeitstag_ID() > 115) {
                 //Schichtarbeitstag starttag = starttagberechnen(Komponentenzuordnung.getKtypFromID(i), letzterArbeitstagVorwoche);
                 //if (starttag == null) return false;
-                int bedarf = max(ZuliefererManager.getZulieferer(i).getMindestLiefermenge(),letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()));
-            Lieferung lieferung= ZuliefererManager.getZulieferer(i).neueLieferungAnlegen(i, bedarf, letzterTag.getArbeitstag_ID());
-              // Lieferung neededLieferung = new Lieferung(
-              //         i,
-              //        // letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()),
-              //         //ZuliefererManager.getZulieferer(i).getMindestLiefermenge(),
-              //         bedarf,
-              //         letzterArbeitstagVorwoche.getArbeitstag_ID(), starttag.getArbeitstag_ID(),
-              //         letzterArbeitstagVorwoche.getDatum(),
-              //         starttag.getDatum());
-                if(lieferung == null) return false;
+                int bedarf = max(ZuliefererManager.getZulieferer(i).getMindestLiefermenge(), letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()));
+                Lieferung lieferung = ZuliefererManager.getZulieferer(i).neueLieferungAnlegen(i, bedarf, letzterTag.getArbeitstag_ID());
+                // Lieferung neededLieferung = new Lieferung(
+                //         i,
+                //        // letzterTag.getNeededAmount(i) + Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()),
+                //         //ZuliefererManager.getZulieferer(i).getMindestLiefermenge(),
+                //         bedarf,
+                //         letzterArbeitstagVorwoche.getArbeitstag_ID(), starttag.getArbeitstag_ID(),
+                //         letzterArbeitstagVorwoche.getDatum(),
+                //         starttag.getDatum());
+                if (lieferung == null) return false;
                 letzterArbeitstagVorwoche.addLieferung(lieferung);
             }
         }
@@ -375,7 +367,7 @@ public class Data_Manipulation_Controller {
         schichtenEintragen(kwList);
     }
 
-    private void schichtenEintragen(List<Kalenderwoche> fullmap) {
+    private void schichtenEintragen(Kalenderwoche[] fullmap) {
         for (Kalenderwoche kalenderwoche : fullmap) {
             queryA.setSchichten(kalenderwoche);
             queryA.setVorgabetag(kalenderwoche);
@@ -561,9 +553,10 @@ public class Data_Manipulation_Controller {
         this.alleTage = alleTage;
     }
 
-    public void setKwList(List<Kalenderwoche> kwList) {
+    public void setKwList(Kalenderwoche[] kwList) {
         this.kwList = kwList;
     }
+
 
     public void setAbfahrtstage(int[] abfahrtstage) {
         this.abfahrtstage = abfahrtstage;
@@ -577,7 +570,7 @@ public class Data_Manipulation_Controller {
         return alleTage;
     }
 
-    public List<Kalenderwoche> getKwList() {
+    public Kalenderwoche[] getKwList() {
         return kwList;
     }
 

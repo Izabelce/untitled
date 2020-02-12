@@ -137,8 +137,8 @@ public class Data_Manipulation_Interface {
         String[] bestand = new String[23];
         Schichtarbeitstag tag = myController.getAlleTage()[datum];
         bestand[0] = tag.getDatum();
-        for (int i = 1; i <=tag.getLager2().length; i ++) {
-            bestand[i] = Integer.toString(tag.getLager2()[i-1]);
+        for (int i = 1; i < tag.getLager2().length; i++) {
+            bestand[i] = Integer.toString(tag.getLager2()[i - 1]);
         }
 
         return bestand;
@@ -149,11 +149,55 @@ public class Data_Manipulation_Interface {
         int letzterTag = myController.getTagIDFromString(datumLetzterTag);
         String[][] returnvalue = new String[(letzterTag - erstertag) + 1][23];
         Schichtarbeitstag tag = myController.getAlleTage()[letzterTag];
-        for (int i = returnvalue.length - 1; i >= 0; i--) {
+        for (int i = returnvalue.length - 1; i >= 1; i--) {
             returnvalue[i] = getLagerbestandTag(tag.getArbeitstag_ID());
             tag = tag.getVortag();
         }
         return returnvalue;
+    }
+
+    public String getGesamtzahlProduktionInRange(String datumErsterTag, String datumLetzterTag) {
+        int erstertagID = myController.getTagIDFromString(datumErsterTag);
+        int letztertagID = myController.getTagIDFromString(datumLetzterTag);
+
+        int sum = 0;
+        for (int i = erstertagID; i <= letztertagID; i++) {
+            Schichtarbeitstag tag = myController.getAlleTage()[i];
+            for (int j = 0; j < tag.getFahrradplan().length; j++) {
+                sum = sum + tag.getFahrradplan()[j];
+            }
+        }
+        return Integer.toString(sum);
+    }
+
+    public String getGesamtzahlProduktionDay(String datum) {
+        return getGesamtzahlProduktionInRange(datum, datum);
+    }
+
+    public String getGesamtzahlProduktionWeek(String datum) {
+        int tagId = myController.getTagIDFromString(datum);
+        Kalenderwoche kw = myController.getKwList()[myController.getAlleTage()[tagId].getKwID()];
+
+        return getGesamtzahlProduktionInRange(kw.getFirst().getDatum(), kw.getLast().getDatum());
+    }
+
+    public String getGesamtzahlProduktionMonth(String datum) {
+        int tagID =myController.getTagIDFromString(datum);
+        Schichtarbeitstag tag  =myController.getAlleTage()[tagID];
+        int monthID = tag.getMonats_ID();
+        while(tag.getVortag().getMonats_ID() == monthID){
+            tag = tag.getVortag();
+        }
+        String ersterTag = tag.getDatum();
+        while(myController.getAlleTage()[tagID].getMonats_ID() == monthID){
+            tagID++;
+        }
+        String lezterTag = myController.getAlleTage()[tagID-1].getDatum();
+        return getGesamtzahlProduktionInRange(ersterTag, lezterTag);
+    }
+
+    public String getGesamtProduktionJahr(){
+        return getGesamtzahlProduktionInRange(myController.getAlleTage()[0].getDatum(), myController.getAlleTage()[myController.getAlleTage().length-1].getDatum());
     }
 
 
