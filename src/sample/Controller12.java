@@ -50,7 +50,30 @@ public class Controller12 extends Controller_Base{
         Date date = null;
         try {
             date = formatter.parse(backendInterface.getHeute());
-        } catch (ParseException e) {
+            SimpleDateFormat ft = new SimpleDateFormat("dd.MM.yyyy");
+            System.out.println(ft.format(date));
+
+            String[][] bestellungenArray = backendInterface.getBestellwerte(ft.format(date));
+
+            String text = "";
+            //private int iNumber = 1:
+            data.removeAll(data);
+            bestellung.setItems(data);
+
+            if (bestellungenArray != null) {
+                for (int i = 0; i < bestellungenArray.length; i++) {
+                    BestellungAnzeigeHelfer l = new BestellungAnzeigeHelfer(bestellungenArray[i][0], bestellungenArray[i][1], bestellungenArray[i][2], bestellungenArray[i][3]);
+                    data.addAll(l);
+                }
+
+                bestellungstag.setCellValueFactory(new PropertyValueFactory<BestellungAnzeigeHelfer, String>("bestellungstag"));
+                abholungstag.setCellValueFactory(new PropertyValueFactory<BestellungAnzeigeHelfer, String>("abholungstag"));
+                anzahl.setCellValueFactory(new PropertyValueFactory<BestellungAnzeigeHelfer, String>("modell"));
+                modell.setCellValueFactory(new PropertyValueFactory<BestellungAnzeigeHelfer, String>("anzahl"));
+
+                bestellung.setItems(data);
+
+        } }catch (ParseException e) {
             e.printStackTrace();
         }
 

@@ -76,8 +76,11 @@ public class Controller7 extends Controller_Base {
             try {
                 root1 = FXMLLoader.load(getClass().getResource("view14.fxml"));
                 Stage stage = new Stage();
+
+                Scene scene = new Scene(root1, 450, 450);
+                scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
                 stage.setTitle("Adventureworks_Bikes Version 2");
-                stage.setScene(new Scene(root1, 450, 450));
+                stage.setScene(scene);
                 stage.setMaximized(true);
                 stage.show();
 

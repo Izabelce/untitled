@@ -67,7 +67,10 @@ public class Controller3 extends Controller_Base implements Initializable {
                 //Controller2 c2 = loader.getController();
                 //c2.setDatum(ft.format(gettedDatePickerDate));
                 Stage stage = new Stage();
-                stage.setScene(new Scene(root));
+
+                Scene scene = new Scene(root, 450, 450);
+                scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
+                stage.setScene(scene);
                 stage.isMaximized();
                 stage.isFullScreen();
                 stage.setTitle("Adventureworks_Bikes Version 2 - 2. Main Menu");

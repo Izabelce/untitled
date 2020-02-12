@@ -10,8 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,9 +28,25 @@ public class Controller2 extends Controller_Base implements Initializable {
     private Label datum;
     @FXML
     private Button btnOpenNewWindow;
+    @FXML
+   private  ImageView logo;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)  {
+        super.initialize(url, resourceBundle);
 
+    }
 
+    public void initialize() throws FileNotFoundException {
+    Image image = new Image(new FileInputStream("C:\\Users\\Public\\logo_adventure_works.png"));
+
+    //Setting the image view
+    ImageView imageView = new ImageView(image);
+    //Image image = new Image("file: C:\\Users\\Public\\logo_adventure_works.png");
+
+    logo.setImage(image);
+    logo.setCache(true);
+}
 
     public void changeDate(Event evt) {
         Parent root1;
@@ -51,14 +71,19 @@ public class Controller2 extends Controller_Base implements Initializable {
     public void infosHeute(Event evt) {
         Parent root1;
 
+
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view4.fxml"));
             Parent root = (Parent) loader.load();
             //Controller4 c4 = loader.getController();
             //c4.setDatum(this.datum.getText());
             Stage stage = new Stage();
+
+            Scene scene = new Scene(root, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
             stage.setTitle("Adventureworks_Bikes Version 2 - 4. Infos Heute");
-            stage.setScene(new Scene(root, 450, 450));
+            stage.setScene(scene);
             stage.setMaximized(true);
             stage.show();
 
@@ -76,7 +101,11 @@ public class Controller2 extends Controller_Base implements Initializable {
             root1 = FXMLLoader.load(getClass().getResource("view5.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Adventureworks_Bikes Version 2 - 5. Bestandsreport");
-            stage.setScene(new Scene(root1, 450, 450));
+
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
+            stage.setScene(scene);
             stage.setMaximized(true);
             stage.show();
 
@@ -87,14 +116,37 @@ public class Controller2 extends Controller_Base implements Initializable {
         //((Node)(evt.getSource())).getScene().getWindow().hide();
     }
 
+    public void prodPlanung(Event evt) {
+        Parent root1;
+
+        try {
+            root1 = FXMLLoader.load(getClass().getResource("view19.fxml"));
+            Stage stage = new Stage();
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
+            stage.setTitle("Adventureworks_Bikes Version 2 - 19. Produktionsplanung");
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // Hide this current window (if this is what you want)
+        //((Node)(evt.getSource())).getScene().getWindow().hide();
+    }
     public void scorReport(Event evt) {
         Parent root1;
 
         try {
             root1 = FXMLLoader.load(getClass().getResource("view6.fxml"));
             Stage stage = new Stage();
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
             stage.setTitle("Adventureworks_Bikes Version 2 - 6. SCOR Metriken");
-            stage.setScene(new Scene(root1, 450, 450));
+            stage.setScene(scene);
             stage.setMaximized(true);
             stage.show();
 
@@ -111,8 +163,11 @@ public class Controller2 extends Controller_Base implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view7.fxml"));
             Stage stage = new Stage();
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
             stage.setTitle("Adventureworks_Bikes Version 2 - 7. Bestellung neu");
-            stage.setScene(new Scene(root1, 450, 450));
+            stage.setScene(scene);
             stage.setMaximized(true);
             stage.show();
 
@@ -129,8 +184,11 @@ public class Controller2 extends Controller_Base implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view8.fxml"));
             Stage stage = new Stage();
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
             stage.setTitle("Adventureworks_Bikes Version 2 - 8. Marketingaktion");
-            stage.setScene(new Scene(root1, 450, 450));
+            stage.setScene(scene);
             stage.setMaximized(true);
             stage.show();
 
@@ -147,8 +205,11 @@ public class Controller2 extends Controller_Base implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view9.fxml"));
             Stage stage = new Stage();
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
             stage.setTitle("Adventureworks_Bikes Version 2 - 9. Zuliefererprobleme");
-            stage.setScene(new Scene(root1, 450, 450));
+            stage.setScene(scene);
             stage.setMaximized(true);
             stage.show();
 
@@ -165,8 +226,11 @@ public class Controller2 extends Controller_Base implements Initializable {
         try {
             root1 = FXMLLoader.load(getClass().getResource("view10.fxml"));
             Stage stage = new Stage();
+
+            Scene scene = new Scene(root1, 450, 450);
+            scene.getStylesheets().add(getClass().getResource("new.css").toExternalForm());
             stage.setTitle("Adventureworks_Bikes Version 2 - 10. Lagerschaden");
-            stage.setScene(new Scene(root1, 450, 450));
+            stage.setScene(scene);
             stage.setMaximized(true);
             stage.show();
 
