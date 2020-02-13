@@ -71,8 +71,6 @@ public class Controller2 extends Controller_Base implements Initializable {
     public void infosHeute(Event evt) {
         Parent root1;
 
-
-
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view4.fxml"));
             Parent root = (Parent) loader.load();

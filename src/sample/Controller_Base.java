@@ -55,11 +55,12 @@ public abstract class Controller_Base implements Initializable {
 
     private String heute;
 
-    public Controller_Base(){
-        this("01.01.2010");
+    public Controller_Base() {
+
+        this(Backend_Interface.getInstance(null).getHeute());
     }
 
-    public Controller_Base(String datum){
+    public Controller_Base(String datum) {
         heute = datum;
     }
 }

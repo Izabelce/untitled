@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Datamanipulation_data {
@@ -66,7 +65,7 @@ public class Datamanipulation_data {
 
             writer.append(Integer.toString(Stammdatenmanager.getVorlaufzeitChina()) + ", ");
             writer.append(Integer.toString(Stammdatenmanager.getVorlaufzeitSpanien()) + ", ");
-            writer.append(Integer.toString(Stammdatenmanager.getVorlaufZeitBW())+ ", ");
+            writer.append(Integer.toString(Stammdatenmanager.getVorlaufZeitBW()) + ", ");
 
             writer.append(Integer.toString(Stammdatenmanager.getGesamtProduktion()));
 
@@ -223,6 +222,8 @@ public class Datamanipulation_data {
                 outputstring = outputstring + "f, ";
             }
             outputstring = outputstring + tag.getDatum() + ", ";
+
+            outputstring = outputstring + tag.getMonats_ID() + ", ";
             for (int l = 0; l < tag.getLager2().length; l++) {
                 if (l == 0) {
                     outputstring = outputstring + tag.getLager2()[l];
@@ -348,8 +349,8 @@ public class Datamanipulation_data {
 
     private void loadKalenderwoche(String kalenderwochen) {
         List<String> strings = Database_Helper.fullFileToStringList(kalenderwochen);
-        Kalenderwoche[] kwList = new Kalenderwoche[dmc.getAlleTage()[dmc.getAlleTage().length-1].getKwID()];
-        int index =0;
+        Kalenderwoche[] kwList = new Kalenderwoche[dmc.getAlleTage()[dmc.getAlleTage().length-1].getKwID()+1];
+        int index = 0;
         for (String s : strings) {
             String[] results = s.split(", ", 0);
             int kwID = dmc.getAlleTage()[Integer.parseInt(results[0])].getKwID();
@@ -357,9 +358,10 @@ public class Datamanipulation_data {
             for (int i = 0; i < results.length; i++) {
                 k.add(dmc.getAlleTage()[Integer.parseInt(results[i])]);
             }
-           kwList[index] = k;
+            kwList[index] = k;
             index++;
         }
+
         dmc.setKwList(kwList);
     }
 
@@ -396,31 +398,33 @@ public class Datamanipulation_data {
                 holidays.add(Land.Nordrhein_Westfalen);
             }
             String datum = results[17];
+            int monatsID = Integer.parseInt(results[18]);
             int[] lager = new int[22];
-            lager[0] = Integer.parseInt(results[18]);
-            lager[1] = Integer.parseInt(results[19]);
-            lager[2] = Integer.parseInt(results[20]);
-            lager[3] = Integer.parseInt(results[21]);
-            lager[4] = Integer.parseInt(results[22]);
-            lager[5] = Integer.parseInt(results[23]);
-            lager[6] = Integer.parseInt(results[24]);
-            lager[7] = Integer.parseInt(results[25]);
-            lager[8] = Integer.parseInt(results[26]);
-            lager[9] = Integer.parseInt(results[27]);
-            lager[10] = Integer.parseInt(results[28]);
-            lager[11] = Integer.parseInt(results[29]);
-            lager[12] = Integer.parseInt(results[30]);
-            lager[13] = Integer.parseInt(results[31]);
-            lager[14] = Integer.parseInt(results[32]);
-            lager[15] = Integer.parseInt(results[33]);
-            lager[16] = Integer.parseInt(results[34]);
-            lager[17] = Integer.parseInt(results[35]);
-            lager[18] = Integer.parseInt(results[36]);
-            lager[19] = Integer.parseInt(results[37]);
-            lager[20] = Integer.parseInt(results[38]);
-            lager[21] = Integer.parseInt(results[39]);
+            lager[0] = Integer.parseInt(results[19]);
+            lager[1] = Integer.parseInt(results[20]);
+            lager[2] = Integer.parseInt(results[21]);
+            lager[3] = Integer.parseInt(results[22]);
+            lager[4] = Integer.parseInt(results[23]);
+            lager[5] = Integer.parseInt(results[24]);
+            lager[6] = Integer.parseInt(results[25]);
+            lager[7] = Integer.parseInt(results[26]);
+            lager[8] = Integer.parseInt(results[27]);
+            lager[9] = Integer.parseInt(results[28]);
+            lager[10] = Integer.parseInt(results[29]);
+            lager[11] = Integer.parseInt(results[30]);
+            lager[12] = Integer.parseInt(results[31]);
+            lager[13] = Integer.parseInt(results[32]);
+            lager[14] = Integer.parseInt(results[33]);
+            lager[15] = Integer.parseInt(results[34]);
+            lager[16] = Integer.parseInt(results[35]);
+            lager[17] = Integer.parseInt(results[36]);
+            lager[18] = Integer.parseInt(results[37]);
+            lager[19] = Integer.parseInt(results[38]);
+            lager[20] = Integer.parseInt(results[39]);
+            lager[21] = Integer.parseInt(results[40]);
 
             Schichtarbeitstag tag = new Schichtarbeitstag(schichtID, max_output, fahrradplan, kwID, tagID, holidays, datum);
+            tag.setMonats_ID(monatsID);
             for (int i = 1; i <= lager.length; i++) {
                 tag.setLagerbestand(i, lager[i - 1]);
             }

@@ -25,6 +25,7 @@ public class Schichtarbeitstag {
     private List<Bestellung> heutigeBestellungen;
     private int[] lager2;
     private int[] ruckstand;
+    private int[] sekundarbedarf;
 
     public Schichtarbeitstag(int schicht_ID, int max_output, int[] arbeitsmappe, int kw_id, int tag_ID, HashSet<Land> holidays, String datum) {
         this.vortag = null;
@@ -43,7 +44,21 @@ public class Schichtarbeitstag {
             sum = sum + fahrradplan[i];
         }
         lager2 = new int[22];
+        sekundarbedarfBerechnen();
 
+    }
+
+    private void sekundarbedarfBerechnen() {
+        this.sekundarbedarf = new int[14];
+        for (int i = 0; i < fahrradplan.length; i++) {
+            int anzahl = fahrradplan[i];
+            int gabelId = Komponentenzuordnung.getGabelID(i + 1);
+            int sattelId = Komponentenzuordnung.getSattelID(i + 1);
+            int rahmenId = Komponentenzuordnung.getRahmenID(i + 1);
+            sekundarbedarf[gabelId - 9] = sekundarbedarf[gabelId - 9] + anzahl;
+            sekundarbedarf[sattelId - 9] = sekundarbedarf[sattelId - 9] + anzahl;
+            sekundarbedarf[rahmenId - 9] = sekundarbedarf[rahmenId - 9] + anzahl;
+        }
     }
 
     public void setVortag(Schichtarbeitstag vortag) {
@@ -363,4 +378,27 @@ public class Schichtarbeitstag {
     public int[] getLager2() {
         return lager2;
     }
+
+    public String[] getSekundarBedarfe(String[] args) {
+        String[] returnvalue = new String[sekundarbedarf.length+1];
+        for(int i=1; i<returnvalue.length;i++){
+            returnvalue[i] = Integer.toString(sekundarbedarf[i-1]);
+        }
+        returnvalue[0] = datum;
+        return returnvalue;
+    }
+
+    public int[] getSekundarBedarfe(){
+        return this.sekundarbedarf;
+    }
+
+    public String[] getFahrradplanStrings(){
+        String[] returnvalue = new String[9];
+        for(int i=1; i<fahrradplan.length; i++){
+            returnvalue [i] = Integer.toString(fahrradplan[i-1]);
+        }
+        returnvalue[0] = datum;
+        return returnvalue;
+    }
+
 }

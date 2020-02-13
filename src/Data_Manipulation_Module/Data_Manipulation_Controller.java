@@ -51,7 +51,7 @@ public class Data_Manipulation_Controller {
         this.connectivity_interface = null;
         alleTage = new Schichtarbeitstag[520];
         monatsArbeitstage = new int[12][15];
-        this.kwList = Kalenderwoche.getKWListFromTage(alleTage);
+        //this.kwList = Kalenderwoche.getKWListFromTage(alleTage);
         //kwList = null;
         ZuliefererManager.enlistController(this);
     }
@@ -332,6 +332,7 @@ public class Data_Manipulation_Controller {
             letzterArbeitstagVorwoche = ersterTag;
         }
         Schichtarbeitstag letzterTag = kw.getLast();
+
 
         for (int i = 9; i <= 22; i++) {
             if (letzterTag.getLagerbestand(i) < Database_Connectivity_Interface.getPuffer(ZuliefererManager.getZulieferer(i).getMyLand()) && letzterTag.getArbeitstag_ID() > 115) {

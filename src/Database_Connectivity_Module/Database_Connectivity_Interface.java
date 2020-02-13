@@ -15,12 +15,7 @@ public class Database_Connectivity_Interface {
     }
 
     public static int getPuffer(Land l){
-        switch (l){
-            case Spanien: return 50;
-            case China: return 100;
-            case Baden_Württemberg: return 25;
-        }
-        return -1;
+       return 0;
     }
 
     public int heute() {

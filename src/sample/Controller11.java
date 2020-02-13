@@ -101,7 +101,6 @@ public class Controller11 extends Controller_Base {
                 istEingetroffen.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("istEingetroffen"));
                 erfassungstag.setCellValueFactory(new PropertyValueFactory<LieferungAnzeigeHelfer, String>("erfassungstag"));
 
-                //drei.setText(text);
                 lieferung.setItems(data);
             }
 
