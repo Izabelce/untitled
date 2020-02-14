@@ -133,8 +133,8 @@ public class Stammdatenmanager {
         Stammdatenmanager.anteilDezember = anteilDezember;
     }
 
-    public static int getAnteilModell1() {
-        return anteilModell1;
+    public static String getAnteilModell1() {
+        return Integer.toString(anteilModell1);
     }
 
     public static void setAnteilModell1(int anteilModell1) {

@@ -15,7 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         System.out.println("Building User Interface Module...");
-        Parent root = FXMLLoader.load(getClass().getResource("view1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view20.fxml"));
         primaryStage.setTitle("Adventureworks_Bikes Version 2");
 
         Stage stage = new Stage();
