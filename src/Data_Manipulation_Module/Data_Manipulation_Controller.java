@@ -146,12 +146,23 @@ public class Data_Manipulation_Controller {
         //schichtenStabilisieren();
 
         System.out.println("    Lagerbestände werden berechnet...");
+
+        for (int tag = 1; tag < alleTage.length; tag++) {
+            alleTage[tag].sekundarbedarfBerechnen();
+            lagerbestandworkflow(alleTage[tag]);//
+        }// TODO täglich statt wöchentlich
+        //lieferungworkflow(kw);
         System.out.println("    Lieferungen werden berechnet...");
-        for (Kalenderwoche kw : kwList) {
-            lagerbestandworkflow(kw);//TODO täglich statt wöchentlich
-            lieferungworkflow(kw);
-            bestellungworkflow(kw.getVorwoche());
-            lagerbestandworkflow(kw);
+        for (int tag = 1; tag < alleTage.length; tag++) {
+            testLieferungenWorkflow(alleTage[tag]);
+        }
+        System.out.println("    Bestellungen werden berechnet...");
+        for (int tag = 1; tag < alleTage.length; tag++) {
+            bestellungworkflow(alleTage[tag]);
+        }
+        System.out.println("    Lagerbestände werden erneut berechnet...");
+        for (int tag = 1; tag < alleTage.length; tag++) {
+            lagerbestandworkflow(alleTage[tag]);
         }
         for (int i = 0; i < alleTage.length; i++) {
             alleTage[i].checkMyself();
@@ -202,25 +213,33 @@ public class Data_Manipulation_Controller {
         }
     }
 
-    private void bestellungworkflow(Kalenderwoche kw) {
-        if (kw != null) {
-            Schichtarbeitstag tag = kw.getLast();
-            LinkedList<Schichtarbeitstag> zuBerucksichtigen = new LinkedList<>();
-            while (tag.isHoldayIn(Land.Nordrhein_Westfalen)) {
-                zuBerucksichtigen.add(tag);
-                tag = tag.getVortag();
-            }
-            if (tag.getsum() > 0) {
-                for (int i = 1; i <= 8; i++) {
-                    tag.addBestellung(new Bestellung(tag.getArbeitstag_ID(), tag.getArbeitstag_ID(), i, tag.getLagerbestand(i), this.getToday(), tag.getDatum()));
+    private void bestellungworkflow(Schichtarbeitstag tag) {
+
+        if (!tag.isHoldayIn(Land.Nordrhein_Westfalen)) {
+            for (int i = 0; i < 8; i++) {
+                if (tag.getFahrradplan()[i] != 0) {
+                    Bestellung b = new Bestellung(getToday(0), tag.getArbeitstag_ID(), i + 1, tag.getFahrradplan()[i], getToday(), tag.getDatum());
+                    tag.addBestellung(b);
                 }
             }
-            while (zuBerucksichtigen.size() > 0) {
-                Schichtarbeitstag berucksichtigt = zuBerucksichtigen.removeLast();
-                berucksichtigt.lagerbestandBerechnen(berucksichtigt.getVortag());
-            }
+
         }
+        //LinkedList<Schichtarbeitstag> zuBerucksichtigen = new LinkedList<>();
+        //while (tag.isHoldayIn(Land.Nordrhein_Westfalen)) {
+        //    zuBerucksichtigen.add(tag);
+        //    tag = tag.getVortag();
+        //}
+        //if (tag.getsum() > 0) {
+        //    for (int i = 1; i <= 8; i++) {
+        //        tag.addBestellung(new Bestellung(tag.getArbeitstag_ID(), tag.getArbeitstag_ID(), i, tag.getLagerbestand(i), this.getToday(), tag.getDatum()));
+        //    }
+        //}
+        //while (zuBerucksichtigen.size() > 0) {
+        //    Schichtarbeitstag berucksichtigt = zuBerucksichtigen.removeLast();
+        //    berucksichtigt.lagerbestandBerechnen(berucksichtigt.getVortag());
+        //}
     }
+
 
     private void lagerbestandfestschreiben() {
         for (int i = 0; i < alleTage.length; i++) {
@@ -238,11 +257,13 @@ public class Data_Manipulation_Controller {
         alleTage = new Schichtarbeitstag[520];
         Schichtarbeitstag tag = null;
         Schichtarbeitstag vortag = new Schichtarbeitstag(0, 0, new int[8], 0, 0, new HashSet<Land>(), "01.01.1901");
+        Schichtarbeitstag nexttag = null;
         vortag.setVortag(null);
         alleTage[0] = vortag;
         for (int tagId = 1; tagId < alleTage.length; tagId++) {
             tag = queryA.getSchicht(tagId);
             tag.setVortag(vortag);
+            vortag.setNextTag(tag);
             vortag = tag;
             alleTage[tagId] = tag;
         }
@@ -269,12 +290,13 @@ public class Data_Manipulation_Controller {
         return arbeitstageDiesenMonat;
     }
 
-    private void lagerbestandworkflow(Kalenderwoche kw) {
-        while (kw.next()) {
-            Schichtarbeitstag tag = kw.get();
-            tag.lagerbestandBerechnen(tag.getVortag());
-        }
-        kw.reset();
+    private void lagerbestandworkflow(Schichtarbeitstag kw) {
+        //Schichtarbeitstag tag = kw;
+        kw.lagerbestandBerechnen(kw.getVortag());
+        // // for (int i = kw.getArbeitstag_ID(); i < alleTage.length; i++) {
+        //      tag.lagerbestandBerechnen(tag.getVortag());
+        //      tag = tag.getNextTag();
+        //  }
     }
 
     //private Schichtarbeitstag starttagberechnen(Komponenttyp ktyp, Schichtarbeitstag ankunftstag) {
@@ -517,14 +539,14 @@ public class Data_Manipulation_Controller {
         }
         tag.addBestellung(neueBestellung);//gab einen, bestellung hinzufügen
         int kwId = tag.getKwID();
-        for (Kalenderwoche kw : kwListCopy) {
-            if (kw.getKwID() >= kwId) {//TODO
-                lagerbestandworkflow(kw);
-                if (!lieferungworkflow(kw)) return null;
-                bestellungworkflow(kw.getVorwoche());
-                lagerbestandworkflow(kw);
-            }
-        }
+        // for (Kalenderwoche kw : kwListCopy) {
+        //     if (kw.getKwID() >= kwId) {//TODO
+        //         lagerbestandworkflow(kw);
+        //         if (!lieferungworkflow(kw)) return null;
+        //         bestellungworkflow(kw.getVorwoche());
+        //         lagerbestandworkflow(kw);
+        //     }
+        // }
         System.out.println("        Bestellung ist ok");
         return neueBestellung;
     }
@@ -575,8 +597,65 @@ public class Data_Manipulation_Controller {
         return kwList;
     }
 
+    /**
+     * sdsdsdssd
+     *
+     * @return
+     */
     public int[] getAbfahrtstage() {
         return abfahrtstage;
     }
+
+    /**
+     * alternative methode die lieferungen zu berechnen
+     * wenn eine lieferung nicht möglich ist, wird die mögliche produktionsmenge des fahrrads auf 0 gesetzt und auf den nächsten tag gelegt usw.
+     */
+    private void testLieferungenWorkflow(Schichtarbeitstag tag) {
+
+        int[] sekundarBedarfTag = tag.getSekundarBedarfe();
+        Schichtarbeitstag vorherigerArbeitsTag = tag.getVortag();
+        while (vorherigerArbeitsTag.isHoldayIn(Land.Nordrhein_Westfalen)) {
+            vorherigerArbeitsTag = vorherigerArbeitsTag.getVortag();
+        }
+        int vorHerigerarbeitstagID = vorherigerArbeitsTag.getArbeitstag_ID();
+        Schichtarbeitstag nextArbeitstag = tag.getNextTag();
+
+        while (nextArbeitstag != null && nextArbeitstag.isHoldayIn(Land.Nordrhein_Westfalen)) {
+            nextArbeitstag = nextArbeitstag.getNextTag();
+        }
+        //berechnen
+        for (int j = 0; j < sekundarBedarfTag.length; j++) {
+            int komponentID = j + 9;
+            if (sekundarBedarfTag[j] > 0) {
+                Zulieferer zulieferer = ZuliefererManager.getZulieferer(komponentID);
+                Lieferung lieferung = zulieferer.neueLieferungAnlegen(komponentID, sekundarBedarfTag[j], vorHerigerarbeitstagID);
+                if (lieferung != null) {
+                    vorherigerArbeitsTag.addLieferung(lieferung);
+                } else {
+                    //betroffene fahrräder berechnen und rückstand für den tag ermitteln (alle fahrräder des typs)
+                    int[] betroffeneBikes = Komponentenzuordnung.getFahrräderZurKomponente(komponentID);
+                    for (int betroffeneID = 0; betroffeneID < betroffeneBikes.length; betroffeneID++) {
+                        tag.setRuckstand(betroffeneBikes[betroffeneID] - 1, tag.getFahrradplan()[betroffeneBikes[betroffeneID] - 1]);
+                        //fahrradplan anpassen
+                        tag.changeFahrplan(betroffeneBikes[betroffeneID], 0);
+                    }
+
+                    //rückstand auf nächsten tag schieben
+                    if (nextArbeitstag != null) {
+
+                        for (int betroffeneID = 0; betroffeneID < betroffeneBikes.length; betroffeneID++) {
+                            int vorher = nextArbeitstag.getFahrradplan()[betroffeneBikes[betroffeneID] - 1];
+                            int neu = vorher + tag.getRuckstand()[betroffeneBikes[betroffeneID] - 1];
+                            nextArbeitstag.changeFahrplan(betroffeneBikes[betroffeneID], neu);
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
 }
+
+
 

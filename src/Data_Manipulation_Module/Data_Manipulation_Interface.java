@@ -199,8 +199,8 @@ public class Data_Manipulation_Interface {
         String[] bestand = new String[23];
         Schichtarbeitstag tag = myController.getAlleTage()[datum];
         bestand[0] = tag.getDatum();
-        for (int i = 1; i < tag.getLager2().length; i++) {
-            bestand[i] = Integer.toString(tag.getLager2()[i - 1]);
+        for (int i = 1; i <= tag.getLager2().length; i++) {
+            bestand[i] = Integer.toString(tag.getLager2()[i-1]);
         }
        return bestand;
     }
@@ -218,7 +218,7 @@ public class Data_Manipulation_Interface {
         int letzterTag = myController.getTagIDFromString(datumLetzterTag);
         String[][] returnvalue = new String[(letzterTag - erstertag) + 1][23];
         Schichtarbeitstag tag = myController.getAlleTage()[letzterTag];
-        for (int i = returnvalue.length - 1; i >= 1; i--) {
+        for (int i = returnvalue.length - 1; i >= 0; i--) {
             returnvalue[i] = getLagerbestandTag(tag.getArbeitstag_ID());
             tag = tag.getVortag();
         }
@@ -351,11 +351,23 @@ public class Data_Manipulation_Interface {
     public String[][] getProduktionsplanungInRange(String datumErsterTag, String datumLetzterTag){
         int ersterTagID = myController.getTagIDFromString(datumErsterTag);
         int letzterTagID = myController.getTagIDFromString(datumLetzterTag);
-        String[][] returnvalue = new String[letzterTagID-ersterTagID+1][9];
+        String[][] returnvalue = new String[letzterTagID-ersterTagID+2][9];
         int id= ersterTagID;
-        for(int i =0; i< returnvalue.length; i++){
+        int[] sums = new int[8];
+        String[] summen = new String[9];
+        summen[0] = "SUMMEN:";
+        for(int i =0; i< returnvalue.length-1; i++){
             returnvalue[i] = myController.getAlleTage()[id].getFahrradplanStrings();
+            for(int j= 0; j< sums.length; j++){
+                sums[j] = sums[j] + myController.getAlleTage()[id].getFahrradplan()[j];
+            }
+            id++;
         }
+
+        for(int l = 1; l<9; l++){
+            summen[l] = Integer.toString(sums[l-1]);
+        }
+        returnvalue[returnvalue.length-1] = summen;
         return returnvalue;
     }
 
@@ -374,7 +386,9 @@ public class Data_Manipulation_Interface {
     }
 
     public String[][] getProduktionsplanungJahr(String datum){
-        return getProduktionsplanungInRange(myController.getAlleTage()[0].getDatum(), myController.getAlleTage()[myController.getAlleTage().length-1].getDatum());
+        //123 ist 01.01.2021
+        //487 ist 31.12.2021
+        return getProduktionsplanungInRange(myController.getAlleTage()[123].getDatum(), myController.getAlleTage()[487].getDatum());
     }
 
 

@@ -4,6 +4,30 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class ProdPlanungJahrAnzeige {
     private SimpleStringProperty tag;
+    private SimpleStringProperty Allrounder;
+    private SimpleStringProperty Competition;
+    private SimpleStringProperty Downhill;
+    private SimpleStringProperty Extreme;
+    private SimpleStringProperty Freeride;
+    private SimpleStringProperty Marathon;
+    private SimpleStringProperty Performance;
+    private SimpleStringProperty Trail;
+
+
+    public ProdPlanungJahrAnzeige(String tag, String Allrounder, String Competition, String Downhill, String Extreme,
+                                  String Freeride, String Marathon, String Performance, String Trail) {
+
+        this.tag = new SimpleStringProperty(tag);
+        this.Allrounder = new SimpleStringProperty(Allrounder);
+        this.Competition = new SimpleStringProperty(Competition);
+        this.Downhill = new SimpleStringProperty(Downhill);
+        this.Extreme = new SimpleStringProperty(Extreme);
+        this.Freeride = new SimpleStringProperty(Freeride);
+        this.Marathon = new SimpleStringProperty(Marathon);
+        this.Performance = new SimpleStringProperty(Performance);
+        this.Trail = new SimpleStringProperty(Trail);
+
+    }
 
     public String getTag() {
         return tag.get();
@@ -112,32 +136,4 @@ public class ProdPlanungJahrAnzeige {
     public void setTrail(String trail) {
         this.Trail.set(trail);
     }
-
-    private SimpleStringProperty Allrounder;
-    private SimpleStringProperty Competition;
-    private SimpleStringProperty Downhill;
-    private SimpleStringProperty Extreme;
-    private SimpleStringProperty Freeride;
-    private SimpleStringProperty Marathon;
-    private SimpleStringProperty Performance;
-    private SimpleStringProperty Trail;
-
-
-    public ProdPlanungJahrAnzeige(String tag, String Allrounder, String Competition, String Downhill, String Extreme,
-                                  String Freeride, String Marathon, String Performance, String Trail) {
-
-        this.tag = new SimpleStringProperty(tag);
-        this.Allrounder = new SimpleStringProperty(Allrounder);
-        this.Competition = new SimpleStringProperty(Competition);
-        this.Downhill = new SimpleStringProperty(Downhill);
-        this.Extreme = new SimpleStringProperty(Extreme);
-        this.Freeride = new SimpleStringProperty(Freeride);
-        this.Marathon = new SimpleStringProperty(Marathon);
-        this.Performance = new SimpleStringProperty(Performance);
-        this.Trail = new SimpleStringProperty(Trail);
-
-    }
-
-
-
 }

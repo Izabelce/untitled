@@ -1,55 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
-<GridPane alignment="center" hgap="100.0" prefHeight="600.0" prefWidth="615.0" vgap="100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller19">
+<GridPane alignment="center" hgap="100.0" prefHeight="600.0" prefWidth="615.0" vgap="100.0"
+          xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller19">
     <columnConstraints>
-        <ColumnConstraints />
-        <ColumnConstraints />
+        <ColumnConstraints/>
+        <ColumnConstraints/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints />
-        <RowConstraints />
+        <RowConstraints/>
+        <RowConstraints/>
     </rowConstraints>
     <children>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="739.0" >
-   <children>
-      <TableView fx:id="produktionJahr" layoutX="18.0" layoutY="150.0" prefHeight="446.0" prefWidth="688.0">
-         <columns>
-            <TableColumn fx:id="tag" prefWidth="70.0" text="Tag" />
-            <TableColumn fx:id="Allrounder" prefWidth="70.0" text="MTB Allrounder" />
-            <TableColumn fx:id="Competition" prefWidth="70.0" text="MTB Competition" />
-            <TableColumn fx:id="Downhill" prefWidth="70.0" text="MTB Downhill" />
-            <TableColumn fx:id="Extreme" prefWidth="70.0" text="MTB Extreme" />
-            <TableColumn fx:id="Freeride" prefWidth="70.0" text="MTB Freeride" />
-            <TableColumn fx:id="Marathon" prefWidth="70.0" text="MTB Marathon" />
-            <TableColumn fx:id="Performance" prefWidth="70.0" text="MTB Performance" />
-            <TableColumn fx:id="Trail" prefWidth="70.0" text="MTB Trail" />
-            <TableColumn fx:id="Tundra" prefWidth="70.0" text="Fizik Tundra" />
-            <TableColumn fx:id="Raceline" prefWidth="70.0" text="Raceline" />
-            <TableColumn fx:id="Spark" prefWidth="70.0" text="Spark" />
-            <TableColumn fx:id="Speedline" prefWidth="70.0" text="Speedline" />
-            <TableColumn fx:id="a7005DB" prefWidth="70.0" text="Aluminium 7005DB" />
-            <TableColumn fx:id="a7005TB" prefWidth="70.0" text="Aluminium 7005TB" />
-            <TableColumn fx:id="Monocoque" prefWidth="70.0" text="Carbon Monocoque" />
-            <TableColumn fx:id="F100" prefWidth="70.0" text="Fox32 F100" />
-            <TableColumn fx:id="F80" prefWidth="70.0" text="Fox32 F80" />
-            <TableColumn fx:id="Talas" prefWidth="70.0" text="Fox Talas 140" />
-            <TableColumn fx:id="Reba" prefWidth="70.0" text="Rock Schox Reba" />
-            <TableColumn fx:id="f351" prefWidth="70.0" text="Rock Schox Recon 351" />
-            <TableColumn fx:id="SL" prefWidth="70.0" text="Rock Schox Recon SL" />
-            <TableColumn fx:id="Raidon" prefWidth="70.0" text="SR Suntour Raidon" />
-         </columns>
-      </TableView>
-      <Label layoutX="48.0" layoutY="32.0" text="Heute:" />
-      <Label fx:id="datum" layoutX="83.0" layoutY="32.0" text="Label" />
-      <Button layoutX="83.0" layoutY="91.0" mnemonicParsing="false" onAction="#tag_button" text="Heute anzeigen" />
-      <Button layoutX="226.0" layoutY="91.0" mnemonicParsing="false" onAction="#woche_button" prefHeight="25.0" prefWidth="99.0" text="Diese Woche" />
-      <Button layoutX="372.0" layoutY="91.0" mnemonicParsing="false" onAction="#monat_button" prefHeight="25.0" prefWidth="99.0" text="Diesen Monat" />
-      <Button layoutX="521.0" layoutY="91.0" mnemonicParsing="false" onAction="#jahr_button" prefHeight="25.0" prefWidth="99.0" text="Dieses Jahr" />
-   </children>
-</Pane>
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0"
+              prefWidth="739.0">
+            <children>
+                <TableView fx:id="produktionJahr" layoutX="18.0" layoutY="150.0" prefHeight="446.0" prefWidth="688.0">
+                    <columns>
+                        <TableColumn fx:id="tag" prefWidth="70.0" text="Tag"/>
+                        <TableColumn fx:id="Allrounder" prefWidth="70.0" text="MTB Allrounder"/>
+                        <TableColumn fx:id="Competition" prefWidth="70.0" text="MTB Competition"/>
+                        <TableColumn fx:id="Downhill" prefWidth="70.0" text="MTB Downhill"/>
+                        <TableColumn fx:id="Extreme" prefWidth="70.0" text="MTB Extreme"/>
+                        <TableColumn fx:id="Freeride" prefWidth="70.0" text="MTB Freeride"/>
+                        <TableColumn fx:id="Marathon" prefWidth="70.0" text="MTB Marathon"/>
+                        <TableColumn fx:id="Performance" prefWidth="70.0" text="MTB Performance"/>
+                        <TableColumn fx:id="Trail" prefWidth="70.0" text="MTB Trail"/>
+                    </columns>
+                </TableView>
+                <Label layoutX="48.0" layoutY="32.0" text="Heute:"/>
+                <Label fx:id="datum" layoutX="83.0" layoutY="32.0" text="Label"/>
+                <Button layoutX="83.0" layoutY="91.0" mnemonicParsing="false" onAction="#tag_button"
+                        text="Heute anzeigen"/>
+                <Button layoutX="226.0" layoutY="91.0" mnemonicParsing="false" onAction="#woche_button"
+                        prefHeight="25.0" prefWidth="99.0" text="Diese Woche"/>
+                <Button layoutX="372.0" layoutY="91.0" mnemonicParsing="false" onAction="#monat_button"
+                        prefHeight="25.0" prefWidth="99.0" text="Diesen Monat"/>
+                <Button layoutX="521.0" layoutY="91.0" mnemonicParsing="false" onAction="#jahr_button" prefHeight="25.0"
+                        prefWidth="99.0" text="Dieses Jahr"/>
+            </children>
+        </Pane>
     </children>
 </GridPane>

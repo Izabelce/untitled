@@ -173,4 +173,88 @@ public class Komponentenzuordnung {
         }
         return "ERROR";
     }
+
+
+    public static int[] getFahrräderZurKomponente(int komponenttypID) {
+        boolean[] fahrräder = new boolean[8];
+        int anzahl = 0;
+        switch (komponenttypID) {
+            case 9:
+                fahrräder[2] = true;
+                fahrräder[4] = true;
+                fahrräder[6] = true;
+                anzahl = 3;
+                break;
+            case 10:
+                fahrräder[5] = true;
+                anzahl = 1;
+                break;
+            case 11:
+                fahrräder[0] = true;
+                fahrräder[3] = true;
+                anzahl = 2;
+                break;
+            case 12:
+                fahrräder[1] = true;
+                fahrräder[7] = true;
+                anzahl = 2;
+                break;
+            case 13:
+                fahrräder[0] = true;
+                fahrräder[5] = true;
+                anzahl = 2;
+                break;
+            case 14:
+                fahrräder[2] = true;
+                fahrräder[4] = true;
+                fahrräder[6] = true;
+                anzahl = 3;
+                break;
+            case 15:
+                fahrräder[1] = true;
+                fahrräder[3] = true;
+                fahrräder[7] = true;
+                anzahl = 3;
+                break;
+            case 16:
+                fahrräder[0] = true;
+                anzahl = 1;
+                break;
+            case 17:
+                fahrräder[4] = true;
+                anzahl = 1;
+                break;
+            case 18:
+                fahrräder[1] = true;
+                anzahl = 1;
+                break;
+            case 19:
+                fahrräder[3] = true;
+                fahrräder[6] = true;
+                anzahl = 2;
+                break;
+            case 20:
+                fahrräder[2] = true;
+                anzahl = 1;
+                break;
+            case 21:
+                fahrräder[5] = true;
+                anzahl = 1;
+                break;
+            case 22:
+                fahrräder[7] = true;
+                anzahl = 1;
+                break;
+        }
+        int[] returnarray = new int[anzahl];
+        int index = 0;
+        for (int i = 0; i < fahrräder.length; i++) {
+            if (fahrräder[i]) {
+                returnarray[index] = i + 1;
+                index++;
+            }
+        }
+
+        return returnarray;
+    }
 }

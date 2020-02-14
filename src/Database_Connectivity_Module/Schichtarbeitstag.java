@@ -22,6 +22,7 @@ public class Schichtarbeitstag {
     private HashSet<Data_Manipulation_Module.Land> holidayIn;
     private List<Lieferung> heutigeLieferungen;
     private Schichtarbeitstag vortag;
+    private Schichtarbeitstag nextTag;
     private List<Bestellung> heutigeBestellungen;
     private int[] lager2;
     private int[] ruckstand;
@@ -33,22 +34,31 @@ public class Schichtarbeitstag {
         this.max_output = max_output;
         this.arbeitstag_ID = tag_ID;
         this.datum = datum;
-        fahrradplan = arbeitsmappe;
+        fahrradplan = new int[arbeitsmappe.length];
+        for(int i=0; i<fahrradplan.length; i++){
+            fahrradplan[i] = arbeitsmappe[i];
+        }
         this.kw_id = kw_id;
         this.sum = 0;
         this.holidayIn = holidays;
         heutigeLieferungen = new LinkedList<Lieferung>();
         heutigeBestellungen = new LinkedList<Bestellung>();
         monats_ID = 0;
+        sumBerechnen();
+        this.ruckstand = new int[8];
+
+        lager2 = new int[22];
+        sekundarbedarfBerechnen();
+    }
+
+    private void sumBerechnen() {
         for (int i = 0; i < fahrradplan.length; i++) {
             sum = sum + fahrradplan[i];
         }
-        lager2 = new int[22];
-        sekundarbedarfBerechnen();
-
     }
 
-    private void sekundarbedarfBerechnen() {
+    public void sekundarbedarfBerechnen() {
+
         this.sekundarbedarf = new int[14];
         for (int i = 0; i < fahrradplan.length; i++) {
             int anzahl = fahrradplan[i];
@@ -67,6 +77,14 @@ public class Schichtarbeitstag {
                 throw new IllegalArgumentException("ILLEGAL Vorherigerarbeitstag");
         }
         this.vortag = vortag;
+    }
+
+    public void setNextTag(Schichtarbeitstag nexttag){
+        if (nexttag != null) {
+            if (nexttag.getArbeitstag_ID() != this.getArbeitstag_ID() + 1)
+                throw new IllegalArgumentException("ILLEGAL Vorherigerarbeitstag");
+        }
+        this.nextTag = nexttag;
     }
 
     public Schichtarbeitstag getVortag() {
@@ -88,9 +106,6 @@ public class Schichtarbeitstag {
                 //lagerobjektIDs sind immer +1 dem i
                 lager2[i] = vortag.getLagerbestand(i + 1);
             }
-            // for (Integer key : lager.keySet()) {
-            //     lager.put(key, vortag.getLagerbestand(key));
-            // }
 
             for (int i = 0; i < fahrradplan.length; i++) {
                 int anzahl = fahrradplan[i];
@@ -100,20 +115,14 @@ public class Schichtarbeitstag {
                 lager2[gabelId - 1] = lager2[gabelId - 1] - anzahl;
                 lager2[sattelId - 1] = lager2[sattelId - 1] - anzahl;
                 lager2[rahmenId - 1] = lager2[rahmenId - 1] - anzahl;
-
-                // lager.put(gabelId, lager.get(gabelId) - anzahl);
-                // lager.put(sattelId, lager.get(sattelId) - anzahl);
-                // lager.put(rahmenId, lager.get(rahmenId) - anzahl);
             }
 
             for (Lieferung l : vortag.heutigeLieferungen) {
                 lager2[l.getKomponenttyp_ID() - 1] = lager2[l.getKomponenttyp_ID() - 1] + l.getAnzahl();
-                //lager.put(l.getKomponenttyp_ID(), lager.get(l.getKomponenttyp_ID()) + l.getAnzahl());
             }
 
             for (int i = 0; i < 8; i++) {
                 lager2[i] = lager2[i] + vortag.fahrradplan[i] - vortag.getBestellmenge(i + 1);
-                //lager.put(i + 1, lager.get(i + 1) + vortag.fahrradplan[i] - vortag.getBestellmenge(i+1) );
             }
         }
     }
@@ -394,11 +403,34 @@ public class Schichtarbeitstag {
 
     public String[] getFahrradplanStrings(){
         String[] returnvalue = new String[9];
-        for(int i=1; i<fahrradplan.length; i++){
+        for(int i=1; i<=fahrradplan.length; i++){
             returnvalue [i] = Integer.toString(fahrradplan[i-1]);
         }
         returnvalue[0] = datum;
         return returnvalue;
     }
+
+    public void setSekundarBedarfe(int[] sekundarbedarf) {
+        this.sekundarbedarf = sekundarbedarf;
+    }
+
+    public void setRuckstand(int fahrradID, int anzahl){
+        this.ruckstand [fahrradID] = anzahl;
+    }
+
+    public void changeFahrplan(int fahrradID, int anzahlNeu){
+        fahrradplan[fahrradID-1] = anzahlNeu;
+        sekundarbedarfBerechnen();
+        sumBerechnen();
+    }
+
+    public Schichtarbeitstag getNextTag(){
+        return this.nextTag;
+    }
+
+    public int[] getRuckstand(){
+        return  this.ruckstand;
+    }
+
 
 }

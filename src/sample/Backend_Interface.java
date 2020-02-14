@@ -254,7 +254,7 @@ public class Backend_Interface {
      */
     public String[][] produktionsplanungWoche(String datum) {
 
-        return  dataInterface.getSekundarbedarfWoche(datum);
+        return  dataInterface.getProduktionsplanungWoche(datum);
     }
 
     /**
