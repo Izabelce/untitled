@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/etc/logo_adventure_works.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Data_Manipulation_Interface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Datamanipulation_data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Data_Manipulation_Module/Datamanipulation_data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Connectivity_Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Connectivity_Interface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Connector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/Database_Connectivity_Module/Database_Connector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Adventureworks_Bikes_version2_guis/sample/Controller1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data_Manipulation_Module/Datamanipulation_data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_Manipulation_Module/Datamanipulation_data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data_Manipulation_Module/Komponentenzuordnung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_Manipulation_Module/Komponentenzuordnung.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database_Connectivity_Module/Schichtarbeitstag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database_Connectivity_Module/Schichtarbeitstag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller18.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database_Connectivity_Module/Zulieferer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database_Connectivity_Module/Zulieferer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Backend_Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Backend_Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller19.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller19.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller_Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller_Base.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ProdPlanungJahrAnzeige.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ProdPlanungJahrAnzeige.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/view19.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/view19.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Users\Sternke\IdeaProjects\untitled\.idea\shelf/" />
@@ -75,11 +76,16 @@
       <file leaf-file-name="Data_Manipulation_Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="535" selection-start-line="535" selection-end-line="535" />
+            <state relative-caret-position="207">
+              <caret line="592" selection-start-line="592" selection-end-line="592" />
               <folding>
-                <element signature="e#21834#21835#0" expanded="true" />
-                <element signature="e#21865#21866#0" expanded="true" />
+                <element signature="e#2284#2285#0" expanded="true" />
+                <element signature="e#2339#2340#0" expanded="true" />
+                <element signature="e#2866#2867#0" expanded="true" />
+                <element signature="e#2913#2914#0" expanded="true" />
+                <element signature="e#3468#3469#0" expanded="true" />
+                <element signature="e#3497#3498#0" expanded="true" />
+                <element signature="e#22858#22859#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,8 +94,40 @@
       <file leaf-file-name="Data_Manipulation_Interface.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="306" column="9" lean-forward="true" selection-start-line="306" selection-start-column="9" selection-end-line="306" selection-end-column="9" />
+            <state relative-caret-position="444">
+              <caret line="366" column="33" lean-forward="true" selection-start-line="366" selection-start-column="33" selection-end-line="366" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#13569#13570#0" expanded="true" />
+                <element signature="e#13634#13635#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loadSchichtarbeitstage.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSVDATA/loadSchichtarbeitstage.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="487" column="42" selection-start-line="487" selection-start-column="39" selection-end-line="487" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller18.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller18.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller19.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller19.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="83" column="71" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,28 +135,76 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller_Base.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller_Base.java">
+      <file leaf-file-name="view19.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/view19.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
-              <folding>
-                <element signature="e#1265#1266#0" expanded="true" />
-                <element signature="e#1293#1294#0" expanded="true" />
-                <element signature="e#1539#1540#0" expanded="true" />
-                <element signature="e#1568#1569#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="748">
+              <caret line="44" column="11" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file leaf-file-name="Datamanipulation_data.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Datamanipulation_data.java">
+      <file leaf-file-name="ProdPlanungJahrAnzeige.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/ProdPlanungJahrAnzeige.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="204">
+              <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1291#1292#0" expanded="true" />
+                <element signature="e#1323#1324#0" expanded="true" />
+                <element signature="e#1372#1373#0" expanded="true" />
+                <element signature="e#1398#1399#0" expanded="true" />
+                <element signature="e#1436#1437#0" expanded="true" />
+                <element signature="e#1469#1470#0" expanded="true" />
+                <element signature="e#1506#1507#0" expanded="true" />
+                <element signature="e#1545#1546#0" expanded="true" />
+                <element signature="e#1601#1602#0" expanded="true" />
+                <element signature="e#1634#1635#0" expanded="true" />
+                <element signature="e#1686#1687#0" expanded="true" />
+                <element signature="e#1733#1734#0" expanded="true" />
+                <element signature="e#1771#1772#0" expanded="true" />
+                <element signature="e#1811#1812#0" expanded="true" />
+                <element signature="e#1868#1869#0" expanded="true" />
+                <element signature="e#1902#1903#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+                <element signature="e#2005#2006#0" expanded="true" />
+                <element signature="e#2040#2041#0" expanded="true" />
+                <element signature="e#2077#2078#0" expanded="true" />
+                <element signature="e#2131#2132#0" expanded="true" />
+                <element signature="e#2162#2163#0" expanded="true" />
+                <element signature="e#2210#2211#0" expanded="true" />
+                <element signature="e#2253#2254#0" expanded="true" />
+                <element signature="e#2287#2288#0" expanded="true" />
+                <element signature="e#2323#2324#0" expanded="true" />
+                <element signature="e#2376#2377#0" expanded="true" />
+                <element signature="e#2406#2407#0" expanded="true" />
+                <element signature="e#2452#2453#0" expanded="true" />
+                <element signature="e#2493#2494#0" expanded="true" />
+                <element signature="e#2528#2529#0" expanded="true" />
+                <element signature="e#2565#2566#0" expanded="true" />
+                <element signature="e#2619#2620#0" expanded="true" />
+                <element signature="e#2650#2651#0" expanded="true" />
+                <element signature="e#2698#2699#0" expanded="true" />
+                <element signature="e#2741#2742#0" expanded="true" />
+                <element signature="e#2776#2777#0" expanded="true" />
+                <element signature="e#2813#2814#0" expanded="true" />
+                <element signature="e#2867#2868#0" expanded="true" />
+                <element signature="e#2898#2899#0" expanded="true" />
+                <element signature="e#2946#2947#0" expanded="true" />
+                <element signature="e#2989#2990#0" expanded="true" />
+                <element signature="e#3027#3028#0" expanded="true" />
+                <element signature="e#3067#3068#0" expanded="true" />
+                <element signature="e#3124#3125#0" expanded="true" />
+                <element signature="e#3158#3159#0" expanded="true" />
+                <element signature="e#3212#3213#0" expanded="true" />
+                <element signature="e#3261#3262#0" expanded="true" />
+                <element signature="e#3293#3294#0" expanded="true" />
+                <element signature="e#3327#3328#0" expanded="true" />
+                <element signature="e#3378#3379#0" expanded="true" />
+                <element signature="e#3406#3407#0" expanded="true" />
+                <element signature="e#3448#3449#0" expanded="true" />
+                <element signature="e#3485#3486#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,79 +213,21 @@
       <file leaf-file-name="Schichtarbeitstag.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Schichtarbeitstag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="342" selection-start-line="342" selection-end-line="342" />
+            <state relative-caret-position="340">
+              <caret line="405" column="24" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
               <folding>
-                <element signature="e#2478#2479#0" expanded="true" />
-                <element signature="e#2512#2513#0" expanded="true" />
-                <element signature="e#2586#2587#0" expanded="true" />
-                <element signature="e#2638#2639#0" expanded="true" />
-                <element signature="e#2685#2686#0" expanded="true" />
-                <element signature="e#2727#2728#0" expanded="true" />
-                <element signature="e#4969#4970#0" expanded="true" />
-                <element signature="e#5002#5003#0" expanded="true" />
-                <element signature="e#5051#5052#0" expanded="true" />
-                <element signature="e#5095#5096#0" expanded="true" />
-                <element signature="e#5131#5132#0" expanded="true" />
-                <element signature="e#5172#5173#0" expanded="true" />
-                <element signature="e#6038#6039#0" expanded="true" />
-                <element signature="e#6066#6067#0" expanded="true" />
-                <element signature="e#6093#6094#0" expanded="true" />
-                <element signature="e#6119#6120#0" expanded="true" />
-                <element signature="e#7483#7484#0" expanded="true" />
-                <element signature="e#7531#7532#0" expanded="true" />
-                <element signature="e#8001#8002#0" expanded="true" />
-                <element signature="e#8040#8041#0" expanded="true" />
-                <element signature="e#8077#8078#0" expanded="true" />
-                <element signature="e#8118#8119#0" expanded="true" />
-                <element signature="e#9526#9527#0" expanded="true" />
-                <element signature="e#9581#9582#0" expanded="true" />
-                <element signature="e#9641#9642#0" expanded="true" />
-                <element signature="e#9685#9686#0" expanded="true" />
-                <element signature="e#9732#9733#0" expanded="true" />
-                <element signature="e#9778#9779#0" expanded="true" />
-                <element signature="e#9825#9826#0" expanded="true" />
-                <element signature="e#9867#9868#0" expanded="true" />
-                <element signature="e#9916#9917#0" expanded="true" />
-                <element signature="e#9963#9964#0" expanded="true" />
-                <element signature="e#11856#11857#0" expanded="true" />
-                <element signature="e#11890#11891#0" expanded="true" />
-                <element signature="e#11923#11924#0" expanded="true" />
-                <element signature="e#11960#11961#0" expanded="true" />
-                <element signature="e#11994#11995#0" expanded="true" />
-                <element signature="e#12023#12024#0" expanded="true" />
-                <element signature="e#12051#12052#0" expanded="true" />
-                <element signature="e#12078#12079#0" expanded="true" />
-                <element signature="e#12104#12105#0" expanded="true" />
-                <element signature="e#12137#12138#0" expanded="true" />
-                <element signature="e#12169#12170#0" expanded="true" />
-                <element signature="e#12212#12213#0" expanded="true" />
-                <element signature="e#12244#12245#0" expanded="true" />
-                <element signature="e#12298#12299#0" expanded="true" />
-                <element signature="e#12339#12340#0" expanded="true" />
-                <element signature="e#12395#12396#0" expanded="true" />
-                <element signature="e#12437#12438#0" expanded="true" />
-                <element signature="e#12469#12470#0" expanded="true" />
-                <element signature="e#12498#12499#0" expanded="true" />
+                <element signature="e#12470#12471#0" expanded="true" />
+                <element signature="e#12499#12500#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database_Connector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Connector.java">
+      <file leaf-file-name="Controller5.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database_Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="287">
+              <caret line="107" column="57" lean-forward="true" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -207,8 +235,8 @@
       <file leaf-file-name="Backend_Interface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Backend_Interface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+            <state relative-caret-position="291">
+              <caret line="195" column="36" selection-start-line="195" selection-start-column="36" selection-end-line="195" selection-end-column="36" />
               <folding>
                 <element signature="e#1508#1509#0" expanded="true" />
                 <element signature="e#1600#1601#0" expanded="true" />
@@ -223,24 +251,6 @@
                 <element signature="e#6384#6385#0" expanded="true" />
                 <element signature="e#6448#6449#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="134" column="9" lean-forward="true" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -268,6 +278,14 @@
       <find>50</find>
       <find>25</find>
       <find>prefWidth</find>
+      <find>Sekun</find>
+      <find>Syste</find>
+      <find>fdf</find>
+      <find>Sys</find>
+      <find>&quot; &quot;</find>
+      <find>sekun</find>
+      <find>load</find>
+      <find>writeS</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -289,29 +307,32 @@
       <list>
         <option value="$PROJECT_DIR$/CSVDATA/table_definitons.txt" />
         <option value="$PROJECT_DIR$/CSVDATA/drop_all_tables.txt" />
-        <option value="$PROJECT_DIR$/src/Data_Manipulation_Module/Komponentenzuordnung.java" />
         <option value="$PROJECT_DIR$/src/sample/LieferungAnzeigeHelfer.java" />
         <option value="$PROJECT_DIR$/src/sample/view11.fxml" />
         <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/TagArtTyp.java" />
         <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/ZuliefererManager.java" />
         <option value="$PROJECT_DIR$/CSVDATA/Insert_all_data.txt" />
         <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/TagArt.java" />
-        <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Zulieferer.java" />
         <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Controller.java" />
         <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Stammdatenmanager.java" />
         <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Kalenderwoche.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller11.java" />
         <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Connectivity_Interface.java" />
-        <option value="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java" />
         <option value="$PROJECT_DIR$/src/Data_Manipulation_Module/Plausibility.java" />
-        <option value="$PROJECT_DIR$/src/sample/Backend_Interface.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controller2.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller18.java" />
-        <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Schichtarbeitstag.java" />
         <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Connector.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller1.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controller_Base.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controller2.java" />
+        <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Zulieferer.java" />
+        <option value="$PROJECT_DIR$/src/Data_Manipulation_Module/Komponentenzuordnung.java" />
+        <option value="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java" />
         <option value="$PROJECT_DIR$/src/Data_Manipulation_Module/Datamanipulation_data.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controller_Base.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controller19.java" />
+        <option value="$PROJECT_DIR$/src/sample/ProdPlanungJahrAnzeige.java" />
+        <option value="$PROJECT_DIR$/src/sample/view19.fxml" />
+        <option value="$PROJECT_DIR$/src/Database_Connectivity_Module/Schichtarbeitstag.java" />
+        <option value="$PROJECT_DIR$/src/sample/Backend_Interface.java" />
         <option value="$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java" />
       </list>
     </option>
@@ -329,6 +350,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -345,9 +372,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -375,18 +399,15 @@
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Database_Connectivity_Module" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -558,7 +579,10 @@
       <workItem from="1581444868942" duration="7930000" />
       <workItem from="1581454303549" duration="2901000" />
       <workItem from="1581534089887" duration="8207000" />
-      <workItem from="1581542972355" duration="5173000" />
+      <workItem from="1581542972355" duration="5334000" />
+      <workItem from="1581578945970" duration="34317000" />
+      <workItem from="1581630109129" duration="1736000" />
+      <workItem from="1581632907534" duration="6073000" />
     </task>
     <task id="LOCAL-00001" summary="alles eingebunden. superporno">
       <created>1580326356950</created>
@@ -749,11 +773,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581548369644</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Viele Fehler behoben&#10;TESTEN!!!!!">
+      <created>1581551214077</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1581551214077</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117492000" />
+    <option name="totallyTimeSpent" value="159779000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -775,27 +806,27 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4122905" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.27597764" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19888268" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32960895" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1977612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22228146" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.41005588" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47039106" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2916201" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.28156424" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -840,7 +871,8 @@
     <MESSAGE value="weiter gearbeitet an zulieferer" />
     <MESSAGE value="Fehler behoben" />
     <MESSAGE value="Interface methoden nach anfrage hinzugefügt&#10;TESTEN!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interface methoden nach anfrage hinzugefügt&#10;TESTEN!!!!!" />
+    <MESSAGE value="Viele Fehler behoben&#10;TESTEN!!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Viele Fehler behoben&#10;TESTEN!!!!!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="23" key="#Project_Structure" timestamp="1580244137354">
@@ -941,56 +973,47 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Data_Manipulation_Module/QueryAssembler.java</url>
           <line>171</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Controller17.java</url>
           <line>27</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Database_Connectivity_Module/Zulieferer.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java</url>
-          <line>389</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Controller11.java</url>
           <line>103</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Controller11.java</url>
-          <line>85</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java</url>
           <line>117</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java</url>
-          <line>347</line>
+          <url>file://$PROJECT_DIR$/src/sample/Controller11.java</url>
+          <line>85</line>
           <properties />
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java</url>
+          <line>384</line>
+          <properties />
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="25" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="62" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -998,34 +1021,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/JetBrains/javaFX_SDK/javafx-sdk-11.0.2/lib/javafx.base.jar!/javafx/beans/property/BooleanPropertyBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/JetBrains/javaFX_SDK/javafx-sdk-11.0.2/lib/javafx.graphics.jar!/javafx/stage/Stage.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="625" selection-start-line="625" selection-end-line="625" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="1260" column="26" selection-start-line="1260" selection-start-column="26" selection-end-line="1260" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Lieferung.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1083,7 +1078,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSVDATA/loadSchichtarbeitstage.txt" />
     <entry file="file://$PROJECT_DIR$/.idea/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1109,13 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/QueryAssembler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="311" column="42" selection-start-line="311" selection-start-column="42" selection-end-line="311" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1154,13 +1141,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller12.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="58" column="66" lean-forward="true" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSVDATA/loadBestellungen.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1189,16 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Zulieferer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/ZuliefererManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1218,17 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Kalenderwoche.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#3317#3318#0" expanded="true" />
-            <element signature="e#3364#3365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSVDATA/loadLieferungen.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1243,20 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller11.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="87" column="29" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="142" column="73" selection-start-line="142" selection-start-column="73" selection-end-line="142" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Plausibility.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1265,20 +1210,6 @@
             <element signature="e#314#315#0" expanded="true" />
             <element signature="e#342#343#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller18.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Komponentenzuordnung.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1296,49 +1227,244 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Connector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="2159">
           <caret line="133" selection-start-line="133" selection-end-line="133" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Database_Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="374">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="134" column="9" lean-forward="true" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller_Base.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
-          <folding>
-            <element signature="e#1265#1266#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1539#1540#0" expanded="true" />
-            <element signature="e#1568#1569#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+        <state relative-caret-position="1309">
+          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Zulieferer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Kalenderwoche.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+          <folding>
+            <element signature="e#3131#3132#0" expanded="true" />
+            <element signature="e#3159#3160#0" expanded="true" />
+            <element signature="e#3317#3318#0" expanded="true" />
+            <element signature="e#3364#3365#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/QueryAssembler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4029">
+          <caret line="251" column="16" selection-start-line="251" selection-start-column="16" selection-end-line="251" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Komponentenzuordnung.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1802">
+          <caret line="243" column="20" selection-start-line="243" selection-start-column="20" selection-end-line="243" selection-end-column="20" />
+          <folding>
+            <element signature="method#getSattelID#0;class#Komponentenzuordnung#0" />
+            <element signature="method#getGabelID#0;class#Komponentenzuordnung#0" />
+            <element signature="method#getMBW#0;class#Komponentenzuordnung#0" />
+            <element signature="method#getZulieferer#0;class#Komponentenzuordnung#0" />
+            <element signature="method#getKtypFromID#0;class#Komponentenzuordnung#0" />
+            <element signature="method#getCanonicalName#0;class#Komponentenzuordnung#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/logo_adventure_works.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller_Base.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller11.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Datamanipulation_data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1507">
+          <caret line="449" column="63" lean-forward="true" selection-start-line="449" selection-start-column="63" selection-end-line="449" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller12.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="107" column="57" lean-forward="true" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ProdPlanungJahrAnzeige.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+          <folding>
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1323#1324#0" expanded="true" />
+            <element signature="e#1372#1373#0" expanded="true" />
+            <element signature="e#1398#1399#0" expanded="true" />
+            <element signature="e#1436#1437#0" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1545#1546#0" expanded="true" />
+            <element signature="e#1601#1602#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
+            <element signature="e#1811#1812#0" expanded="true" />
+            <element signature="e#1868#1869#0" expanded="true" />
+            <element signature="e#1902#1903#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#2005#2006#0" expanded="true" />
+            <element signature="e#2040#2041#0" expanded="true" />
+            <element signature="e#2077#2078#0" expanded="true" />
+            <element signature="e#2131#2132#0" expanded="true" />
+            <element signature="e#2162#2163#0" expanded="true" />
+            <element signature="e#2210#2211#0" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
+            <element signature="e#2287#2288#0" expanded="true" />
+            <element signature="e#2323#2324#0" expanded="true" />
+            <element signature="e#2376#2377#0" expanded="true" />
+            <element signature="e#2406#2407#0" expanded="true" />
+            <element signature="e#2452#2453#0" expanded="true" />
+            <element signature="e#2493#2494#0" expanded="true" />
+            <element signature="e#2528#2529#0" expanded="true" />
+            <element signature="e#2565#2566#0" expanded="true" />
+            <element signature="e#2619#2620#0" expanded="true" />
+            <element signature="e#2650#2651#0" expanded="true" />
+            <element signature="e#2698#2699#0" expanded="true" />
+            <element signature="e#2741#2742#0" expanded="true" />
+            <element signature="e#2776#2777#0" expanded="true" />
+            <element signature="e#2813#2814#0" expanded="true" />
+            <element signature="e#2867#2868#0" expanded="true" />
+            <element signature="e#2898#2899#0" expanded="true" />
+            <element signature="e#2946#2947#0" expanded="true" />
+            <element signature="e#2989#2990#0" expanded="true" />
+            <element signature="e#3027#3028#0" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3124#3125#0" expanded="true" />
+            <element signature="e#3158#3159#0" expanded="true" />
+            <element signature="e#3212#3213#0" expanded="true" />
+            <element signature="e#3261#3262#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#3327#3328#0" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3406#3407#0" expanded="true" />
+            <element signature="e#3448#3449#0" expanded="true" />
+            <element signature="e#3485#3486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/view19.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="11" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Schichtarbeitstag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="405" column="24" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
+          <folding>
+            <element signature="e#12470#12471#0" expanded="true" />
+            <element signature="e#12499#12500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller18.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="592" selection-start-line="592" selection-end-line="592" />
+          <folding>
+            <element signature="e#2284#2285#0" expanded="true" />
+            <element signature="e#2339#2340#0" expanded="true" />
+            <element signature="e#2866#2867#0" expanded="true" />
+            <element signature="e#2913#2914#0" expanded="true" />
+            <element signature="e#3468#3469#0" expanded="true" />
+            <element signature="e#3497#3498#0" expanded="true" />
+            <element signature="e#22858#22859#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSVDATA/loadSchichtarbeitstage.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="487" column="42" selection-start-line="487" selection-start-column="39" selection-end-line="487" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller19.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="83" column="71" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Backend_Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        <state relative-caret-position="291">
+          <caret line="195" column="36" selection-start-line="195" selection-start-column="36" selection-end-line="195" selection-end-column="36" />
           <folding>
             <element signature="e#1508#1509#0" expanded="true" />
             <element signature="e#1600#1601#0" expanded="true" />
@@ -1356,93 +1482,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Datamanipulation_data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Database_Connectivity_Module/Schichtarbeitstag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="342" selection-start-line="342" selection-end-line="342" />
-          <folding>
-            <element signature="e#2478#2479#0" expanded="true" />
-            <element signature="e#2512#2513#0" expanded="true" />
-            <element signature="e#2586#2587#0" expanded="true" />
-            <element signature="e#2638#2639#0" expanded="true" />
-            <element signature="e#2685#2686#0" expanded="true" />
-            <element signature="e#2727#2728#0" expanded="true" />
-            <element signature="e#4969#4970#0" expanded="true" />
-            <element signature="e#5002#5003#0" expanded="true" />
-            <element signature="e#5051#5052#0" expanded="true" />
-            <element signature="e#5095#5096#0" expanded="true" />
-            <element signature="e#5131#5132#0" expanded="true" />
-            <element signature="e#5172#5173#0" expanded="true" />
-            <element signature="e#6038#6039#0" expanded="true" />
-            <element signature="e#6066#6067#0" expanded="true" />
-            <element signature="e#6093#6094#0" expanded="true" />
-            <element signature="e#6119#6120#0" expanded="true" />
-            <element signature="e#7483#7484#0" expanded="true" />
-            <element signature="e#7531#7532#0" expanded="true" />
-            <element signature="e#8001#8002#0" expanded="true" />
-            <element signature="e#8040#8041#0" expanded="true" />
-            <element signature="e#8077#8078#0" expanded="true" />
-            <element signature="e#8118#8119#0" expanded="true" />
-            <element signature="e#9526#9527#0" expanded="true" />
-            <element signature="e#9581#9582#0" expanded="true" />
-            <element signature="e#9641#9642#0" expanded="true" />
-            <element signature="e#9685#9686#0" expanded="true" />
-            <element signature="e#9732#9733#0" expanded="true" />
-            <element signature="e#9778#9779#0" expanded="true" />
-            <element signature="e#9825#9826#0" expanded="true" />
-            <element signature="e#9867#9868#0" expanded="true" />
-            <element signature="e#9916#9917#0" expanded="true" />
-            <element signature="e#9963#9964#0" expanded="true" />
-            <element signature="e#11856#11857#0" expanded="true" />
-            <element signature="e#11890#11891#0" expanded="true" />
-            <element signature="e#11923#11924#0" expanded="true" />
-            <element signature="e#11960#11961#0" expanded="true" />
-            <element signature="e#11994#11995#0" expanded="true" />
-            <element signature="e#12023#12024#0" expanded="true" />
-            <element signature="e#12051#12052#0" expanded="true" />
-            <element signature="e#12078#12079#0" expanded="true" />
-            <element signature="e#12104#12105#0" expanded="true" />
-            <element signature="e#12137#12138#0" expanded="true" />
-            <element signature="e#12169#12170#0" expanded="true" />
-            <element signature="e#12212#12213#0" expanded="true" />
-            <element signature="e#12244#12245#0" expanded="true" />
-            <element signature="e#12298#12299#0" expanded="true" />
-            <element signature="e#12339#12340#0" expanded="true" />
-            <element signature="e#12395#12396#0" expanded="true" />
-            <element signature="e#12437#12438#0" expanded="true" />
-            <element signature="e#12469#12470#0" expanded="true" />
-            <element signature="e#12498#12499#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="535" selection-start-line="535" selection-end-line="535" />
-          <folding>
-            <element signature="e#21834#21835#0" expanded="true" />
-            <element signature="e#21865#21866#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Data_Manipulation_Module/Data_Manipulation_Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="306" column="9" lean-forward="true" selection-start-line="306" selection-start-column="9" selection-end-line="306" selection-end-column="9" />
+        <state relative-caret-position="444">
+          <caret line="366" column="33" lean-forward="true" selection-start-line="366" selection-start-column="33" selection-end-line="366" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#13569#13570#0" expanded="true" />
+            <element signature="e#13634#13635#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -29,11 +29,10 @@ public abstract class Controller_Base implements Initializable {
         datum.setText(backendInterface.getHeute());
 
         try {
-            Image image = new Image(new FileInputStream("C:\\Users\\Public\\logo_adventure_works.png"));
+            Image image = new Image(new FileInputStream("etc/logo_adventure_works.png"));//TODO an die stelle das richtige bild tun, oder birbs behalten
 
             //Setting the image view
             ImageView imageView = new ImageView(image);
-            //Image image = new Image("file: C:\\Users\\Public\\logo_adventure_works.png");
 
             logo.setImage(image);
             logo.setCache(true);

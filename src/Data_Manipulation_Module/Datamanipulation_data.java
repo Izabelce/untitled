@@ -223,27 +223,37 @@ public class Datamanipulation_data {
             }
             outputstring = outputstring + tag.getDatum() + ", ";
 
-            outputstring = outputstring + tag.getMonats_ID() + ", ";
+            outputstring = outputstring + tag.getMonats_ID();
             for (int l = 0; l < tag.getLager2().length; l++) {
-                if (l == 0) {
-                    outputstring = outputstring + tag.getLager2()[l];
-                } else {
-                    outputstring = outputstring + ", " + tag.getLager2()[l];
-                }
+                outputstring = outputstring + ", " + tag.getLager2()[l];
             }
+            //outputstring = outputstring+ ", ";
+            String[] sekundarBedarfe = tag.getSekundarBedarfe(null);
+            //startet bei 1 weil sekundarbedarfe als string an pos 0 das datum hat!!!
+            for(int s =1; s< sekundarBedarfe.length; s++){
+                outputstring = outputstring + ", "+ sekundarBedarfe[s] ;
+            }
+
             outputstring = outputstring + "\n";
             try {
                 writer.append(outputstring);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         }
         //fertig, writer schliessen
-        try {
+        try
+
+        {
             writer.close();
-        } catch (IOException ioe) {
+        } catch (
+                IOException ioe)
+
+        {
             ioe.printStackTrace();
         }
+
     }
 
     public void loadFromCSV() {
@@ -349,7 +359,7 @@ public class Datamanipulation_data {
 
     private void loadKalenderwoche(String kalenderwochen) {
         List<String> strings = Database_Helper.fullFileToStringList(kalenderwochen);
-        Kalenderwoche[] kwList = new Kalenderwoche[dmc.getAlleTage()[dmc.getAlleTage().length-1].getKwID()+1];
+        Kalenderwoche[] kwList = new Kalenderwoche[dmc.getAlleTage()[dmc.getAlleTage().length - 1].getKwID() + 1];
         int index = 0;
         for (String s : strings) {
             String[] results = s.split(", ", 0);
@@ -423,8 +433,25 @@ public class Datamanipulation_data {
             lager[20] = Integer.parseInt(results[39]);
             lager[21] = Integer.parseInt(results[40]);
 
+            int[] sekundarbedarf = new int[14];
+            sekundarbedarf[0] = Integer.parseInt(results[41]);
+            sekundarbedarf[1] = Integer.parseInt(results[42]);
+            sekundarbedarf[2] = Integer.parseInt(results[43]);
+            sekundarbedarf[3] = Integer.parseInt(results[44]);
+            sekundarbedarf[4] = Integer.parseInt(results[45]);
+            sekundarbedarf[5] = Integer.parseInt(results[46]);
+            sekundarbedarf[6] = Integer.parseInt(results[47]);
+            sekundarbedarf[7] = Integer.parseInt(results[48]);
+            sekundarbedarf[8] = Integer.parseInt(results[49]);
+            sekundarbedarf[9] = Integer.parseInt(results[50]);
+            sekundarbedarf[10] = Integer.parseInt(results[51]);
+            sekundarbedarf[11] = Integer.parseInt(results[52]);
+            sekundarbedarf[12] = Integer.parseInt(results[53]);
+            sekundarbedarf[13] = Integer.parseInt(results[54]);
+
             Schichtarbeitstag tag = new Schichtarbeitstag(schichtID, max_output, fahrradplan, kwID, tagID, holidays, datum);
             tag.setMonats_ID(monatsID);
+            tag.setSekundarBedarfe(sekundarbedarf);
             for (int i = 1; i <= lager.length; i++) {
                 tag.setLagerbestand(i, lager[i - 1]);
             }
@@ -432,6 +459,7 @@ public class Datamanipulation_data {
         }
         for (int i = alleTage.length - 1; i > 0; i--) {
             alleTage[i].setVortag(alleTage[i - 1]);
+            alleTage[i-1].setNextTag(alleTage[i]);
         }
         dmc.setAlleTage(alleTage);
     }
